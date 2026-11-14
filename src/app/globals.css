@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --background: #08090c;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0b0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #242934;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4252;
+}
+
+/* Glassmorphism & Gold accents */
+.glass-panel {
+  background: rgba(18, 20, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(229, 169, 59, 0.2);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f5d17a 0%, #e5a93b 50%, #c4831f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
