@@ -5,47 +5,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --background: #08090c;
-  --foreground: #ededed;
+  --swpa-red: #c8102e;
+  --swpa-blue: #012169;
+  --swpa-white: #f7f7f5;
+  --swpa-steel: #737981;
+  --background: #050505;
+  --foreground: #f7f7f5;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #050505;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom luxury scrollbar */
+/* Red-White-Blue Patriot Accent Bar */
+.swpa-patriot-accent {
+  height: 6px;
+  background: linear-gradient(
+    180deg,
+    #c8102e 0 28%,
+    #ffffff 28% 43%,
+    #012169 43% 57%,
+    #ffffff 57% 72%,
+    #c8102e 72% 100%
+  );
+}
+
+.swpa-patriot-card-top {
+  height: 8px;
+  background: linear-gradient(
+    180deg,
+    #c8102e 0 28%,
+    #ffffff 28% 43%,
+    #012169 43% 57%,
+    #ffffff 57% 72%,
+    #c8102e 72% 100%
+  );
+}
+
+/* Custom steel scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0b0e;
+  background: #08090a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #242934;
+  background: #2b2e33;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b4252;
-}
-
-/* Glassmorphism & Gold accents */
-.glass-panel {
-  background: rgba(18, 20, 26, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.gold-glow {
-  box-shadow: 0 0 25px rgba(229, 169, 59, 0.2);
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #f5d17a 0%, #e5a93b 50%, #c4831f 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: #737981;
 }

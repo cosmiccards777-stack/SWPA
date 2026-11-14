@@ -1,104 +1,93 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { ShoppingBag, ShieldCheck, Flame, Menu, X } from 'lucide-react';
+import { ShoppingBag, ShieldCheck, Menu, X, Search } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 export default function Header() {
   const { totalItems, setIsDrawerOpen } = useCart();
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#0a0b0e]/90 border-b border-[#1f242e]">
-      {/* Announcement bar */}
-      <div className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-black text-xs font-bold py-1.5 px-4 text-center tracking-widest uppercase flex items-center justify-center gap-2">
-        <Flame className="w-3.5 h-3.5 fill-black" />
-        <span>Official SWPA Store — Free UK Delivery On Orders Over £60</span>
-        <Flame className="w-3.5 h-3.5 fill-black" />
-      </div>
+    <header className="sticky top-0 z-40 w-full bg-[#181a1b] border-b border-[#2a2d30] shadow-md">
+      {/* Top Patriot Ribbon Accent */}
+      <div className="swpa-patriot-accent w-full" />
 
+      {/* Main Header Row */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Mobile menu button */}
           <div className="flex md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-400 hover:text-white p-2"
+              className="text-gray-300 hover:text-white p-2"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
-          {/* Brand Logo */}
+          {/* Official Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-black text-xl tracking-tighter shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-              SW
+            <div className="w-12 h-12 rounded-lg border border-[#737981] overflow-hidden bg-black p-0.5 flex-shrink-0 group-hover:border-white transition-colors shadow-md">
+              <img
+                src="https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-crest.jpg?v=1789637394"
+                alt="SWPA Crest"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-black tracking-wider text-white flex items-center gap-1.5 uppercase font-display">
-                SWPA <span className="text-amber-400">Merch</span>
+              <div className="text-xl sm:text-2xl font-black tracking-wider text-white uppercase font-display leading-none">
+                SWPA <span className="text-[#c5c9cf]">MERCH</span>
               </div>
-              <div className="text-[10px] text-gray-400 tracking-widest uppercase">
-                Official UK Store
+              <div className="text-[10px] text-[#a7adb5] tracking-widest uppercase mt-0.5 font-medium">
+                Official Merchandise
               </div>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide">
-            <Link
-              href="/"
-              className="text-gray-300 hover:text-amber-400 transition-colors uppercase"
-            >
-              All Merch
+          {/* Desktop Nav - Matching Original Exactly */}
+          <nav className="hidden md:flex items-center space-x-7 text-sm font-bold tracking-wide">
+            <Link href="/" className="text-white hover:text-[#d71920] transition-colors uppercase">
+              Home
             </Link>
-            <Link
-              href="/#hoodies"
-              className="text-gray-300 hover:text-amber-400 transition-colors uppercase"
-            >
+            <Link href="/#hoodies" className="text-gray-300 hover:text-white transition-colors uppercase">
               Hoodies
             </Link>
-            <Link
-              href="/#sweatshirts"
-              className="text-gray-300 hover:text-amber-400 transition-colors uppercase"
-            >
-              Sweatshirts
+            <Link href="/#mens" className="text-gray-300 hover:text-white transition-colors uppercase">
+              Men&apos;s
             </Link>
-            <Link
-              href="/#cargo-joggers"
-              className="text-gray-300 hover:text-amber-400 transition-colors uppercase"
-            >
-              Cargo & Joggers
+            <Link href="/#womens" className="text-gray-300 hover:text-white transition-colors uppercase">
+              Women&apos;s
             </Link>
-            <Link
-              href="/#accessories"
-              className="text-gray-300 hover:text-amber-400 transition-colors uppercase"
-            >
-              Patches & Stickers
+            <Link href="/#accessories" className="text-gray-300 hover:text-white transition-colors uppercase">
+              Accessories
+            </Link>
+            <Link href="/#bundles" className="text-gray-300 hover:text-white transition-colors uppercase">
+              Bundles
             </Link>
           </nav>
 
-          {/* Right actions */}
-          <div className="flex items-center gap-4">
-            <div className="hidden lg:flex items-center gap-1.5 text-xs text-gray-400 border border-gray-800 bg-gray-900/60 px-3 py-1.5 rounded-full">
+          {/* Right Actions */}
+          <div className="flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-1.5 text-xs text-gray-300 border border-[#3b3f46] bg-[#101113] px-3 py-1.5 rounded-md">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>PayPal Buyer Protection</span>
+              <span>PayPal Protected</span>
             </div>
 
-            {/* Cart Trigger */}
+            {/* Shopping Cart Bag */}
             <button
               onClick={() => setIsDrawerOpen(true)}
-              className="relative p-2.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-200 hover:text-amber-400 hover:border-amber-500/40 transition-all flex items-center gap-2"
-              aria-label="View shopping bag"
+              className="relative p-2.5 rounded-lg bg-[#24272b] border border-[#3b3f46] text-white hover:border-gray-400 transition-all flex items-center gap-2"
+              aria-label="View bag"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-5 h-5 text-white" />
               <span className="hidden sm:inline text-xs font-bold uppercase tracking-wider">
-                Bag
+                Cart
               </span>
               {totalItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-amber-400 text-black font-black text-xs w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
+                <span className="bg-[#d71920] text-white font-black text-xs w-5 h-5 rounded-full flex items-center justify-center">
                   {totalItems}
                 </span>
               )}
@@ -107,43 +96,50 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-800 bg-[#0d0f14] px-4 pt-3 pb-6 space-y-3">
+        <div className="md:hidden border-t border-[#2a2d30] bg-[#121415] px-4 py-4 space-y-2 text-sm font-bold">
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-gray-200 font-medium py-2 px-3 rounded hover:bg-gray-800"
+            className="block text-white py-2 px-3 rounded hover:bg-[#202326] uppercase"
           >
-            All Products
+            Home
           </Link>
           <Link
             href="/#hoodies"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-gray-200 font-medium py-2 px-3 rounded hover:bg-gray-800"
+            className="block text-gray-300 py-2 px-3 rounded hover:bg-[#202326] uppercase"
           >
-            Night Patrol Hoodies
+            Hoodies
           </Link>
           <Link
-            href="/#sweatshirts"
+            href="/#mens"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-gray-200 font-medium py-2 px-3 rounded hover:bg-gray-800"
+            className="block text-gray-300 py-2 px-3 rounded hover:bg-[#202326] uppercase"
           >
-            Sweatshirts
+            Men&apos;s
           </Link>
           <Link
-            href="/#cargo-joggers"
+            href="/#womens"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-gray-200 font-medium py-2 px-3 rounded hover:bg-gray-800"
+            className="block text-gray-300 py-2 px-3 rounded hover:bg-[#202326] uppercase"
           >
-            Cargo Trousers & Joggers
+            Women&apos;s
           </Link>
           <Link
             href="/#accessories"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-gray-200 font-medium py-2 px-3 rounded hover:bg-gray-800"
+            className="block text-gray-300 py-2 px-3 rounded hover:bg-[#202326] uppercase"
           >
-            Patches, Badges & Stickers
+            Accessories & Patches
+          </Link>
+          <Link
+            href="/#bundles"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-gray-300 py-2 px-3 rounded hover:bg-[#202326] uppercase"
+          >
+            Bundles
           </Link>
         </div>
       )}
