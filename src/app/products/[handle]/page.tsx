@@ -9,10 +9,8 @@ import SizeGuideModal from '@/components/SizeGuideModal';
 import {
   ShieldCheck,
   Truck,
-  RotateCcw,
   Ruler,
   ShoppingBag,
-  ArrowRight,
   ChevronRight,
 } from 'lucide-react';
 
@@ -86,7 +84,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-xs text-[#737981] mb-8 font-medium">
+      <nav className="flex items-center gap-2 text-xs font-semibold text-[#c5c9cf] mb-8 uppercase font-sans">
         <Link href="/" className="hover:text-white transition-colors">
           Home
         </Link>
@@ -95,13 +93,13 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           {product.product_type}
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-[#c5c9cf] line-clamp-1">{product.title}</span>
+        <span className="text-white font-bold line-clamp-1">{product.title}</span>
       </nav>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* Left: Image Gallery */}
         <div className="lg:col-span-7 space-y-4">
-          <div className="aspect-square w-full rounded-xl bg-[#08090a] border border-[#2b2e33] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden">
+          <div className="aspect-square w-full rounded-xl bg-[#0a0b0d] border-2 border-[#33373e] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden">
             <img
               src={selectedImage}
               alt={product.title}
@@ -116,10 +114,10 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 <button
                   key={img.id}
                   onClick={() => setSelectedImage(img.src)}
-                  className={`w-20 h-20 rounded-lg bg-[#08090a] border overflow-hidden p-1 flex-shrink-0 transition-all ${
+                  className={`w-20 h-20 rounded-lg bg-[#0a0b0d] border-2 overflow-hidden p-1 flex-shrink-0 transition-all ${
                     selectedImage === img.src
-                      ? 'border-white ring-1 ring-white'
-                      : 'border-[#2b2e33] hover:border-gray-500'
+                      ? 'border-white ring-2 ring-white'
+                      : 'border-[#33373e] hover:border-gray-400'
                   }`}
                 >
                   <img
@@ -136,39 +134,39 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         {/* Right: Details & Purchase */}
         <div className="lg:col-span-5 space-y-6">
           <div>
-            <div className="text-xs font-bold text-[#737981] uppercase tracking-wider mb-1">
+            <div className="text-xs font-bold text-[#c5c9cf] uppercase tracking-widest mb-1 font-sans">
               {product.vendor || 'SWPA Merch'}
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-white uppercase font-display leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-normal text-white uppercase font-bebas leading-tight tracking-wide">
               {product.title}
             </h1>
 
             {/* Price display */}
             <div className="mt-3 flex items-baseline gap-3">
-              <span className="text-2xl sm:text-3xl font-black text-white font-display">
+              <span className="text-4xl font-normal text-white font-bebas tracking-wide">
                 £{price}
               </span>
-              <span className="text-xs text-[#737981]">
-                Tax included.
+              <span className="text-xs font-semibold text-[#d1d5db] font-sans">
+                Tax included. Direct UK Tracked Fulfillment.
               </span>
             </div>
           </div>
 
           {/* Color Selector */}
           {availableColors.length > 0 && (
-            <div className="space-y-2 pt-2 border-t border-[#1d1f22]">
-              <div className="text-xs font-bold text-[#c5c9cf] uppercase tracking-wider">
-                Colour: <span className="text-white font-normal">{selectedColor}</span>
+            <div className="space-y-2 pt-2 border-t border-[#2d3137]">
+              <div className="text-xs font-bold text-white uppercase tracking-wider font-sans">
+                COLOUR: <span className="text-[#e5e7eb] font-normal">{selectedColor}</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {availableColors.map((col) => (
                   <button
                     key={col}
                     onClick={() => setSelectedColor(col)}
-                    className={`px-3.5 py-1.5 rounded text-xs font-bold uppercase transition-all ${
+                    className={`px-4 py-2 rounded text-sm font-bold uppercase transition-all font-sans ${
                       selectedColor === col
-                        ? 'bg-white text-black'
-                        : 'bg-[#181a1b] text-gray-300 border border-[#2b2e33] hover:border-gray-500'
+                        ? 'bg-white text-black font-extrabold'
+                        : 'bg-[#181a1d] text-white border border-[#373c44] hover:border-white'
                     }`}
                   >
                     {col}
@@ -180,14 +178,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
           {/* Size Selector */}
           {availableSizes.length > 0 && (
-            <div className="space-y-2 pt-2 border-t border-[#1d1f22]">
+            <div className="space-y-2 pt-2 border-t border-[#2d3137]">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#c5c9cf] uppercase tracking-wider">
-                  Size: <span className="text-white font-normal">{selectedSize}</span>
+                <span className="text-xs font-bold text-white uppercase tracking-wider font-sans">
+                  SIZE: <span className="text-[#e5e7eb] font-normal">{selectedSize}</span>
                 </span>
                 <button
                   onClick={() => setSizeGuideOpen(true)}
-                  className="text-xs text-[#a7adb5] hover:text-white underline flex items-center gap-1 font-semibold"
+                  className="text-xs font-bold text-white hover:underline flex items-center gap-1 font-sans"
                 >
                   <Ruler className="w-3.5 h-3.5" />
                   <span>Size guide</span>
@@ -199,10 +197,10 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   <button
                     key={sz}
                     onClick={() => setSelectedSize(sz)}
-                    className={`min-w-[44px] px-3.5 py-2 rounded text-xs font-bold uppercase transition-all ${
+                    className={`min-w-[48px] px-4 py-2.5 rounded text-sm font-bold uppercase transition-all font-sans ${
                       selectedSize === sz
                         ? 'bg-white text-black font-black'
-                        : 'bg-[#181a1b] text-gray-300 border border-[#2b2e33] hover:border-gray-500'
+                        : 'bg-[#181a1d] text-white border border-[#373c44] hover:border-white'
                     }`}
                   >
                     {sz}
@@ -213,19 +211,19 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           )}
 
           {/* Quantity Stepper */}
-          <div className="space-y-2 pt-2 border-t border-[#1d1f22]">
-            <span className="text-xs font-bold text-[#c5c9cf] uppercase tracking-wider">Quantity</span>
-            <div className="flex items-center border border-[#3b3f46] bg-[#101113] rounded w-fit">
+          <div className="space-y-2 pt-2 border-t border-[#2d3137]">
+            <span className="text-xs font-bold text-white uppercase tracking-wider font-sans">QUANTITY</span>
+            <div className="flex items-center border border-[#454a52] bg-[#141618] rounded w-fit">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="px-3 py-1.5 text-gray-300 hover:text-white font-bold"
+                className="px-4 py-2 text-white hover:bg-[#202326] font-bold text-sm"
               >
                 -
               </button>
-              <span className="px-3 text-xs font-bold text-white">{quantity}</span>
+              <span className="px-4 text-sm font-bold text-white">{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="px-3 py-1.5 text-gray-300 hover:text-white font-bold"
+                className="px-4 py-2 text-white hover:bg-[#202326] font-bold text-sm"
               >
                 +
               </button>
@@ -233,32 +231,32 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           </div>
 
           {/* Action Buttons */}
-          <div className="space-y-2.5 pt-4">
+          <div className="space-y-3 pt-4">
             <button
               onClick={() => handleAddToCart(true)}
-              className="w-full bg-[#24272b] hover:bg-[#32363c] border border-[#d7d9dd] text-white font-bold uppercase tracking-wider py-3.5 rounded text-xs transition-all flex items-center justify-center gap-2"
+              className="w-full bg-[#272b32] hover:bg-[#343942] border-2 border-white text-white font-bebas text-2xl tracking-wider uppercase py-3.5 rounded transition-all flex items-center justify-center gap-2"
             >
-              <ShoppingBag className="w-4 h-4" />
-              <span>{addedAnimation ? 'Added to bag ✓' : 'Add to bag'}</span>
+              <ShoppingBag className="w-5 h-5" />
+              <span>{addedAnimation ? 'ADDED TO CART ✓' : 'ADD TO CART'}</span>
             </button>
 
             <Link
               href="/checkout"
               onClick={() => handleAddToCart(false)}
-              className="w-full bg-[#ffc439] hover:bg-[#f4bb34] text-[#003087] font-black uppercase tracking-wider py-3.5 rounded text-xs flex items-center justify-center gap-2 transition-all shadow"
+              className="w-full bg-[#ffc439] hover:bg-[#f4bb34] text-[#003087] font-bebas text-2xl tracking-wider uppercase py-3.5 rounded flex items-center justify-center gap-2 transition-all shadow"
             >
-              <span className="italic font-bold font-serif text-sm">PayPal</span>
-              <span>Express Checkout</span>
+              <span className="italic font-bold font-serif text-xl">PayPal</span>
+              <span className="ml-1">EXPRESS CHECKOUT</span>
             </Link>
           </div>
 
           {/* Reassurance */}
-          <div className="border border-[#23262a] rounded-lg p-3.5 bg-[#0e1013] space-y-2 text-xs text-[#a7adb5]">
-            <div className="flex items-center gap-2">
+          <div className="border border-[#33373e] rounded-lg p-4 bg-[#111316] space-y-2.5 text-xs text-[#ffffff] font-medium font-sans">
+            <div className="flex items-center gap-2.5">
               <Truck className="w-4 h-4 text-white flex-shrink-0" />
               <span>Automated UK fulfillment direct from Inkthreadable UK</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
               <span>100% Protected with PayPal Buyer Protection</span>
             </div>
@@ -266,10 +264,10 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
           {/* Description */}
           {product.body_html && (
-            <div className="pt-4 border-t border-[#1d1f22] space-y-2 text-xs text-[#888e96] leading-relaxed">
-              <h3 className="font-bold text-white uppercase text-xs">Description</h3>
+            <div className="pt-4 border-t border-[#2d3137] space-y-2 text-sm text-[#ffffff] leading-relaxed font-sans">
+              <h3 className="font-bebas text-2xl text-white uppercase tracking-wider">PRODUCT DESCRIPTION</h3>
               <div
-                className="prose prose-invert prose-xs max-w-none text-[#a7adb5]"
+                className="prose prose-invert max-w-none text-white font-medium"
                 dangerouslySetInnerHTML={{ __html: product.body_html }}
               />
             </div>

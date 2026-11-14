@@ -12,10 +12,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/products/${product.handle}`}
-      className="group flex flex-col rounded-lg bg-[#111315] border border-[#2b2e33] hover:border-[#737981] transition-all duration-200 overflow-hidden shadow-md"
+      className="group flex flex-col rounded-lg bg-[#141618] border-2 border-[#33373e] hover:border-white transition-all duration-200 overflow-hidden shadow-md"
     >
       {/* Product Image */}
-      <div className="aspect-square w-full bg-[#08090a] p-4 flex items-center justify-center relative overflow-hidden">
+      <div className="aspect-square w-full bg-[#0a0b0d] p-4 flex items-center justify-center relative overflow-hidden">
         <img
           src={product.featuredImage}
           alt={product.title}
@@ -24,28 +24,28 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
 
         {isBundle && (
-          <span className="absolute top-2.5 left-2.5 bg-[#c8102e] text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow">
+          <span className="absolute top-2.5 left-2.5 bg-[#c8102e] text-white text-xs font-black uppercase px-2 py-0.5 rounded shadow font-sans">
             Bundle
           </span>
         )}
       </div>
 
       {/* Details */}
-      <div className="p-4 flex-1 flex flex-col justify-between space-y-2">
+      <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
         <div>
-          <span className="text-[10px] font-extrabold text-[#737981] uppercase tracking-wider block">
+          <span className="text-[11px] font-bold text-[#c5c9cf] uppercase tracking-wider block font-sans">
             {product.vendor || 'SWPA Merch'}
           </span>
-          <h3 className="text-xs sm:text-sm font-bold text-white group-hover:underline line-clamp-2 leading-snug mt-0.5">
+          <h3 className="text-base font-bold text-white group-hover:text-gray-200 line-clamp-2 leading-tight mt-1 font-sans">
             {product.title}
           </h3>
         </div>
 
-        <div className="pt-2 border-t border-[#1d1f22] flex items-baseline justify-between">
-          <span className="text-sm sm:text-base font-black text-white font-display">
+        <div className="pt-2 border-t border-[#2d3137] flex items-baseline justify-between">
+          <span className="text-2xl font-normal text-white font-bebas tracking-wide">
             £{product.startingPrice}
           </span>
-          <span className="text-[11px] text-[#737981] font-medium">
+          <span className="text-xs text-[#d1d5db] font-semibold font-sans">
             {product.variants.length > 1 ? `${product.variants.length} Options` : 'In Stock'}
           </span>
         </div>

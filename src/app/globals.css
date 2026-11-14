@@ -2,22 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 :root {
   --swpa-red: #c8102e;
   --swpa-blue: #012169;
-  --swpa-white: #f7f7f5;
-  --swpa-steel: #737981;
+  --swpa-white: #ffffff;
   --background: #050505;
-  --foreground: #f7f7f5;
+  --foreground: #ffffff;
 }
 
-body {
-  color: var(--foreground);
-  background: #050505;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+html, body {
+  color: #ffffff;
+  background-color: #050505;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* Headings use Bebas Neue */
+h1, h2, h3, h4, .font-bebas, .font-display {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 0.05em;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -46,7 +53,7 @@ body {
   );
 }
 
-/* Custom steel scrollbar */
+/* Crisp steel scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -54,7 +61,7 @@ body {
   background: #08090a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2b2e33;
+  background: #373b43;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

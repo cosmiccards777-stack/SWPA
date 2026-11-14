@@ -9,18 +9,18 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          dark: '#0a0b0e',
-          surface: '#12141a',
-          card: '#181b22',
-          border: '#242934',
-          accent: '#e5a93b', // luxurious warm amber/gold
-          accentHover: '#f5ba4d',
-          red: '#dc2626',
+          dark: '#050505',
+          surface: '#111315',
+          card: '#181a1b',
+          border: '#33373d',
+          red: '#d71920',
+          blue: '#113f88',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Barlow Condensed', 'Impact', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-bebas)', 'Bebas Neue', 'sans-serif'],
+        bebas: ['var(--font-bebas)', 'Bebas Neue', 'sans-serif'],
       }
     },
   },

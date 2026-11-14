@@ -4,29 +4,29 @@ import { ShieldCheck, Truck, Lock } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0b0c0e] border-t border-[#23262a] text-[#a7adb5] mt-20 text-xs">
+    <footer className="bg-[#0b0c0e] border-t border-[#23262a] text-[#ffffff] mt-20 text-xs">
       {/* Top trust strip */}
       <div className="border-b border-[#1c1e22] py-6 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
           <div className="flex items-center justify-center sm:justify-start gap-3">
-            <Truck className="w-5 h-5 text-white flex-shrink-0" />
+            <Truck className="w-6 h-6 text-white flex-shrink-0" />
             <div>
-              <div className="text-white font-bold uppercase text-[11px]">UK Tracked Delivery</div>
-              <div className="text-[10px] text-[#737981]">Direct fulfillment via Inkthreadable UK</div>
+              <div className="text-white font-bold uppercase text-xs font-sans">UK Tracked Delivery</div>
+              <div className="text-[11px] text-[#c5c9cf]">Direct fulfillment via Inkthreadable UK</div>
             </div>
           </div>
           <div className="flex items-center justify-center sm:justify-start gap-3">
-            <ShieldCheck className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+            <ShieldCheck className="w-6 h-6 text-emerald-400 flex-shrink-0" />
             <div>
-              <div className="text-white font-bold uppercase text-[11px]">PayPal Buyer Protection</div>
-              <div className="text-[10px] text-[#737981]">100% secure transaction protection</div>
+              <div className="text-white font-bold uppercase text-xs font-sans">PayPal Buyer Protection</div>
+              <div className="text-[11px] text-[#c5c9cf]">100% secure transaction protection</div>
             </div>
           </div>
           <div className="flex items-center justify-center sm:justify-start gap-3">
-            <Lock className="w-5 h-5 text-white flex-shrink-0" />
+            <Lock className="w-6 h-6 text-white flex-shrink-0" />
             <div>
-              <div className="text-white font-bold uppercase text-[11px]">Official Merchandise</div>
-              <div className="text-[10px] text-[#737981]">Authentic South West Patriots Alliance apparel</div>
+              <div className="text-white font-bold uppercase text-xs font-sans">Official Merchandise</div>
+              <div className="text-[11px] text-[#c5c9cf]">Authentic South West Patriots Alliance apparel</div>
             </div>
           </div>
         </div>
@@ -37,48 +37,50 @@ export default function Footer() {
           {/* Col 1 */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded border border-[#737981] overflow-hidden bg-black p-0.5">
+              <div className="w-10 h-10 rounded border-2 border-[#555b64] overflow-hidden bg-black p-0.5">
                 <img
                   src="https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-crest.jpg?v=1789637394"
                   alt="SWPA Crest"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-base font-black text-white uppercase font-display tracking-wider">
+              <span className="text-2xl font-normal text-white uppercase font-bebas tracking-wider">
                 SWPA Merch
               </span>
             </div>
-            <p className="text-[#888e96] text-[11px] leading-relaxed max-w-xs">
+            <p className="text-[#ffffff] text-xs leading-relaxed max-w-xs font-medium">
               Black apparel and merchandise featuring the SWPA crest. Stand with steel.
             </p>
           </div>
 
           {/* Col 2 */}
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider mb-3 text-xs">Categories</h4>
-            <ul className="space-y-1.5 text-[11px]">
+            <h4 className="text-white font-normal uppercase tracking-wider mb-3 text-2xl font-bebas">
+              CATEGORIES
+            </h4>
+            <ul className="space-y-2 text-xs font-semibold uppercase font-sans">
               <li>
-                <Link href="/#hoodies" className="hover:text-white transition-colors">
+                <Link href="/#hoodies" className="hover:text-[#d71920] transition-colors">
                   Hoodies
                 </Link>
               </li>
               <li>
-                <Link href="/#sweatshirts" className="hover:text-white transition-colors">
+                <Link href="/#sweatshirts" className="hover:text-[#d71920] transition-colors">
                   Sweatshirts
                 </Link>
               </li>
               <li>
-                <Link href="/#cargo-joggers" className="hover:text-white transition-colors">
+                <Link href="/#cargo-joggers" className="hover:text-[#d71920] transition-colors">
                   Cargo & Joggers
                 </Link>
               </li>
               <li>
-                <Link href="/#accessories" className="hover:text-white transition-colors">
+                <Link href="/#accessories" className="hover:text-[#d71920] transition-colors">
                   Badges, Patches & Stickers
                 </Link>
               </li>
               <li>
-                <Link href="/#bundles" className="hover:text-white transition-colors">
+                <Link href="/#bundles" className="hover:text-[#d71920] transition-colors">
                   Bundles
                 </Link>
               </li>
@@ -87,20 +89,22 @@ export default function Footer() {
 
           {/* Col 3 */}
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider mb-3 text-xs">Payment & Fulfillment</h4>
-            <p className="text-[11px] text-[#888e96] mb-3 leading-relaxed">
+            <h4 className="text-white font-normal uppercase tracking-wider mb-3 text-2xl font-bebas">
+              PAYMENT & FULFILLMENT
+            </h4>
+            <p className="text-xs text-[#ffffff] font-medium mb-3 leading-relaxed font-sans">
               We process payments via PayPal for instant funds and zero delays. Every order is automatically routed to Inkthreadable UK for immediate printing.
             </p>
-            <div className="inline-flex items-center gap-2 bg-[#181a1b] border border-[#2b2e33] px-3 py-1.5 rounded text-[11px] text-white font-semibold">
-              <span className="italic font-bold font-serif">PayPal</span>
+            <div className="inline-flex items-center gap-2 bg-[#181a1b] border-2 border-[#373c44] px-3.5 py-2 rounded text-xs text-white font-bold">
+              <span className="italic font-bold font-serif text-sm">PayPal</span>
               <span>• Debit & Credit Cards</span>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-[#1c1e22] pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#656b72] gap-2">
+        <div className="border-t border-[#1c1e22] pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#c5c9cf] font-semibold gap-2 font-sans">
           <p>© {new Date().getFullYear()} SWPA Merch. All Rights Reserved.</p>
-          <p>Stand with steel.</p>
+          <p className="uppercase tracking-widest text-white font-bold">Stand with steel.</p>
         </div>
       </div>
     </footer>
