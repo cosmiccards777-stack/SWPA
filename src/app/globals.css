@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,17 +15,19 @@
 html, body {
   color: #ffffff;
   background-color: #050505;
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Headings use Bebas Neue */
 h1, h2, h3, h4, .font-bebas, .font-display {
-  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
-  letter-spacing: 0.05em;
+  font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif !important;
+  letter-spacing: 0.04em;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }

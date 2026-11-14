@@ -32,11 +32,15 @@ export default function HomePage() {
           <div className="swpa-patriot-accent w-64 max-w-full mx-auto shadow-md" />
 
           {/* Authentic Steel-Framed SWPA Crest */}
-          <div className="w-52 sm:w-64 aspect-square mx-auto p-2.5 rounded-xl border-2 border-[#555b64] bg-gradient-to-br from-[#1d1f22] via-[#08090a] to-[#2b2e33] shadow-2xl">
+          <div
+            className="aspect-square mx-auto p-2.5 rounded-xl border-2 border-[#555b64] bg-gradient-to-br from-[#1d1f22] via-[#08090a] to-[#2b2e33] shadow-2xl flex items-center justify-center overflow-hidden"
+            style={{ width: '220px', height: '220px', maxWidth: '85vw' }}
+          >
             <img
               src="https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-crest.jpg?v=1789637394"
               alt="Southwest Patriots Alliance crest"
-              className="w-full h-full object-contain bg-black rounded-lg"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+              className="bg-black rounded-lg"
               loading="eager"
             />
           </div>
