@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: 'SWPA Merch | Official Store | South West Patriots Alliance',
   description:
     'Official high-grade apparel, Night Patrol hoodies, and supporters gear. Direct UK tracked fulfillment and PayPal express checkout.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
