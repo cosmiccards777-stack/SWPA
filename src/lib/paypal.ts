@@ -22,7 +22,9 @@ export async function getPayPalAccessToken(): Promise<string> {
     ? 'https://api-m.paypal.com'
     : 'https://api-m.sandbox.paypal.com';
 
-  const auth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+  const auth = typeof Buffer !== 'undefined'
+    ? Buffer.from(`${clientId}:${clientSecret}`).toString('base64')
+    : btoa(`${clientId}:${clientSecret}`);
 
   const response = await fetch(`${baseUrl}/v1/oauth2/token`, {
     method: 'POST',

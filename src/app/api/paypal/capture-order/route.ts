@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { capturePayPalOrder } from '@/lib/paypal';
 import { submitOrderToInkthreadable } from '@/lib/inkthreadable';
 
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
