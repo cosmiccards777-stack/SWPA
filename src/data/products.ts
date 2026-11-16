@@ -19639,6 +19639,100 @@ export const PRODUCTS: Product[] = [
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-2e495d9c4399b0e2b281fc24124a759e.png?v=1790036584",
     "startingPrice": "40.99"
+  },
+  {
+    "id": 15960998871424,
+    "title": "SWPA Bag for Life - Long Handles",
+    "handle": "swpa-bag-for-life-long-handles",
+    "body_html": "<p><b>Material:\u00a0</b>100% cotton.</p>\n\n<ul>\n\t<li>Carry/shoulder straps (67cm long).</li>\n\t<li>Capacity 10 litres.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>140 gsm.</p>\n",
+    "vendor": "SWPA Merch",
+    "product_type": "Accessories",
+    "tags": [],
+    "variants": [
+      {
+        "id": 59943132496256,
+        "title": "Black",
+        "sku": "W101-BLK",
+        "price": "11.99",
+        "old_price": "7.99",
+        "exact_new_price": "11.63",
+        "option1": "Black",
+        "option2": null,
+        "option3": null,
+        "available": true,
+        "featured_image": {
+          "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-893edb350b8410a1315c1d59daf14b38.png?v=1790029624",
+          "alt": "SWPA Bag for Life - Long Handles"
+        },
+        "requires_shipping": true,
+        "taxable": true
+      }
+    ],
+    "images": [
+      {
+        "id": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-893edb350b8410a1315c1d59daf14b38.png?v=1790029624",
+        "alt": "SWPA Bag for Life - Long Handles"
+      }
+    ],
+    "options": [
+      {
+        "name": "Title",
+        "position": 1,
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-893edb350b8410a1315c1d59daf14b38.png?v=1790029624",
+    "startingPrice": "11.99"
+  },
+  {
+    "id": 15960998412672,
+    "title": "SWPA Bottle Opener Keyring",
+    "handle": "swpa-bottle-opener-keyring",
+    "body_html": "",
+    "vendor": "SWPA Merch",
+    "product_type": "Accessories",
+    "tags": [],
+    "variants": [
+      {
+        "id": 59943130726784,
+        "title": "White",
+        "sku": "BOTTLE-OP-WHI",
+        "price": "9.99",
+        "old_price": "5.99",
+        "exact_new_price": "9.57",
+        "option1": "White",
+        "option2": null,
+        "option3": null,
+        "available": true,
+        "featured_image": {
+          "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-bbdbb703d2b2b7745ece552a7d7bdecf.png?v=1790029285",
+          "alt": "SWPA Bottle Opener Keyring"
+        },
+        "requires_shipping": true,
+        "taxable": true
+      }
+    ],
+    "images": [
+      {
+        "id": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-bbdbb703d2b2b7745ece552a7d7bdecf.png?v=1790029285",
+        "alt": "SWPA Bottle Opener Keyring"
+      }
+    ],
+    "options": [
+      {
+        "name": "Title",
+        "position": 1,
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-bbdbb703d2b2b7745ece552a7d7bdecf.png?v=1790029285",
+    "startingPrice": "9.99"
   }
 ];
 
@@ -19648,6 +19742,19 @@ export function getProductByHandle(handle: string): Product | undefined {
 
 export function getProductsByType(type: string): Product[] {
   if (type === 'All') return PRODUCTS;
+  if (type.toLowerCase() === 'accessories') {
+    return PRODUCTS.filter((p) =>
+      p.product_type.toLowerCase() === 'accessories' ||
+      p.product_type.toLowerCase() === 'patches' ||
+      p.product_type.toLowerCase() === 'snoods & neck gaiters' ||
+      p.title.toLowerCase().includes('badge') ||
+      p.title.toLowerCase().includes('patch') ||
+      p.title.toLowerCase().includes('sticker') ||
+      p.title.toLowerCase().includes('bag') ||
+      p.title.toLowerCase().includes('keyring') ||
+      p.title.toLowerCase().includes('snood')
+    );
+  }
   return PRODUCTS.filter((p) => p.product_type.toLowerCase() === type.toLowerCase());
 }
 
@@ -19657,8 +19764,6 @@ export const CATEGORIES = [
   'Sweatshirts',
   'Cargo Trousers',
   'Joggers',
-  "Women's Polo Shirts",
-  'Patches',
   'Accessories',
   'Bundles'
 ];

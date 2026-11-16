@@ -17,6 +17,19 @@ export default function HomePage() {
           if (selectedCategory === "Women's") {
             return p.title.toLowerCase().includes("women") || p.product_type.toLowerCase().includes("women");
           }
+          if (selectedCategory === 'Accessories') {
+            return (
+              p.product_type.toLowerCase() === 'accessories' ||
+              p.product_type.toLowerCase() === 'patches' ||
+              p.product_type.toLowerCase() === 'snoods & neck gaiters' ||
+              p.title.toLowerCase().includes('badge') ||
+              p.title.toLowerCase().includes('patch') ||
+              p.title.toLowerCase().includes('sticker') ||
+              p.title.toLowerCase().includes('bag') ||
+              p.title.toLowerCase().includes('keyring') ||
+              p.title.toLowerCase().includes('snood')
+            );
+          }
           return p.product_type.toLowerCase() === selectedCategory.toLowerCase();
         });
 
