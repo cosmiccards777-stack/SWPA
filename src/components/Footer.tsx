@@ -60,6 +60,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs font-semibold uppercase font-sans">
               <li>
+                <Link href="/#t-shirts" className="hover:text-[#d71920] transition-colors">
+                  T-Shirts
+                </Link>
+              </li>
+              <li>
                 <Link href="/#hoodies" className="hover:text-[#d71920] transition-colors">
                   Hoodies
                 </Link>
@@ -70,18 +75,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#cargo-joggers" className="hover:text-[#d71920] transition-colors">
-                  Cargo & Joggers
+                <Link href="/#joggers" className="hover:text-[#d71920] transition-colors">
+                  Joggers & Cargo
                 </Link>
               </li>
               <li>
                 <Link href="/#accessories" className="hover:text-[#d71920] transition-colors">
-                  Badges, Patches & Stickers
-                </Link>
-              </li>
-              <li>
-                <Link href="/#bundles" className="hover:text-[#d71920] transition-colors">
-                  Bundles
+                  Accessories & Patches
                 </Link>
               </li>
             </ul>

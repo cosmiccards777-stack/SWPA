@@ -7,8 +7,6 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const isBundle = product.product_type.toLowerCase().includes('bundle');
-
   return (
     <Link
       href={`/products/${product.handle}`}
@@ -22,12 +20,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
-
-        {isBundle && (
-          <span className="absolute top-2.5 left-2.5 bg-[#c8102e] text-white text-xs font-black uppercase px-2 py-0.5 rounded shadow font-sans">
-            Bundle
-          </span>
-        )}
       </div>
 
       {/* Details */}

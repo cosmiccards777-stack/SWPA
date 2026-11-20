@@ -40,20 +40,20 @@ export default function Header() {
               <Link href="/" className="text-white hover:text-gray-300 transition-colors">
                 Home
               </Link>
+              <Link href="/#t-shirts" className="text-[#c5c9cf] hover:text-white transition-colors">
+                T-Shirts
+              </Link>
               <Link href="/#hoodies" className="text-[#c5c9cf] hover:text-white transition-colors">
                 Hoodies
               </Link>
-              <Link href="/#mens" className="text-[#c5c9cf] hover:text-white transition-colors">
-                Men&apos;s
+              <Link href="/#sweatshirts" className="text-[#c5c9cf] hover:text-white transition-colors">
+                Sweatshirts
               </Link>
-              <Link href="/#womens" className="text-[#c5c9cf] hover:text-white transition-colors">
-                Women&apos;s
+              <Link href="/#joggers" className="text-[#c5c9cf] hover:text-white transition-colors">
+                Joggers
               </Link>
               <Link href="/#accessories" className="text-[#c5c9cf] hover:text-white transition-colors">
                 Accessories
-              </Link>
-              <Link href="/#bundles" className="text-[#c5c9cf] hover:text-white transition-colors">
-                Bundles
               </Link>
             </nav>
           </div>
@@ -93,6 +93,13 @@ export default function Header() {
             Home
           </Link>
           <Link
+            href="/#t-shirts"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
+          >
+            T-Shirts
+          </Link>
+          <Link
             href="/#hoodies"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
@@ -100,18 +107,18 @@ export default function Header() {
             Hoodies
           </Link>
           <Link
-            href="/#mens"
+            href="/#sweatshirts"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
           >
-            Men&apos;s
+            Sweatshirts
           </Link>
           <Link
-            href="/#womens"
+            href="/#joggers"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
           >
-            Women&apos;s
+            Joggers
           </Link>
           <Link
             href="/#accessories"
@@ -119,13 +126,6 @@ export default function Header() {
             className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
           >
             Accessories & Patches
-          </Link>
-          <Link
-            href="/#bundles"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
-          >
-            Bundles
           </Link>
         </div>
       )}

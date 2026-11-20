@@ -12,10 +12,53 @@ export default function HomePage() {
       ? PRODUCTS
       : PRODUCTS.filter((p) => {
           if (selectedCategory === "Men's") {
-            return p.title.toLowerCase().includes("men's") || p.product_type.toLowerCase().includes('hoodie');
+            return (
+              p.title.toLowerCase().includes("men's") ||
+              p.product_type.toLowerCase() === 't-shirts' ||
+              p.product_type.toLowerCase() === 'polo shirts' ||
+              p.product_type.toLowerCase().includes('hoodie') ||
+              p.product_type.toLowerCase().includes('joggers') ||
+              p.product_type.toLowerCase().includes('cargo')
+            );
           }
           if (selectedCategory === "Women's") {
-            return p.title.toLowerCase().includes("women") || p.product_type.toLowerCase().includes("women");
+            return (
+              p.title.toLowerCase().includes("women") ||
+              p.product_type.toLowerCase().includes("women")
+            );
+          }
+          if (selectedCategory === 'T-Shirts' || selectedCategory === 'Tees') {
+            return (
+              p.product_type.toLowerCase() === 't-shirts' ||
+              p.product_type.toLowerCase() === 'polo shirts' ||
+              p.product_type.toLowerCase() === "women's polo shirts" ||
+              p.title.toLowerCase().includes('t-shirt') ||
+              p.title.toLowerCase().includes('polo')
+            );
+          }
+          if (selectedCategory === 'Hoodies') {
+            return (
+              p.product_type.toLowerCase() === 'hoodies' ||
+              p.title.toLowerCase().includes('hoodie')
+            );
+          }
+          if (selectedCategory === 'Sweatshirts') {
+            return (
+              p.product_type.toLowerCase() === 'sweatshirts' ||
+              p.title.toLowerCase().includes('sweatshirt')
+            );
+          }
+          if (selectedCategory === 'Joggers') {
+            return (
+              p.product_type.toLowerCase() === 'joggers' ||
+              p.title.toLowerCase().includes('joggers')
+            );
+          }
+          if (selectedCategory === 'Cargo Trousers') {
+            return (
+              p.product_type.toLowerCase() === 'cargo trousers' ||
+              p.title.toLowerCase().includes('cargo')
+            );
           }
           if (selectedCategory === 'Accessories') {
             return (
@@ -108,7 +151,23 @@ export default function HomePage() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* Card 1: HOODIES */}
+          {/* Card 1: TEES & POLOS */}
+          <button
+            onClick={() => setSelectedCategory('T-Shirts')}
+            className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
+            style={{
+              background:
+                'linear-gradient(135deg, rgba(215,25,32,.09), transparent 35%), linear-gradient(315deg, rgba(17,63,136,.16), transparent 42%), #101113',
+            }}
+          >
+            <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
+            <span className="text-3xl font-normal text-white uppercase font-bebas tracking-wider group-hover:text-white">
+              TEES & POLOS
+            </span>
+            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop black tees & polo shirts</span>
+          </button>
+
+          {/* Card 2: HOODIES */}
           <button
             onClick={() => setSelectedCategory('Hoodies')}
             className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
@@ -124,9 +183,9 @@ export default function HomePage() {
             <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop black hoodies</span>
           </button>
 
-          {/* Card 2: SWEATSHIRTS */}
+          {/* Card 3: SWEATSHIRTS & JOGGERS */}
           <button
-            onClick={() => setSelectedCategory('Sweatshirts')}
+            onClick={() => setSelectedCategory('Joggers')}
             className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
             style={{
               background:
@@ -135,25 +194,9 @@ export default function HomePage() {
           >
             <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
             <span className="text-3xl font-normal text-white uppercase font-bebas tracking-wider group-hover:text-white">
-              SWEATSHIRTS
+              JOGGERS & CARGO
             </span>
-            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop black sweatshirts</span>
-          </button>
-
-          {/* Card 3: CARGO & PANTS */}
-          <button
-            onClick={() => setSelectedCategory('Cargo Trousers')}
-            className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(215,25,32,.09), transparent 35%), linear-gradient(315deg, rgba(17,63,136,.16), transparent 42%), #101113',
-            }}
-          >
-            <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
-            <span className="text-3xl font-normal text-white uppercase font-bebas tracking-wider group-hover:text-white">
-              CARGO & PANTS
-            </span>
-            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop stretch cargo & joggers</span>
+            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop joggers & cargo trousers</span>
           </button>
 
           {/* Card 4: ACCESSORIES */}
@@ -188,7 +231,7 @@ export default function HomePage() {
 
           {/* Filter Pills */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none font-sans text-xs font-bold uppercase tracking-wide">
-            {['All', 'Hoodies', 'Sweatshirts', 'Cargo Trousers', 'Joggers', 'Accessories', 'Bundles'].map((cat) => (
+            {['All', 'T-Shirts', 'Hoodies', 'Sweatshirts', 'Joggers', 'Cargo Trousers', 'Accessories'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
