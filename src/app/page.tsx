@@ -37,6 +37,42 @@ export default function HomePage() {
 
   return (
     <div className="space-y-20 pb-24">
+      {/* Immediate redirect for legacy bookmark / cache hash URLs */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              if (typeof window === 'undefined') return;
+              var h = (window.location.hash || '').toLowerCase().replace('#', '');
+              var map = {
+                'mens': '/collections/mens',
+                "men's": '/collections/mens',
+                'womens': '/collections/womens',
+                "women's": '/collections/womens',
+                'hoodies': '/collections/hoodies',
+                'hoodie': '/collections/hoodies',
+                'tees': '/collections/tees',
+                't-shirts': '/collections/tees',
+                't-shirt': '/collections/tees',
+                'sweatshirts': '/collections/sweatshirts',
+                'sweatshirt': '/collections/sweatshirts',
+                'joggers': '/collections/bottoms',
+                'jogger': '/collections/bottoms',
+                'cargo': '/collections/bottoms',
+                'cargo-trousers': '/collections/bottoms',
+                'cargo-joggers': '/collections/bottoms',
+                'bottoms': '/collections/bottoms',
+                'accessories': '/collections/accessories',
+                'all': '/collections/all'
+              };
+              if (map[h]) {
+                window.location.replace(map[h]);
+              }
+            })();
+          `,
+        }}
+      />
+
       {/* Hero */}
       <section className="relative overflow-hidden pt-8 pb-12 px-4 text-center bg-gradient-to-b from-[#050505] via-[#090b0e] to-[#050505]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[#113f88]/20 blur-[150px] pointer-events-none rounded-full" />

@@ -99,8 +99,22 @@ export const COLLECTIONS: Collection[] = [
 /** Order of links in the main navigation. */
 export const NAV_SLUGS = ['mens', 'womens', 'tees', 'hoodies', 'sweatshirts', 'bottoms', 'accessories'];
 
+export const ALIASES: Record<string, string> = {
+  't-shirts': 'tees',
+  't-shirt': 'tees',
+  'tee': 'tees',
+  'men': 'mens',
+  'women': 'womens',
+  'joggers': 'bottoms',
+  'jogger': 'bottoms',
+  'cargo': 'bottoms',
+  'cargos': 'bottoms',
+  'cargo-trousers': 'bottoms',
+};
+
 export function getCollection(slug: string): Collection | undefined {
-  return COLLECTIONS.find((c) => c.slug === slug);
+  const normalized = ALIASES[slug.toLowerCase()] || slug.toLowerCase();
+  return COLLECTIONS.find((c) => c.slug === normalized);
 }
 
 export function getCollectionProducts(slug: string): Product[] {

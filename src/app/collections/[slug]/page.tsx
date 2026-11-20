@@ -3,7 +3,7 @@ export const runtime = 'edge';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { COLLECTIONS, getCollection, getCollectionProducts } from '@/data/collections';
+import { COLLECTIONS, ALIASES, getCollection, getCollectionProducts } from '@/data/collections';
 import CollectionView from '@/components/CollectionView';
 
 interface Props {
@@ -14,7 +14,9 @@ interface Props {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return COLLECTIONS.map((c) => ({ slug: c.slug }));
+  const base = COLLECTIONS.map((c) => ({ slug: c.slug }));
+  const aliases = Object.keys(ALIASES).map((slug) => ({ slug }));
+  return [...base, ...aliases];
 }
 
 export function generateMetadata({ params }: Props): Metadata {
