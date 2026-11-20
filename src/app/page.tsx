@@ -1,172 +1,52 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { PRODUCTS } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 
+const CARD_BG =
+  'linear-gradient(135deg, rgba(215,25,32,.09), transparent 35%), linear-gradient(315deg, rgba(17,63,136,.16), transparent 42%), #101113';
+
+const GENDER_CARDS = [
+  { slug: 'mens', title: "MEN'S", sub: "Shop men's & unisex apparel", handle: 'awdis-college-hoodie-black-night-patrol-hoodie-mens' },
+  { slug: 'womens', title: "WOMEN'S", sub: "Shop women's fit apparel", handle: 'awdis-college-hoodie-7691-7691' },
+];
+
+const CATEGORY_CARDS = [
+  { slug: 'tees', title: 'TEES & POLOS', sub: 'Crest tees & polo shirts' },
+  { slug: 'hoodies', title: 'HOODIES', sub: 'Pullover & zip-up hoodies' },
+  { slug: 'bottoms', title: 'JOGGERS & CARGO', sub: 'Joggers & stretch cargos' },
+  { slug: 'accessories', title: 'ACCESSORIES', sub: 'Badges, patches & stickers' },
+];
+
 export default function HomePage() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const imageFor = (handle: string) => PRODUCTS.find((p) => p.handle === handle)?.featuredImage;
 
-  // Synchronize category with Header, URL hash, and custom events
-  useEffect(() => {
-    const handleCategoryEvent = (e: Event) => {
-      const customEvent = e as CustomEvent<string>;
-      if (customEvent.detail) {
-        setSelectedCategory(customEvent.detail);
-      }
-    };
-    window.addEventListener('swpa:selectCategory', handleCategoryEvent);
-
-    const syncFromUrl = () => {
-      const hash = window.location.hash.toLowerCase().replace('#', '');
-      const searchParams = new URLSearchParams(window.location.search);
-      const catQuery = searchParams.get('category');
-
-      let targetCat = '';
-      if (catQuery) {
-        targetCat = catQuery;
-      } else if (hash) {
-        if (hash === 'hoodies') targetCat = 'Hoodies';
-        else if (hash === 'mens' || hash === "men's") targetCat = "Men's";
-        else if (hash === 'womens' || hash === "women's") targetCat = "Women's";
-        else if (hash === 'accessories') targetCat = 'Accessories';
-        else if (hash === 'tees' || hash === 't-shirts') targetCat = 'T-Shirts';
-        else if (hash === 'sweatshirts') targetCat = 'Sweatshirts';
-        else if (hash === 'joggers') targetCat = 'Joggers';
-        else if (hash === 'cargo' || hash === 'cargo-trousers') targetCat = 'Cargo Trousers';
-      }
-
-      if (targetCat) {
-        const categories = [
-          'All',
-          'T-Shirts',
-          'Hoodies',
-          'Sweatshirts',
-          'Joggers',
-          'Cargo Trousers',
-          'Accessories',
-          "Men's",
-          "Women's",
-        ];
-        const match = categories.find((c) => c.toLowerCase() === targetCat.toLowerCase());
-        if (match) {
-          setSelectedCategory(match);
-        }
-        setTimeout(() => {
-          const el = document.getElementById('catalog');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 150);
-      }
-    };
-
-    syncFromUrl();
-    window.addEventListener('hashchange', syncFromUrl);
-
-    return () => {
-      window.removeEventListener('swpa:selectCategory', handleCategoryEvent);
-      window.removeEventListener('hashchange', syncFromUrl);
-    };
-  }, []);
-
-  const selectAndScroll = (category: string) => {
-    setSelectedCategory(category);
-    const el = document.getElementById('catalog');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const filteredProducts =
-    selectedCategory === 'All'
-      ? PRODUCTS
-      : PRODUCTS.filter((p) => {
-          if (selectedCategory === "Men's") {
-            return (
-              p.title.toLowerCase().includes("men's") ||
-              p.product_type.toLowerCase() === 't-shirts' ||
-              p.product_type.toLowerCase() === 'polo shirts' ||
-              p.product_type.toLowerCase().includes('hoodie') ||
-              p.product_type.toLowerCase().includes('joggers') ||
-              p.product_type.toLowerCase().includes('cargo')
-            );
-          }
-          if (selectedCategory === "Women's") {
-            return (
-              p.title.toLowerCase().includes("women") ||
-              p.product_type.toLowerCase().includes("women")
-            );
-          }
-          if (selectedCategory === 'T-Shirts' || selectedCategory === 'Tees') {
-            return (
-              p.product_type.toLowerCase() === 't-shirts' ||
-              p.product_type.toLowerCase() === 'polo shirts' ||
-              p.product_type.toLowerCase() === "women's polo shirts" ||
-              p.title.toLowerCase().includes('t-shirt') ||
-              p.title.toLowerCase().includes('polo')
-            );
-          }
-          if (selectedCategory === 'Hoodies') {
-            return (
-              p.product_type.toLowerCase() === 'hoodies' ||
-              p.title.toLowerCase().includes('hoodie')
-            );
-          }
-          if (selectedCategory === 'Sweatshirts') {
-            return (
-              p.product_type.toLowerCase() === 'sweatshirts' ||
-              p.title.toLowerCase().includes('sweatshirt')
-            );
-          }
-          if (selectedCategory === 'Joggers') {
-            return (
-              p.product_type.toLowerCase() === 'joggers' ||
-              p.title.toLowerCase().includes('joggers')
-            );
-          }
-          if (selectedCategory === 'Cargo Trousers') {
-            return (
-              p.product_type.toLowerCase() === 'cargo trousers' ||
-              p.title.toLowerCase().includes('cargo')
-            );
-          }
-          if (selectedCategory === 'Accessories') {
-            return (
-              p.product_type.toLowerCase() === 'accessories' ||
-              p.product_type.toLowerCase() === 'patches' ||
-              p.product_type.toLowerCase() === 'snoods & neck gaiters' ||
-              p.title.toLowerCase().includes('badge') ||
-              p.title.toLowerCase().includes('patch') ||
-              p.title.toLowerCase().includes('sticker') ||
-              p.title.toLowerCase().includes('bag') ||
-              p.title.toLowerCase().includes('keyring') ||
-              p.title.toLowerCase().includes('snood')
-            );
-          }
-          return p.product_type.toLowerCase() === selectedCategory.toLowerCase();
-        });
+  // Featured: a hand-picked mix across men's, women's and categories
+  const FEATURED_HANDLES = [
+    'original-swpa-night-patrol-hoodie',
+    'awdis-college-hoodie-swpa-womens-night-patrol-hoodie',
+    'swpa-classic-t-shirt',
+    'swpa-womens-embroidered-polo-shirt-black-pink',
+    'swpa-printed-zip-up-hoodie',
+    'swpa-womens-fitted-t-shirt',
+    'swpa-printed-cuffed-joggers',
+    'awdis-sweatshirt-7033-7185',
+  ];
+  const featured = FEATURED_HANDLES.map((h) => PRODUCTS.find((p) => p.handle === h)).filter(
+    (p): p is (typeof PRODUCTS)[number] => Boolean(p)
+  );
 
   return (
-    <div className="space-y-16 pb-24">
-      {/* Exact Proportional Hero Section matching Original */}
-      <section className="relative overflow-hidden pt-8 pb-16 px-4 text-center bg-gradient-to-b from-[#050505] via-[#090b0e] to-[#050505]">
-        {/* Subtle radial patriot glow */}
+    <div className="space-y-20 pb-24">
+      {/* Hero */}
+      <section className="relative overflow-hidden pt-8 pb-12 px-4 text-center bg-gradient-to-b from-[#050505] via-[#090b0e] to-[#050505]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[#113f88]/20 blur-[150px] pointer-events-none rounded-full" />
 
         <div className="max-w-4xl mx-auto relative z-10">
-          {/* Top Tri-Color Stacked Ribbon */}
           <div
             className="swpa-patriot-accent mx-auto shadow-md"
-            style={{
-              width: 'min(330px, 70vw)',
-              height: '10px',
-              marginBottom: '2rem',
-              borderRadius: '1px',
-            }}
+            style={{ width: 'min(330px, 70vw)', height: '10px', marginBottom: '2rem', borderRadius: '1px' }}
           />
 
-          {/* Large Steel-Bevelled Crest Frame (Exact Original Dimensions) */}
           <div
             className="mx-auto rounded-xl p-2.5 sm:p-3 border border-[#737981] shadow-2xl flex items-center justify-center overflow-hidden bg-black"
             style={{
@@ -186,7 +66,6 @@ export default function HomePage() {
             />
           </div>
 
-          {/* Headings & Kicker matching Original Spacing */}
           <div className="space-y-2 max-w-2xl mx-auto">
             <p className="text-xs sm:text-sm font-extrabold tracking-[0.22em] text-[#c5c9cf] uppercase font-sans">
               SWPA Merchandise
@@ -194,152 +73,113 @@ export default function HomePage() {
             <h1 className="text-5xl sm:text-7xl font-normal text-white uppercase tracking-wider font-bebas leading-tight">
               SWPA MERCH
             </h1>
-            <p className="text-sm sm:text-base text-[#d6d7da] font-normal max-w-xl mx-auto leading-relaxed pt-1">
+            <p className="text-sm sm:text-base text-[#d6d7da] max-w-xl mx-auto leading-relaxed pt-1">
               Black apparel and merchandise featuring the SWPA crest.
             </p>
           </div>
 
-          {/* Primary Action Button */}
-          <div className="pt-6">
-            <button
-              onClick={() => {
-                const el = document.getElementById('categories');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
+          <div className="pt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/collections/all"
               className="inline-flex items-center justify-center min-h-[50px] px-9 py-3 rounded border border-[#d7d9dd] hover:border-white text-white font-sans text-xs font-extrabold tracking-[0.1em] uppercase transition-all shadow-md bg-gradient-to-b from-[#24272b] to-[#111315] hover:brightness-125"
             >
+              Shop all
+            </Link>
+            <a
+              href="#categories"
+              className="inline-flex items-center justify-center min-h-[50px] px-9 py-3 rounded border border-[#3a3f46] hover:border-white text-[#c5c9cf] hover:text-white font-sans text-xs font-extrabold tracking-[0.1em] uppercase transition-all"
+            >
               Shop categories
-            </button>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* SHOP BY CATEGORY (Exact Original Spacing & Proportions) */}
-      <section
-        id="categories"
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24"
-        style={{ marginTop: 'clamp(3rem, 6vw, 5rem)' }}
-      >
+      {/* Shop by category */}
+      <section id="categories" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <p className="text-center text-xs font-black tracking-[0.22em] text-[#aeb2b8] uppercase mb-6 font-sans">
           SHOP BY CATEGORY
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* Card 1: TEES & POLOS */}
-          <button
-            onClick={() => selectAndScroll('T-Shirts')}
-            className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(215,25,32,.09), transparent 35%), linear-gradient(315deg, rgba(17,63,136,.16), transparent 42%), #101113',
-            }}
-          >
-            <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
-            <span className="text-3xl font-normal text-white uppercase font-bebas tracking-wider group-hover:text-white">
-              TEES & POLOS
-            </span>
-            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop black tees & polo shirts</span>
-          </button>
+        {/* Men's / Women's */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          {GENDER_CARDS.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/collections/${c.slug}`}
+              className="group relative min-h-[240px] sm:min-h-[300px] rounded-lg border border-[#656b72] hover:border-[#b7bbc1] transition-all overflow-hidden shadow-lg flex items-end"
+              style={{ background: CARD_BG }}
+            >
+              <div className="swpa-patriot-card-top absolute top-0 left-0 right-0 z-10" style={{ height: '10px' }} />
+              {imageFor(c.handle) && (
+                <img
+                  src={imageFor(c.handle)}
+                  alt=""
+                  className="absolute right-0 bottom-0 h-full w-[55%] object-contain p-6 opacity-90 group-hover:scale-105 transition-transform duration-300"
+                />
+              )}
+              <div className="relative p-6">
+                <span className="block text-4xl sm:text-5xl font-normal text-white uppercase font-bebas tracking-wider">
+                  {c.title}
+                </span>
+                <span className="block text-xs text-[#b9bdc3] mt-1 font-sans">{c.sub}</span>
+                <span className="inline-block mt-4 text-[11px] font-extrabold uppercase tracking-wider text-white border-b-2 border-[#c8102e] pb-0.5 font-sans">
+                  Shop now →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
 
-          {/* Card 2: HOODIES */}
-          <button
-            onClick={() => selectAndScroll('Hoodies')}
-            className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(215,25,32,.09), transparent 35%), linear-gradient(315deg, rgba(17,63,136,.16), transparent 42%), #101113',
-            }}
-          >
-            <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
-            <span className="text-3xl font-normal text-white uppercase font-bebas tracking-wider group-hover:text-white">
-              HOODIES
-            </span>
-            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop black hoodies</span>
-          </button>
-
-          {/* Card 3: JOGGERS & CARGO */}
-          <button
-            onClick={() => selectAndScroll('Joggers')}
-            className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(215,25,32,.09), transparent 35%), linear-gradient(315deg, rgba(17,63,136,.16), transparent 42%), #101113',
-            }}
-          >
-            <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
-            <span className="text-3xl font-normal text-white uppercase font-bebas tracking-wider group-hover:text-white">
-              JOGGERS & CARGO
-            </span>
-            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop joggers & cargo trousers</span>
-          </button>
-
-          {/* Card 4: ACCESSORIES */}
-          <button
-            onClick={() => selectAndScroll('Accessories')}
-            className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(215,25,32,.09), transparent 35%), linear-gradient(315deg, rgba(17,63,136,.16), transparent 42%), #101113',
-            }}
-          >
-            <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
-            <span className="text-3xl font-normal text-white uppercase font-bebas tracking-wider group-hover:text-white">
-              ACCESSORIES
-            </span>
-            <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop patches, badges & stickers</span>
-          </button>
+        {/* Product categories */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {CATEGORY_CARDS.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/collections/${c.slug}`}
+              className="group relative text-left min-h-[160px] sm:min-h-[180px] p-5 sm:p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
+              style={{ background: CARD_BG }}
+            >
+              <div className="swpa-patriot-card-top absolute top-0 left-0 right-0" style={{ height: '10px' }} />
+              <span className="text-2xl sm:text-3xl font-normal text-white uppercase font-bebas tracking-wider">
+                {c.title}
+              </span>
+              <span className="text-xs text-[#b9bdc3] mt-1 font-sans">{c.sub}</span>
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* Main Catalog & Filter Section */}
-      <section id="catalog" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 scroll-mt-24">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#2d3137] mb-8 gap-4">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-normal text-white uppercase font-bebas tracking-wider">
-              {selectedCategory === 'All' ? 'ALL PRODUCTS' : selectedCategory.toUpperCase()}
-            </h2>
-            <p className="text-xs font-semibold text-[#aeb2b8] mt-0.5">
-              Showing {filteredProducts.length} items • Direct UK print-on-demand fulfillment
-            </p>
-          </div>
-
-          {/* Filter Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none font-sans text-xs font-bold uppercase tracking-wide">
-            {['All', 'T-Shirts', 'Hoodies', 'Sweatshirts', 'Joggers', 'Cargo Trousers', 'Accessories', "Men's", "Women's"].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded uppercase transition-colors whitespace-nowrap ${
-                  selectedCategory === cat
-                    ? 'bg-white text-black font-extrabold'
-                    : 'bg-[#181a1d] text-gray-300 hover:text-white border border-[#373c44]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+      {/* Featured */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-end justify-between pb-4 border-b border-[#2d3137] mb-8">
+          <h2 className="text-3xl sm:text-4xl font-normal text-white uppercase font-bebas tracking-wider">
+            Featured
+          </h2>
+          <Link
+            href="/collections/all"
+            className="text-xs font-extrabold uppercase tracking-wider text-[#c5c9cf] hover:text-white font-sans"
+          >
+            View all {PRODUCTS.length} products →
+          </Link>
         </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {featured.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
 
-      {/* Stand with Steel Guarantee Bar */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {/* Guarantee bar */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-xl border border-[#373b43] bg-[#0e1013] p-8 text-center space-y-3">
-          <p className="text-xs font-bold text-[#c5c9cf] uppercase tracking-widest font-sans">
-            Stand With Steel
-          </p>
+          <p className="text-xs font-bold text-[#c5c9cf] uppercase tracking-widest font-sans">Stand With Steel</p>
           <h3 className="text-3xl sm:text-4xl font-normal text-white uppercase font-bebas tracking-wider">
-            DIRECT UK PRINTING & FAST TRACKED FULFILLMENT
+            DIRECT UK PRINTING &amp; FAST TRACKED FULFILLMENT
           </h3>
-          <p className="text-xs sm:text-sm text-[#ffffff] font-medium max-w-xl mx-auto leading-relaxed">
-            All orders placed on the store are instantly transmitted to Inkthreadable UK for immediate production and tracked UK dispatch. Zero wait times, zero delays.
+          <p className="text-xs sm:text-sm text-white font-medium max-w-xl mx-auto leading-relaxed">
+            All orders placed on the store are instantly transmitted to Inkthreadable UK for immediate production and
+            tracked UK dispatch.
           </p>
         </div>
       </section>

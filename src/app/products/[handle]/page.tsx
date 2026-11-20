@@ -6,6 +6,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PRODUCTS, getProductByHandle, ProductVariant } from '@/data/products';
+import { getCategory, CATEGORY_LABELS } from '@/data/collections';
 import { useCart } from '@/context/CartContext';
 import SizeGuideModal from '@/components/SizeGuideModal';
 import {
@@ -91,8 +92,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           Home
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <Link href={`/#${product.product_type.toLowerCase()}`} className="hover:text-white transition-colors">
-          {product.product_type}
+        <Link href={`/collections/${getCategory(product)}`} className="hover:text-white transition-colors">
+          {CATEGORY_LABELS[getCategory(product)]}
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <span className="text-white font-bold line-clamp-1">{product.title}</span>

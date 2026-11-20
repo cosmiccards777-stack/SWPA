@@ -56,32 +56,42 @@ export default function Footer() {
           {/* Col 2 */}
           <div>
             <h4 className="text-white font-normal uppercase tracking-wider mb-3 text-2xl font-bebas">
-              CATEGORIES
+              COLLECTIONS
             </h4>
             <ul className="space-y-2 text-xs font-semibold uppercase font-sans">
               <li>
-                <Link href="/#t-shirts" className="hover:text-[#d71920] transition-colors">
-                  T-Shirts
+                <Link href="/collections/mens" className="hover:text-[#d71920] transition-colors">
+                  Men&apos;s
                 </Link>
               </li>
               <li>
-                <Link href="/#hoodies" className="hover:text-[#d71920] transition-colors">
+                <Link href="/collections/womens" className="hover:text-[#d71920] transition-colors">
+                  Women&apos;s
+                </Link>
+              </li>
+              <li>
+                <Link href="/collections/tees" className="hover:text-[#d71920] transition-colors">
+                  Tees &amp; Polos
+                </Link>
+              </li>
+              <li>
+                <Link href="/collections/hoodies" className="hover:text-[#d71920] transition-colors">
                   Hoodies
                 </Link>
               </li>
               <li>
-                <Link href="/#sweatshirts" className="hover:text-[#d71920] transition-colors">
+                <Link href="/collections/sweatshirts" className="hover:text-[#d71920] transition-colors">
                   Sweatshirts
                 </Link>
               </li>
               <li>
-                <Link href="/#joggers" className="hover:text-[#d71920] transition-colors">
-                  Joggers & Cargo
+                <Link href="/collections/bottoms" className="hover:text-[#d71920] transition-colors">
+                  Joggers &amp; Cargo
                 </Link>
               </li>
               <li>
-                <Link href="/#accessories" className="hover:text-[#d71920] transition-colors">
-                  Accessories & Patches
+                <Link href="/collections/accessories" className="hover:text-[#d71920] transition-colors">
+                  Accessories &amp; Patches
                 </Link>
               </li>
             </ul>

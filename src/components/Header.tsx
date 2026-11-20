@@ -1,18 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShoppingBag, Menu, X, ShieldCheck } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { NAV_SLUGS, getCollection } from '@/data/collections';
 
 const NAV_ITEMS = [
-  { name: 'Home', hash: '', cat: 'All' },
-  { name: 'Tees', hash: 'tees', cat: 'T-Shirts' },
-  { name: 'Hoodies', hash: 'hoodies', cat: 'Hoodies' },
-  { name: "Men's", hash: 'mens', cat: "Men's" },
-  { name: "Women's", hash: 'womens', cat: "Women's" },
-  { name: 'Accessories', hash: 'accessories', cat: 'Accessories' },
+  { label: 'Home', href: '/' },
+  ...NAV_SLUGS.map((slug) => ({ label: getCollection(slug)!.navLabel, href: `/collections/${slug}` })),
 ];
 
 export default function Header() {
@@ -20,79 +17,59 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const handleNavClick = (cat: string, hash: string) => {
+  // Close the mobile menu whenever the route changes
+  useEffect(() => {
     setMobileMenuOpen(false);
+  }, [pathname]);
 
-    if (pathname === '/') {
-      // Broadcast category change to HomePage
-      window.dispatchEvent(new CustomEvent('swpa:selectCategory', { detail: cat }));
-
-      if (hash) {
-        window.history.pushState(null, '', `/#${hash}`);
-        const el = document.getElementById('catalog');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        window.history.pushState(null, '', '/');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-  };
+  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#08090a]/95 backdrop-blur-md border-b border-[#1c1f24] shadow-sm">
-      {/* Top Patriot Ribbon Accent */}
       <div className="swpa-patriot-accent w-full" style={{ height: '4px' }} />
 
-      {/* Main Header Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18">
-          {/* Left: Navigation Menu Items */}
-          <div className="flex items-center gap-6">
-            {/* Mobile menu hamburger */}
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center gap-6 xl:gap-8">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-white hover:text-gray-300 p-1"
+              className="lg:hidden text-white hover:text-gray-300 p-1"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
 
-            {/* Brand Logo text (compact & sleek) */}
-            <Link
-              href="/"
-              onClick={() => handleNavClick('All', '')}
-              className="flex items-center gap-2 group"
-            >
+            <Link href="/" className="flex items-center gap-2">
               <span className="text-xl sm:text-2xl font-normal tracking-wider text-white uppercase font-bebas leading-none">
                 SWPA <span className="text-[#a7adb5]">MERCH</span>
               </span>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center space-x-6 text-xs font-bold tracking-wider font-sans uppercase">
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-[11px] xl:text-xs font-bold tracking-wider font-sans uppercase">
               {NAV_ITEMS.map((item) => (
                 <Link
-                  key={item.name}
-                  href={item.hash ? `/#${item.hash}` : '/'}
-                  onClick={() => handleNavClick(item.cat, item.hash)}
-                  className="text-[#c5c9cf] hover:text-white transition-colors"
+                  key={item.href}
+                  href={item.href}
+                  className={`relative py-1 transition-colors whitespace-nowrap ${
+                    isActive(item.href) ? 'text-white' : 'text-[#aeb3ba] hover:text-white'
+                  }`}
                 >
-                  {item.name}
+                  {item.label}
+                  {isActive(item.href) && (
+                    <span className="absolute -bottom-[3px] left-0 right-0 h-[2px] bg-[#c8102e]" />
+                  )}
                 </Link>
               ))}
             </nav>
           </div>
 
-          {/* Right: Actions */}
           <div className="flex items-center gap-3.5">
-            <div className="hidden lg:flex items-center gap-1.5 text-[11px] font-semibold text-[#aeb2b8] border border-[#2d3137] bg-[#101215] px-2.5 py-1 rounded">
+            <div className="hidden xl:flex items-center gap-1.5 text-[11px] font-semibold text-[#aeb2b8] border border-[#2d3137] bg-[#101215] px-2.5 py-1 rounded">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               <span>PayPal Protected</span>
             </div>
 
-            {/* Cart Button */}
             <button
               onClick={() => setIsDrawerOpen(true)}
               className="relative p-2 rounded text-white hover:text-gray-300 transition-all flex items-center gap-1.5"
@@ -109,20 +86,20 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#23262a] bg-[#0c0d10] px-4 py-3 space-y-1 text-xs font-bold font-sans uppercase tracking-wider">
+        <nav className="lg:hidden border-t border-[#23262a] bg-[#0c0d10] px-4 py-3 space-y-1 text-xs font-bold font-sans uppercase tracking-wider">
           {NAV_ITEMS.map((item) => (
             <Link
-              key={item.name}
-              href={item.hash ? `/#${item.hash}` : '/'}
-              onClick={() => handleNavClick(item.cat, item.hash)}
-              className="block text-[#c5c9cf] hover:text-white py-2 px-3 rounded hover:bg-[#181a1d]"
+              key={item.href}
+              href={item.href}
+              className={`block py-2.5 px-3 rounded hover:bg-[#181a1d] ${
+                isActive(item.href) ? 'text-white bg-[#181a1d] border-l-2 border-[#c8102e]' : 'text-[#c5c9cf]'
+              }`}
             >
-              {item.name}
+              {item.label}
             </Link>
           ))}
-        </div>
+        </nav>
       )}
     </header>
   );
