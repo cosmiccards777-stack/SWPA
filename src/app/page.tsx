@@ -1,11 +1,82 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PRODUCTS } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Synchronize category with Header, URL hash, and custom events
+  useEffect(() => {
+    const handleCategoryEvent = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      if (customEvent.detail) {
+        setSelectedCategory(customEvent.detail);
+      }
+    };
+    window.addEventListener('swpa:selectCategory', handleCategoryEvent);
+
+    const syncFromUrl = () => {
+      const hash = window.location.hash.toLowerCase().replace('#', '');
+      const searchParams = new URLSearchParams(window.location.search);
+      const catQuery = searchParams.get('category');
+
+      let targetCat = '';
+      if (catQuery) {
+        targetCat = catQuery;
+      } else if (hash) {
+        if (hash === 'hoodies') targetCat = 'Hoodies';
+        else if (hash === 'mens' || hash === "men's") targetCat = "Men's";
+        else if (hash === 'womens' || hash === "women's") targetCat = "Women's";
+        else if (hash === 'accessories') targetCat = 'Accessories';
+        else if (hash === 'tees' || hash === 't-shirts') targetCat = 'T-Shirts';
+        else if (hash === 'sweatshirts') targetCat = 'Sweatshirts';
+        else if (hash === 'joggers') targetCat = 'Joggers';
+        else if (hash === 'cargo' || hash === 'cargo-trousers') targetCat = 'Cargo Trousers';
+      }
+
+      if (targetCat) {
+        const categories = [
+          'All',
+          'T-Shirts',
+          'Hoodies',
+          'Sweatshirts',
+          'Joggers',
+          'Cargo Trousers',
+          'Accessories',
+          "Men's",
+          "Women's",
+        ];
+        const match = categories.find((c) => c.toLowerCase() === targetCat.toLowerCase());
+        if (match) {
+          setSelectedCategory(match);
+        }
+        setTimeout(() => {
+          const el = document.getElementById('catalog');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+      }
+    };
+
+    syncFromUrl();
+    window.addEventListener('hashchange', syncFromUrl);
+
+    return () => {
+      window.removeEventListener('swpa:selectCategory', handleCategoryEvent);
+      window.removeEventListener('hashchange', syncFromUrl);
+    };
+  }, []);
+
+  const selectAndScroll = (category: string) => {
+    setSelectedCategory(category);
+    const el = document.getElementById('catalog');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const filteredProducts =
     selectedCategory === 'All'
@@ -130,12 +201,15 @@ export default function HomePage() {
 
           {/* Primary Action Button */}
           <div className="pt-6">
-            <a
-              href="#categories"
+            <button
+              onClick={() => {
+                const el = document.getElementById('categories');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="inline-flex items-center justify-center min-h-[50px] px-9 py-3 rounded border border-[#d7d9dd] hover:border-white text-white font-sans text-xs font-extrabold tracking-[0.1em] uppercase transition-all shadow-md bg-gradient-to-b from-[#24272b] to-[#111315] hover:brightness-125"
             >
               Shop categories
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -153,7 +227,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Card 1: TEES & POLOS */}
           <button
-            onClick={() => setSelectedCategory('T-Shirts')}
+            onClick={() => selectAndScroll('T-Shirts')}
             className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
             style={{
               background:
@@ -169,7 +243,7 @@ export default function HomePage() {
 
           {/* Card 2: HOODIES */}
           <button
-            onClick={() => setSelectedCategory('Hoodies')}
+            onClick={() => selectAndScroll('Hoodies')}
             className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
             style={{
               background:
@@ -183,9 +257,9 @@ export default function HomePage() {
             <span className="text-xs text-[#b9bdc3] mt-1 font-sans">Shop black hoodies</span>
           </button>
 
-          {/* Card 3: SWEATSHIRTS & JOGGERS */}
+          {/* Card 3: JOGGERS & CARGO */}
           <button
-            onClick={() => setSelectedCategory('Joggers')}
+            onClick={() => selectAndScroll('Joggers')}
             className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
             style={{
               background:
@@ -201,7 +275,7 @@ export default function HomePage() {
 
           {/* Card 4: ACCESSORIES */}
           <button
-            onClick={() => setSelectedCategory('Accessories')}
+            onClick={() => selectAndScroll('Accessories')}
             className="group relative text-left min-h-[180px] p-6 rounded-lg border border-[#656b72] hover:border-[#b7bbc1] hover:-translate-y-1 transition-all overflow-hidden shadow-lg flex flex-col justify-end"
             style={{
               background:
@@ -218,7 +292,7 @@ export default function HomePage() {
       </section>
 
       {/* Main Catalog & Filter Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      <section id="catalog" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 scroll-mt-24">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#2d3137] mb-8 gap-4">
           <div>
             <h2 className="text-3xl sm:text-4xl font-normal text-white uppercase font-bebas tracking-wider">
@@ -231,11 +305,11 @@ export default function HomePage() {
 
           {/* Filter Pills */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none font-sans text-xs font-bold uppercase tracking-wide">
-            {['All', 'T-Shirts', 'Hoodies', 'Sweatshirts', 'Joggers', 'Cargo Trousers', 'Accessories'].map((cat) => (
+            {['All', 'T-Shirts', 'Hoodies', 'Sweatshirts', 'Joggers', 'Cargo Trousers', 'Accessories', "Men's", "Women's"].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded uppercase transition-colors ${
+                className={`px-3.5 py-1.5 rounded uppercase transition-colors whitespace-nowrap ${
                   selectedCategory === cat
                     ? 'bg-white text-black font-extrabold'
                     : 'bg-[#181a1d] text-gray-300 hover:text-white border border-[#373c44]'

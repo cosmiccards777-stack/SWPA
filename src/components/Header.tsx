@@ -2,12 +2,43 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ShoppingBag, Search, Menu, X, ShieldCheck } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { ShoppingBag, Menu, X, ShieldCheck } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+
+const NAV_ITEMS = [
+  { name: 'Home', hash: '', cat: 'All' },
+  { name: 'Tees', hash: 'tees', cat: 'T-Shirts' },
+  { name: 'Hoodies', hash: 'hoodies', cat: 'Hoodies' },
+  { name: "Men's", hash: 'mens', cat: "Men's" },
+  { name: "Women's", hash: 'womens', cat: "Women's" },
+  { name: 'Accessories', hash: 'accessories', cat: 'Accessories' },
+];
 
 export default function Header() {
   const { totalItems, setIsDrawerOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const handleNavClick = (cat: string, hash: string) => {
+    setMobileMenuOpen(false);
+
+    if (pathname === '/') {
+      // Broadcast category change to HomePage
+      window.dispatchEvent(new CustomEvent('swpa:selectCategory', { detail: cat }));
+
+      if (hash) {
+        window.history.pushState(null, '', `/#${hash}`);
+        const el = document.getElementById('catalog');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        window.history.pushState(null, '', '/');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#08090a]/95 backdrop-blur-md border-b border-[#1c1f24] shadow-sm">
@@ -29,32 +60,28 @@ export default function Header() {
             </button>
 
             {/* Brand Logo text (compact & sleek) */}
-            <Link href="/" className="flex items-center gap-2 group">
+            <Link
+              href="/"
+              onClick={() => handleNavClick('All', '')}
+              className="flex items-center gap-2 group"
+            >
               <span className="text-xl sm:text-2xl font-normal tracking-wider text-white uppercase font-bebas leading-none">
                 SWPA <span className="text-[#a7adb5]">MERCH</span>
               </span>
             </Link>
 
-            {/* Desktop Nav - Matching Original */}
+            {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-6 text-xs font-bold tracking-wider font-sans uppercase">
-              <Link href="/" className="text-white hover:text-gray-300 transition-colors">
-                Home
-              </Link>
-              <Link href="/#t-shirts" className="text-[#c5c9cf] hover:text-white transition-colors">
-                T-Shirts
-              </Link>
-              <Link href="/#hoodies" className="text-[#c5c9cf] hover:text-white transition-colors">
-                Hoodies
-              </Link>
-              <Link href="/#sweatshirts" className="text-[#c5c9cf] hover:text-white transition-colors">
-                Sweatshirts
-              </Link>
-              <Link href="/#joggers" className="text-[#c5c9cf] hover:text-white transition-colors">
-                Joggers
-              </Link>
-              <Link href="/#accessories" className="text-[#c5c9cf] hover:text-white transition-colors">
-                Accessories
-              </Link>
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.hash ? `/#${item.hash}` : '/'}
+                  onClick={() => handleNavClick(item.cat, item.hash)}
+                  className="text-[#c5c9cf] hover:text-white transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </nav>
           </div>
 
@@ -85,48 +112,16 @@ export default function Header() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-[#23262a] bg-[#0c0d10] px-4 py-3 space-y-1 text-xs font-bold font-sans uppercase tracking-wider">
-          <Link
-            href="/"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-white py-2 px-3 rounded hover:bg-[#181a1d]"
-          >
-            Home
-          </Link>
-          <Link
-            href="/#t-shirts"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
-          >
-            T-Shirts
-          </Link>
-          <Link
-            href="/#hoodies"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
-          >
-            Hoodies
-          </Link>
-          <Link
-            href="/#sweatshirts"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
-          >
-            Sweatshirts
-          </Link>
-          <Link
-            href="/#joggers"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
-          >
-            Joggers
-          </Link>
-          <Link
-            href="/#accessories"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-[#c5c9cf] py-2 px-3 rounded hover:bg-[#181a1d]"
-          >
-            Accessories & Patches
-          </Link>
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.name}
+              href={item.hash ? `/#${item.hash}` : '/'}
+              onClick={() => handleNavClick(item.cat, item.hash)}
+              className="block text-[#c5c9cf] hover:text-white py-2 px-3 rounded hover:bg-[#181a1d]"
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
       )}
     </header>
