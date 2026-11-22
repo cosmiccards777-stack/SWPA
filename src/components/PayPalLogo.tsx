@@ -9,10 +9,10 @@ export function PayPalLogo({ className = 'h-5', height = 20 }: PayPalLogoProps) 
   return (
     <svg
       height={height}
-      viewBox="0 0 100 32"
+      viewBox="0 0 115 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={`shrink-0 overflow-visible ${className}`}
       aria-label="PayPal"
     >
       {/* Monogram P's */}
@@ -34,50 +34,35 @@ export function PayPalLogo({ className = 'h-5', height = 20 }: PayPalLogoProps) 
           opacity="0.35"
         />
       </g>
-      {/* Official PayPal Wordmark */}
-      <g fill="#003087">
-        <text
-          x="42"
-          y="23"
-          fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-          fontWeight="800"
-          fontStyle="italic"
-          fontSize="22"
-          letterSpacing="-0.5px"
-        >
-          <tspan fill="#002F86">Pay</tspan>
-          <tspan fill="#0079C1">Pal</tspan>
-        </text>
+      {/* Official PayPal Pure Vector Letterforms - Never gets cropped */}
+      <g>
+        {/* Pay */}
+        <path
+          d="M45.5 8H51.2C54.6 8 56.8 9.5 56.4 12.8C55.9 16.5 53.2 18.5 49.8 18.5H47.4L45.8 26.8H42.2L45.5 8ZM48.6 15.6C50.6 15.6 52.3 14.7 52.6 12.7C52.9 10.9 51.6 10.3 49.9 10.3H47.1L46.3 15.6H48.6Z"
+          fill="#002F86"
+        />
+        <path
+          d="M62.2 12.8L61.7 15.1C60.9 13.9 59.4 13.2 57.6 13.2C54.1 13.2 51.5 15.9 50.9 19.8C50.4 23.4 52.3 26.3 56 26.3C58.8 26.3 60.3 24.9 60.9 24.1L60.5 26.2H63.9L66.3 12.8H62.2ZM60.3 20.4C59.9 22.4 58.5 23.7 56.7 23.7C55 23.7 54.1 22.3 54.4 20.4C54.7 18.4 56.2 16.1 58 16.1C59.7 16.1 60.6 17.5 60.3 20.4Z"
+          fill="#002F86"
+        />
+        <path
+          d="M72.9 13.4H69.4L66.8 24.5L65.4 13.4H61.8L64.8 26.6L61.8 30.6H65.3L75.6 13.4H72.9Z"
+          fill="#002F86"
+        />
+        {/* Pal */}
+        <path
+          d="M77.2 8H82.9C86.3 8 88.5 9.5 88.1 12.8C87.6 16.5 84.9 18.5 81.5 18.5H79.1L77.5 26.8H73.9L77.2 8ZM80.3 15.6C82.3 15.6 84 14.7 84.3 12.7C84.6 10.9 83.3 10.3 81.6 10.3H78.8L78 15.6H80.3Z"
+          fill="#0079C1"
+        />
+        <path
+          d="M93.9 12.8L93.4 15.1C92.6 13.9 91.1 13.2 89.3 13.2C85.8 13.2 83.2 15.9 82.6 19.8C82.1 23.4 84 26.3 87.7 26.3C90.5 26.3 92 24.9 92.6 24.1L92.2 26.2H95.6L98 12.8H93.9ZM92 20.4C91.6 22.4 90.2 23.7 88.4 23.7C86.7 23.7 85.8 22.3 86.1 20.4C86.4 18.4 87.9 16.1 89.7 16.1C91.4 16.1 92.3 17.5 92 20.4Z"
+          fill="#0079C1"
+        />
+        <path
+          d="M102.3 6.4L98.5 26.2H102.1L105.9 6.4H102.3Z"
+          fill="#0079C1"
+        />
       </g>
     </svg>
-  );
-}
-
-export function PayPalPillButton({
-  onClick,
-  className = '',
-  disabled = false,
-  subtext = 'Buy now with PayPal'
-}: {
-  onClick?: () => void;
-  className?: string;
-  disabled?: boolean;
-  subtext?: string;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-      className={`group relative w-full h-[48px] bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] transition-all rounded-full flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
-      aria-label={subtext}
-    >
-      <div className="flex items-center justify-center gap-1.5 pointer-events-none">
-        <span className="text-[14px] font-semibold text-[#2C2E2F] tracking-tight font-sans">
-          Buy with
-        </span>
-        <PayPalLogo height={22} className="h-[22px]" />
-      </div>
-    </button>
   );
 }

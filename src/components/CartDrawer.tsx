@@ -173,13 +173,13 @@ export default function CartDrawer() {
                 <Link
                   href="/checkout"
                   onClick={() => setIsDrawerOpen(false)}
-                  className="w-full h-[46px] bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] transition-all rounded-full flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)]"
+                  className="w-full h-[46px] px-4 bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] transition-all rounded-full flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)]"
                 >
-                  <div className="flex items-center justify-center gap-1.5 pointer-events-none">
-                    <span className="text-[14px] font-semibold text-[#2C2E2F] font-sans">
+                  <div className="flex items-center justify-center gap-2 pointer-events-none">
+                    <span className="text-[14px] font-semibold text-[#2C2E2F] font-sans whitespace-nowrap">
                       Checkout with
                     </span>
-                    <PayPalLogo height={20} className="h-5" />
+                    <PayPalLogo height={20} className="h-5 shrink-0" />
                   </div>
                 </Link>
               </div>

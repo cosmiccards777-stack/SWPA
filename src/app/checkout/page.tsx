@@ -274,7 +274,7 @@ function CheckoutContent() {
                 type="button"
                 onClick={executePayment}
                 disabled={isProcessing}
-                className="w-full h-[52px] bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] rounded-full font-bold flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all disabled:opacity-50 disabled:pointer-events-none"
+                className="w-full h-[52px] px-4 bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] rounded-full font-bold flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all disabled:opacity-50 disabled:pointer-events-none"
               >
                 {isProcessing ? (
                   <span className="flex items-center gap-2 text-sm font-sans text-[#2C2E2F]">
@@ -283,10 +283,10 @@ function CheckoutContent() {
                   </span>
                 ) : (
                   <div className="flex items-center justify-center gap-2 pointer-events-none">
-                    <span className="text-[15px] font-semibold text-[#2C2E2F] font-sans">
+                    <span className="text-[15px] font-semibold text-[#2C2E2F] font-sans whitespace-nowrap">
                       Pay with
                     </span>
-                    <PayPalLogo height={24} className="h-6" />
+                    <PayPalLogo height={22} className="h-[22px] shrink-0" />
                   </div>
                 )}
               </button>
