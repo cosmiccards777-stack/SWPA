@@ -274,19 +274,23 @@ function CheckoutContent() {
                 type="button"
                 onClick={executePayment}
                 disabled={isProcessing}
-                className="w-full h-[52px] px-4 bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] rounded-full font-bold flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all disabled:opacity-50 disabled:pointer-events-none"
+                className="w-full h-[52px] px-6 bg-[#0070BA] hover:bg-[#005ea6] active:bg-[#004c87] text-white rounded-full font-bold flex items-center justify-center gap-2 shadow-[0_2px_4px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-all disabled:opacity-50 disabled:pointer-events-none font-sans"
               >
                 {isProcessing ? (
-                  <span className="flex items-center gap-2 text-sm font-sans text-[#2C2E2F]">
-                    <Loader2 className="w-5 h-5 animate-spin text-[#003087]" />
+                  <span className="flex items-center gap-2 text-sm font-sans text-white">
+                    <Loader2 className="w-5 h-5 animate-spin" />
                     <span>Connecting securely to PayPal...</span>
                   </span>
                 ) : (
                   <div className="flex items-center justify-center gap-2 pointer-events-none">
-                    <span className="text-[15px] font-semibold text-[#2C2E2F] font-sans whitespace-nowrap">
+                    <span className="text-[15px] font-semibold tracking-wide">
                       Pay with
                     </span>
-                    <PayPalLogo height={22} className="h-[22px] shrink-0" />
+                    <img
+                      src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg"
+                      alt="PayPal"
+                      className="h-5 w-auto brightness-0 invert"
+                    />
                   </div>
                 )}
               </button>

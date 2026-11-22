@@ -247,14 +247,16 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <Link
               href="/checkout"
               onClick={() => handleAddToCart(false)}
-              className="w-full h-[48px] px-4 bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] transition-all rounded-full flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)]"
+              className="w-full h-[50px] px-6 bg-[#0070BA] hover:bg-[#005ea6] active:bg-[#004c87] text-white transition-all rounded-full flex items-center justify-center gap-2 shadow-[0_2px_4px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.3)] font-sans"
             >
-              <div className="flex items-center justify-center gap-2 pointer-events-none">
-                <span className="text-[14px] sm:text-[15px] font-semibold text-[#2C2E2F] font-sans whitespace-nowrap">
-                  Buy with
-                </span>
-                <PayPalLogo height={20} className="h-5 shrink-0" />
-              </div>
+              <span className="text-sm font-semibold tracking-wide">
+                Pay with
+              </span>
+              <img
+                src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg"
+                alt="PayPal"
+                className="h-5 w-auto brightness-0 invert"
+              />
             </Link>
           </div>
 

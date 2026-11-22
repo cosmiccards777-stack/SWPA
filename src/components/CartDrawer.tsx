@@ -173,14 +173,16 @@ export default function CartDrawer() {
                 <Link
                   href="/checkout"
                   onClick={() => setIsDrawerOpen(false)}
-                  className="w-full h-[46px] px-4 bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] transition-all rounded-full flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)]"
+                  className="w-full h-[48px] px-6 bg-[#0070BA] hover:bg-[#005ea6] active:bg-[#004c87] text-white transition-all rounded-full flex items-center justify-center gap-2 shadow-[0_2px_4px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.3)] font-sans"
                 >
-                  <div className="flex items-center justify-center gap-2 pointer-events-none">
-                    <span className="text-[14px] font-semibold text-[#2C2E2F] font-sans whitespace-nowrap">
-                      Checkout with
-                    </span>
-                    <PayPalLogo height={20} className="h-5 shrink-0" />
-                  </div>
+                  <span className="text-sm font-semibold tracking-wide">
+                    Checkout with
+                  </span>
+                  <img
+                    src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg"
+                    alt="PayPal"
+                    className="h-5 w-auto brightness-0 invert"
+                  />
                 </Link>
               </div>
 
