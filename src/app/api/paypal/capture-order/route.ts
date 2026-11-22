@@ -105,21 +105,33 @@ export async function POST(req: Request) {
     }
 
     // 6. Push verified order to Inkthreadable Print-on-Demand
+    // SAFETY LOCK: ONLY submit real production orders to Inkthreadable if PayPal is in LIVE/PRODUCTION mode.
+    // In Sandbox mode, we NEVER push to Inkthreadable so your client is never charged for testing.
     let fulfillmentResult: any = null;
     const generatedOrderNumber = `SWPA-${orderID.slice(-8)}`;
+    const isPayPalLive = (process.env.PAYPAL_ENVIRONMENT || '').toLowerCase() === 'production' || (process.env.PAYPAL_ENVIRONMENT || '').toLowerCase() === 'live';
 
-    try {
-      fulfillmentResult = await submitOrderToInkthreadable({
-        orderId: `SWPA-${orderID}`,
-        shipping,
-        items: validatedFulfillmentItems,
-      });
-      console.log('[Auto-Fulfillment Success]', fulfillmentResult);
-    } catch (fulfillErr) {
-      console.error('[Auto-Fulfillment Error]', fulfillErr);
+    if (isPayPalLive) {
+      try {
+        fulfillmentResult = await submitOrderToInkthreadable({
+          orderId: `SWPA-${orderID}`,
+          shipping,
+          items: validatedFulfillmentItems,
+        });
+        console.log('[Auto-Fulfillment Success]', fulfillmentResult);
+      } catch (fulfillErr) {
+        console.error('[Auto-Fulfillment Error]', fulfillErr);
+        fulfillmentResult = {
+          success: false,
+          error: String(fulfillErr),
+        };
+      }
+    } else {
+      console.log('[Sandbox Test Mode] PayPal is in Sandbox. Skipping Inkthreadable dispatch so no real money or orders are triggered.');
       fulfillmentResult = {
-        success: false,
-        error: String(fulfillErr),
+        success: true,
+        mode: 'sandbox_simulation',
+        message: 'Sandbox test completed. Inkthreadable production order skipped safely.',
       };
     }
 
