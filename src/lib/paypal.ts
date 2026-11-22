@@ -10,15 +10,20 @@ interface PayPalTokenResponse {
 }
 
 export async function getPayPalAccessToken(): Promise<string> {
-  const clientId = process.env.PAYPAL_CLIENT_ID || process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
-  const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
-  const environment = process.env.PAYPAL_ENVIRONMENT || 'sandbox';
+  const rawClientId = process.env.PAYPAL_CLIENT_ID || process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || '';
+  const rawClientSecret = process.env.PAYPAL_CLIENT_SECRET || '';
+  const rawEnvironment = process.env.PAYPAL_ENVIRONMENT || 'sandbox';
+
+  // Automatically strip all whitespaces, tabs, newlines, and quotes
+  const clientId = rawClientId.trim().replace(/[\r\n\t\s'"]/g, '');
+  const clientSecret = rawClientSecret.trim().replace(/[\r\n\t\s'"]/g, '');
+  const environment = rawEnvironment.trim().toLowerCase();
 
   if (!clientId || !clientSecret || clientId === 'test_client_id') {
     throw new Error('PayPal credentials are not configured in environment variables.');
   }
 
-  const baseUrl = environment === 'production'
+  const baseUrl = environment === 'production' || environment === 'live'
     ? 'https://api-m.paypal.com'
     : 'https://api-m.sandbox.paypal.com';
 
