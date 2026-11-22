@@ -16,6 +16,7 @@ import {
   ShoppingBag,
   ChevronRight,
 } from 'lucide-react';
+import { PayPalLogo } from '@/components/PayPalLogo';
 
 interface ProductPageProps {
   params: {
@@ -246,10 +247,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <Link
               href="/checkout"
               onClick={() => handleAddToCart(false)}
-              className="w-full bg-[#ffc439] hover:bg-[#f4bb34] text-[#003087] font-bebas text-2xl tracking-wider uppercase py-3.5 rounded flex items-center justify-center gap-2 transition-all shadow"
+              className="w-full h-[48px] bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] transition-all rounded-full flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)]"
             >
-              <span className="italic font-bold font-serif text-xl">PayPal</span>
-              <span className="ml-1">EXPRESS CHECKOUT</span>
+              <div className="flex items-center justify-center gap-1.5 pointer-events-none">
+                <span className="text-[14px] font-semibold text-[#2C2E2F] font-sans">
+                  Buy with
+                </span>
+                <PayPalLogo height={20} className="h-5" />
+              </div>
             </Link>
           </div>
 

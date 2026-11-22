@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { X, Trash2, Plus, Minus, ArrowRight, ShieldCheck, Truck } from 'lucide-react';
+import { PayPalLogo } from '@/components/PayPalLogo';
 import { useCart } from '@/context/CartContext';
 
 export default function CartDrawer() {
@@ -172,10 +173,14 @@ export default function CartDrawer() {
                 <Link
                   href="/checkout"
                   onClick={() => setIsDrawerOpen(false)}
-                  className="w-full bg-[#ffc439] hover:bg-[#f4bb34] text-[#003087] font-black uppercase tracking-wider py-3.5 rounded flex items-center justify-center gap-2 transition-all font-display text-xs shadow"
+                  className="w-full h-[46px] bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] transition-all rounded-full flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)]"
                 >
-                  <span className="italic font-bold font-serif text-sm">PayPal</span>
-                  <span>Check out</span>
+                  <div className="flex items-center justify-center gap-1.5 pointer-events-none">
+                    <span className="text-[14px] font-semibold text-[#2C2E2F] font-sans">
+                      Checkout with
+                    </span>
+                    <PayPalLogo height={20} className="h-5" />
+                  </div>
                 </Link>
               </div>
 

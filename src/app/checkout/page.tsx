@@ -15,6 +15,7 @@ import {
   Loader2,
   AlertCircle,
 } from 'lucide-react';
+import { PayPalLogo } from '@/components/PayPalLogo';
 
 function CheckoutContent() {
   const router = useRouter();
@@ -273,18 +274,20 @@ function CheckoutContent() {
                 type="button"
                 onClick={executePayment}
                 disabled={isProcessing}
-                className="w-full bg-[#ffc439] hover:bg-[#f4bb34] text-black py-4 px-6 rounded-lg font-bold flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none"
+                className="w-full h-[52px] bg-[#FFC439] hover:bg-[#F4BB34] active:bg-[#E0A82E] rounded-full font-bold flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all disabled:opacity-50 disabled:pointer-events-none"
               >
                 {isProcessing ? (
-                  <span className="flex items-center gap-2 text-sm font-sans">
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Connecting to PayPal...</span>
+                  <span className="flex items-center gap-2 text-sm font-sans text-[#2C2E2F]">
+                    <Loader2 className="w-5 h-5 animate-spin text-[#003087]" />
+                    <span>Connecting securely to PayPal...</span>
                   </span>
                 ) : (
-                  <span className="flex items-center gap-2 text-base font-extrabold">
-                    <span>Pay with</span>
-                    <span className="italic font-bold font-serif text-xl">PayPal</span>
-                  </span>
+                  <div className="flex items-center justify-center gap-2 pointer-events-none">
+                    <span className="text-[15px] font-semibold text-[#2C2E2F] font-sans">
+                      Pay with
+                    </span>
+                    <PayPalLogo height={24} className="h-6" />
+                  </div>
                 )}
               </button>
 
