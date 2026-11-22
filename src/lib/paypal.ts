@@ -10,10 +10,6 @@ interface PayPalTokenResponse {
 }
 
 export async function getPayPalAccessToken(): Promise<string> {
-  // Verified sandbox keys
-  const VERIFIED_SANDBOX_CLIENT_ID = 'AbcocWM_bFmLqAjGx8lByaCxang3-Ml4tkhBcpw-s0UWz878RZJpNkxiTIjfArNfzZqB-fKOhSsK46PU';
-  const VERIFIED_SANDBOX_SECRET = 'EG8DshpimBstOxC3ghq7P6BgGLSrnOvQvhJJa9sGBSc90Hw_Qo8bhIEXGX0NajLjzOKGfrjf2xjLsGlo';
-
   const rawClientId = process.env.PAYPAL_CLIENT_ID || process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || '';
   const rawClientSecret = process.env.PAYPAL_CLIENT_SECRET || '';
   const rawEnvironment = process.env.PAYPAL_ENVIRONMENT || 'sandbox';
@@ -23,14 +19,8 @@ export async function getPayPalAccessToken(): Promise<string> {
   let clientSecret = rawClientSecret.trim().replace(/[\r\n\t\s'"]/g, '');
   const environment = rawEnvironment.trim().toLowerCase();
 
-  // If in sandbox mode and the Cloudflare client ID has a missing/corrupted character (e.g. len != 80), use the verified full 80-char sandbox key
-  if (environment === 'sandbox' || environment === '') {
-    if (clientId.length !== 80) {
-      clientId = VERIFIED_SANDBOX_CLIENT_ID;
-    }
-    if (clientSecret.length !== 80) {
-      clientSecret = VERIFIED_SANDBOX_SECRET;
-    }
+  if (!clientId || !clientSecret || clientId === 'test_client_id') {
+    throw new Error('PayPal credentials are not configured in environment variables.');
   }
 
   // Detect sandbox vs production based on key prefix or environment
