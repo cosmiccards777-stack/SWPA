@@ -10,12 +10,12 @@ interface PayPalTokenResponse {
 }
 
 export async function getPayPalAccessToken(): Promise<string> {
-  // Hardcoded fallback to verified sandbox keys if Cloudflare env variables are unset or misconfigured
-  const FALLBACK_CLIENT_ID = 'AbcocWM_bFmLqAjGx8lByaCxang3-Ml4tkhBcpw-s0UWz878RZJpNkxiTIjfArNfzZqB-fKOhSsK46PU';
-  const FALLBACK_CLIENT_SECRET = 'EG8DshpimBstOxC3ghq7P6BgGLSrnOvQvhJJa9sGBSc90Hw_Qo8bhIEXGX0NajLjzOKGfrjf2xjLsGlo';
+  // Verified sandbox keys
+  const VERIFIED_SANDBOX_CLIENT_ID = 'AbcocWM_bFmLqAjGx8lByaCxang3-Ml4tkhBcpw-s0UWz878RZJpNkxiTIjfArNfzZqB-fKOhSsK46PU';
+  const VERIFIED_SANDBOX_SECRET = 'EG8DshpimBstOxC3ghq7P6BgGLSrnOvQvhJJa9sGBSc90Hw_Qo8bhIEXGX0NajLjzOKGfrjf2xjLsGlo';
 
-  const rawClientId = process.env.PAYPAL_CLIENT_ID || process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || FALLBACK_CLIENT_ID;
-  const rawClientSecret = process.env.PAYPAL_CLIENT_SECRET || FALLBACK_CLIENT_SECRET;
+  const rawClientId = process.env.PAYPAL_CLIENT_ID || process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || '';
+  const rawClientSecret = process.env.PAYPAL_CLIENT_SECRET || '';
   const rawEnvironment = process.env.PAYPAL_ENVIRONMENT || 'sandbox';
 
   // Automatically strip all whitespaces, tabs, newlines, and quotes
@@ -23,10 +23,14 @@ export async function getPayPalAccessToken(): Promise<string> {
   let clientSecret = rawClientSecret.trim().replace(/[\r\n\t\s'"]/g, '');
   const environment = rawEnvironment.trim().toLowerCase();
 
-  // If Cloudflare has incomplete/corrupted keys, fall back to verified sandbox keys
-  if (clientId.length < 50 || clientSecret.length < 50) {
-    clientId = FALLBACK_CLIENT_ID;
-    clientSecret = FALLBACK_CLIENT_SECRET;
+  // If in sandbox mode and the Cloudflare client ID has a missing/corrupted character (e.g. len != 80), use the verified full 80-char sandbox key
+  if (environment === 'sandbox' || environment === '') {
+    if (clientId.length !== 80) {
+      clientId = VERIFIED_SANDBOX_CLIENT_ID;
+    }
+    if (clientSecret.length !== 80) {
+      clientSecret = VERIFIED_SANDBOX_SECRET;
+    }
   }
 
   // Detect sandbox vs production based on key prefix or environment
