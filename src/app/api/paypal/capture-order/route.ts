@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { capturePayPalOrder } from '@/lib/paypal';
 import { submitOrderToInkthreadable } from '@/lib/inkthreadable';
 import { PRODUCTS } from '@/data/products';
+import { sendOrderConfirmationEmail } from '@/lib/email';
 
 export const runtime = 'edge';
 
@@ -105,6 +106,8 @@ export async function POST(req: Request) {
 
     // 6. Push verified order to Inkthreadable Print-on-Demand
     let fulfillmentResult: any = null;
+    const generatedOrderNumber = `SWPA-${orderID.slice(-8)}`;
+
     try {
       fulfillmentResult = await submitOrderToInkthreadable({
         orderId: `SWPA-${orderID}`,
@@ -120,11 +123,35 @@ export async function POST(req: Request) {
       };
     }
 
+    // 7. Fire official Order Confirmation Email from sales@swpamerch.uk
+    try {
+      await sendOrderConfirmationEmail({
+        to: shipping.email,
+        customerName: shipping.fullName,
+        orderNumber: generatedOrderNumber,
+        total: capturedValue,
+        shippingAddress: {
+          address1: shipping.address1,
+          city: shipping.city,
+          postcode: shipping.postcode,
+        },
+        items: cartItems.map((ci: any) => ({
+          title: ci.title,
+          size: ci.size,
+          color: ci.color,
+          quantity: ci.quantity,
+          price: ci.price,
+        })),
+      });
+    } catch (emailErr) {
+      console.error('[Confirmation Email Error]', emailErr);
+    }
+
     return NextResponse.json({
       success: true,
       capture: captureResult,
       fulfillment: fulfillmentResult,
-      orderNumber: `SWPA-${orderID.slice(-8)}`,
+      orderNumber: generatedOrderNumber,
     });
   } catch (err: any) {
     console.error('PayPal capture-order API error:', err);
