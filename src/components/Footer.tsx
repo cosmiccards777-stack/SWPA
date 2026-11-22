@@ -12,7 +12,7 @@ export default function Footer() {
             <Truck className="w-6 h-6 text-white flex-shrink-0" />
             <div>
               <div className="text-white font-bold uppercase text-xs font-sans">UK Tracked Delivery</div>
-              <div className="text-[11px] text-[#c5c9cf]">Direct fulfillment via Inkthreadable UK</div>
+              <div className="text-[11px] text-[#c5c9cf]">Dispatched tracked direct across the UK</div>
             </div>
           </div>
           <div className="flex items-center justify-center sm:justify-start gap-3">
@@ -103,7 +103,7 @@ export default function Footer() {
               PAYMENT & FULFILLMENT
             </h4>
             <p className="text-xs text-[#ffffff] font-medium mb-3 leading-relaxed font-sans">
-              We process payments via PayPal for instant funds and zero delays. Every order is automatically routed to Inkthreadable UK for immediate printing.
+              We process payments securely via PayPal. Every order is prepared and printed with premium garments and tracked UK dispatch.
             </p>
             <div className="inline-flex items-center gap-2 bg-[#181a1b] border-2 border-[#373c44] px-3.5 py-2 rounded text-xs text-white font-bold">
               <span className="italic font-bold font-serif text-sm">PayPal</span>

@@ -214,8 +214,8 @@ export default function HomePage() {
             DIRECT UK PRINTING &amp; FAST TRACKED FULFILLMENT
           </h3>
           <p className="text-xs sm:text-sm text-white font-medium max-w-xl mx-auto leading-relaxed">
-            All orders placed on the store are instantly transmitted to Inkthreadable UK for immediate production and
-            tracked UK dispatch.
+            All orders placed on the store are processed immediately for premium UK production and
+            tracked dispatch.
           </p>
         </div>
       </section>

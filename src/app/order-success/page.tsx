@@ -99,7 +99,7 @@ function OrderSuccessContent() {
           CONFIRMING YOUR PAYMENT WITH PAYPAL...
         </h2>
         <p className="text-xs font-semibold text-[#c5c9cf]">
-          Please do not refresh or close this window while we verify your payment and route your order to Inkthreadable UK.
+          Please do not refresh or close this window while we verify your payment.
         </p>
       </div>
     );
@@ -143,7 +143,7 @@ function OrderSuccessContent() {
             THANK YOU FOR YOUR ORDER!
           </h1>
           <p className="text-xs sm:text-sm text-[#d1d5db] max-w-md mx-auto font-sans leading-relaxed">
-            Your payment via PayPal was received and verified. Your order has been automatically transmitted to <strong className="text-white">Inkthreadable UK</strong> for production and tracked dispatch.
+            Your payment via PayPal was received and verified. Your order has been registered for production and tracked dispatch.
           </p>
         </div>
 

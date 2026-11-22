@@ -116,7 +116,7 @@ function CheckoutContent() {
           EXPRESS SECURE CHECKOUT
         </h1>
         <p className="text-xs font-semibold text-[#ffffff] mt-1 font-sans">
-          Complete your order with PayPal or Debit/Credit Card. Orders are immediately routed to Inkthreadable UK.
+          Complete your order with PayPal or Debit/Credit Card. Orders are prepared immediately for tracked UK dispatch.
         </p>
       </div>
 
@@ -358,7 +358,7 @@ function CheckoutContent() {
             {/* Stand with Steel pledge */}
             <div className="rounded-lg bg-[#0c0d10] border border-[#2d3137] p-3 text-[11px] text-[#c5c9cf] space-y-1">
               <span className="text-white font-bold block uppercase font-sans">Stand With Steel</span>
-              <p>Your order is directly fulfilled in the UK via Inkthreadable Print-on-Demand.</p>
+              <p>Your order is printed, hand-finished, and dispatched tracked across the UK.</p>
             </div>
           </div>
         </div>

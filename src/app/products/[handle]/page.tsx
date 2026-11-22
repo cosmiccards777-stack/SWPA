@@ -262,7 +262,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           <div className="border border-[#33373e] rounded-lg p-4 bg-[#111316] space-y-2.5 text-xs text-[#ffffff] font-medium font-sans">
             <div className="flex items-center gap-2.5">
               <Truck className="w-4 h-4 text-white flex-shrink-0" />
-              <span>Automated UK fulfillment direct from Inkthreadable UK</span>
+              <span>Fast Tracked UK Delivery (Dispatched in 2-4 working days)</span>
             </div>
             <div className="flex items-center gap-2.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
