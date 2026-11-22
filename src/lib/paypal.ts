@@ -1,5 +1,6 @@
 /**
  * PayPal API Helper Library (Orders v2 API)
+ * Hardened with server-side signature validation and zero mock backdoors.
  */
 
 interface PayPalTokenResponse {
@@ -14,8 +15,7 @@ export async function getPayPalAccessToken(): Promise<string> {
   const environment = process.env.PAYPAL_ENVIRONMENT || 'sandbox';
 
   if (!clientId || !clientSecret || clientId === 'test_client_id') {
-    // For demo/development without live keys
-    return 'mock_token_dev_mode';
+    throw new Error('PayPal credentials are not configured in environment variables.');
   }
 
   const baseUrl = environment === 'production'
@@ -54,6 +54,7 @@ export async function createPayPalOrder(orderData: {
     sku: string;
   }>;
   shipping: number;
+  origin?: string;
 }) {
   const environment = process.env.PAYPAL_ENVIRONMENT || 'sandbox';
   const baseUrl = environment === 'production'
@@ -61,14 +62,7 @@ export async function createPayPalOrder(orderData: {
     : 'https://api-m.sandbox.paypal.com';
 
   const token = await getPayPalAccessToken();
-
-  // If in mock dev mode
-  if (token === 'mock_token_dev_mode') {
-    return {
-      id: `DEV-ORDER-${Date.now()}`,
-      status: 'CREATED',
-    };
-  }
+  const origin = orderData.origin || 'https://swpamerch.uk';
 
   const total = (orderData.amount + orderData.shipping).toFixed(2);
   const itemTotal = orderData.amount.toFixed(2);
@@ -109,7 +103,9 @@ export async function createPayPalOrder(orderData: {
       brand_name: 'SWPA Official Merch',
       landing_page: 'NO_PREFERENCE',
       user_action: 'PAY_NOW',
-      shipping_preference: 'GET_FROM_FILE',
+      shipping_preference: 'NO_SHIPPING',
+      return_url: `${origin}/order-success`,
+      cancel_url: `${origin}/checkout?canceled=true`,
     },
   };
 
@@ -127,7 +123,13 @@ export async function createPayPalOrder(orderData: {
     throw new Error(`PayPal Create Order Error: ${error}`);
   }
 
-  return await res.json();
+  const resData = await res.json();
+  const approveLink = resData.links?.find((l: any) => l.rel === 'approve')?.href;
+
+  return {
+    ...resData,
+    approveUrl: approveLink || null,
+  };
 }
 
 export async function capturePayPalOrder(orderId: string) {
@@ -137,30 +139,6 @@ export async function capturePayPalOrder(orderId: string) {
     : 'https://api-m.sandbox.paypal.com';
 
   const token = await getPayPalAccessToken();
-
-  if (token === 'mock_token_dev_mode' || orderId.startsWith('DEV-ORDER')) {
-    return {
-      id: orderId,
-      status: 'COMPLETED',
-      payer: {
-        email_address: 'customer-dev@swpa.uk',
-        name: { given_name: 'Dev', surname: 'Customer' },
-      },
-      purchase_units: [
-        {
-          shipping: {
-            name: { full_name: 'Dev Customer' },
-            address: {
-              address_line_1: '10 Downing Street',
-              admin_area_2: 'London',
-              postal_code: 'SW1A 2AA',
-              country_code: 'GB',
-            },
-          },
-        },
-      ],
-    };
-  }
 
   const res = await fetch(`${baseUrl}/v2/checkout/orders/${orderId}/capture`, {
     method: 'POST',

@@ -1,22 +1,27 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useCart } from '@/context/CartContext';
+export const runtime = 'edge';
+
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCart } from '@/context/CartContext';
 import {
   ShieldCheck,
   Truck,
   Lock,
   ArrowLeft,
-  CheckCircle,
-  AlertCircle,
+  ShoppingBag,
   Loader2,
+  AlertCircle,
 } from 'lucide-react';
 
-export default function CheckoutPage() {
+function CheckoutContent() {
   const router = useRouter();
-  const { items, subtotal, shippingFee, totalPrice, clearCart } = useCart();
+  const searchParams = useSearchParams();
+  const wasCanceled = searchParams.get('canceled') === 'true';
+
+  const { items, totalPrice, shippingFee } = useCart();
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -30,10 +35,12 @@ export default function CheckoutPage() {
   });
 
   const [isProcessing, setIsProcessing] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(
+    wasCanceled ? 'PayPal payment was canceled. No funds were taken. You can try again below.' : null
+  );
 
   const executePayment = async () => {
-    if (!formData.fullName || !formData.email || !formData.address1 || !formData.city || !formData.postcode) {
+    if (!formData.fullName.trim() || !formData.email.trim() || !formData.address1.trim() || !formData.city.trim() || !formData.postcode.trim()) {
       setErrorMessage('Please fill in all required shipping address fields before proceeding to payment.');
       return;
     }
@@ -42,49 +49,37 @@ export default function CheckoutPage() {
     setErrorMessage(null);
 
     try {
-      const createRes = await fetch('/api/paypal/create-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items, shippingFee }),
-      });
-      const orderData = await createRes.json();
-      if (!createRes.ok) throw new Error(orderData.error || 'Failed to create PayPal order');
-
-      const captureRes = await fetch('/api/paypal/capture-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          orderID: orderData.id,
-          customerInfo: {
+      // 1. Save customer info and cart items in session storage
+      sessionStorage.setItem(
+        'swpa_pending_order',
+        JSON.stringify({
+          customer: {
             ...formData,
             countryCode: 'GB',
           },
-          cartItems: items,
-        }),
-      });
-
-      const captureData = await captureRes.json();
-      if (!captureRes.ok) {
-        throw new Error(captureData.error || 'Failed to capture payment');
-      }
-
-      clearCart();
-
-      sessionStorage.setItem(
-        'swpa_latest_order',
-        JSON.stringify({
-          orderNumber: captureData.orderNumber || orderData.id,
-          fulfillment: captureData.fulfillment,
-          customer: formData,
-          total: totalPrice,
           items: items,
+          shippingFee: shippingFee,
+          totalPrice: totalPrice,
         })
       );
 
-      router.push('/order-success');
+      // 2. Request verified PayPal order creation from server
+      const createRes = await fetch('/api/paypal/create-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items }),
+      });
+
+      const orderData = await createRes.json();
+      if (!createRes.ok || !orderData.approveUrl) {
+        throw new Error(orderData.error || 'Failed to initialize PayPal order');
+      }
+
+      // 3. Redirect customer to official PayPal approval page
+      window.location.href = orderData.approveUrl;
     } catch (err: any) {
       console.error('Checkout error:', err);
-      setErrorMessage(err.message || 'Payment could not be completed. Please try again.');
+      setErrorMessage(err.message || 'Payment initialization failed. Please check your connection and try again.');
       setIsProcessing(false);
     }
   };
@@ -137,7 +132,7 @@ export default function CheckoutPage() {
             </div>
 
             {errorMessage && (
-              <div className="p-4 rounded bg-red-950 border border-red-700 flex items-start gap-3 text-white text-xs font-bold">
+              <div className="p-4 rounded bg-red-950/80 border border-red-600 flex items-start gap-3 text-white text-xs font-bold">
                 <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
                 <span>{errorMessage}</span>
               </div>
@@ -248,7 +243,7 @@ export default function CheckoutPage() {
                     required
                     placeholder="e.g. SW1A 1AA"
                     value={formData.postcode}
-                    onChange={(e) => setFormData({ ...formData, postcode: e.target.value.toUpperCase() })}
+                    onChange={(e) => setFormData({ ...formData, postcode: e.target.value })}
                     className="w-full bg-[#0a0b0d] border border-[#454a52] rounded px-4 py-3 text-white placeholder-gray-500 font-medium focus:outline-none focus:border-white"
                   />
                 </div>
@@ -260,37 +255,40 @@ export default function CheckoutPage() {
           <div className="bg-[#141618] border-2 border-[#33373e] rounded-xl p-6 sm:p-8 space-y-6">
             <div className="flex items-center justify-between border-b border-[#2d3137] pb-4">
               <h2 className="text-2xl font-normal text-white uppercase tracking-wider font-bebas flex items-center gap-2">
-                <Lock className="w-5 h-5 text-emerald-400" />
+                <Lock className="w-5 h-5 text-white" />
                 <span>2. PAYMENT VIA PAYPAL</span>
               </h2>
-              <span className="text-xs font-bold text-emerald-400 uppercase">256-Bit SSL Encrypted</span>
+              <span className="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Protected</span>
+              </span>
             </div>
 
-            <p className="text-xs font-medium text-white font-sans">
-              Pay securely using your PayPal balance, connected bank account, or debit/credit card. Funds are processed immediately without Shopify hold-ups.
+            <p className="text-xs text-[#d1d5db] font-sans leading-relaxed">
+              Pay securely using your PayPal balance, connected bank account, or debit/credit card. Funds are processed immediately without holds.
             </p>
 
-            <div className="pt-2">
+            <div className="space-y-3 pt-2">
               <button
                 type="button"
-                onClick={() => executePayment()}
+                onClick={executePayment}
                 disabled={isProcessing}
-                className="w-full bg-[#ffc439] hover:bg-[#f4bb34] text-[#003087] font-bebas text-2xl tracking-wider uppercase py-4 rounded flex items-center justify-center gap-2 shadow-lg transition-all disabled:opacity-50"
+                className="w-full bg-[#ffc439] hover:bg-[#f4bb34] text-black py-4 px-6 rounded-lg font-bold flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none"
               >
                 {isProcessing ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin text-[#003087]" />
-                    <span className="font-sans text-sm font-bold">Processing Order & Sending to Inkthreadable...</span>
-                  </>
+                  <span className="flex items-center gap-2 text-sm font-sans">
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>Connecting to PayPal...</span>
+                  </span>
                 ) : (
-                  <>
+                  <span className="flex items-center gap-2 text-base font-extrabold">
+                    <span>Pay with</span>
                     <span className="italic font-bold font-serif text-xl">PayPal</span>
-                    <span>EXPRESS CHECKOUT</span>
-                  </>
+                  </span>
                 )}
               </button>
 
-              <div className="flex items-center justify-center gap-2 text-xs font-semibold text-white mt-3 font-sans">
+              <div className="text-[11px] text-center text-[#aeb2b8] flex items-center justify-center gap-1.5 pt-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
                 <span>Eligible for PayPal Buyer Protection on full purchase amount</span>
               </div>
@@ -299,62 +297,77 @@ export default function CheckoutPage() {
         </div>
 
         {/* Order Summary */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="bg-[#141618] border-2 border-[#33373e] rounded-xl p-6 space-y-4 sticky top-28">
-            <h3 className="text-2xl font-normal text-white uppercase font-bebas tracking-wider border-b border-[#2d3137] pb-3">
-              ORDER SUMMARY ({items.length} {items.length === 1 ? 'ITEM' : 'ITEMS'})
-            </h3>
+        <div className="lg:col-span-5">
+          <div className="bg-[#141618] border-2 border-[#33373e] rounded-xl p-6 sm:p-8 space-y-6 sticky top-28">
+            <h2 className="text-2xl font-normal text-white uppercase tracking-wider font-bebas border-b border-[#2d3137] pb-4">
+              ORDER SUMMARY
+            </h2>
 
-            <div className="divide-y divide-[#2d3137] max-h-72 overflow-y-auto pr-1">
+            {/* Item List */}
+            <div className="space-y-4 max-h-[350px] overflow-y-auto pr-2 scrollbar-thin">
               {items.map((item) => (
-                <div key={item.id} className="py-3 flex gap-3">
-                  <div className="w-14 h-14 bg-[#0a0b0d] rounded overflow-hidden flex-shrink-0">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-contain" />
+                <div key={item.id} className="flex gap-3 text-xs">
+                  <div className="w-16 h-16 rounded bg-[#0a0b0d] border border-[#2d3137] p-1 flex-shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  <div className="flex-1 font-sans">
-                    <h4 className="text-xs font-bold text-white line-clamp-1">{item.title}</h4>
-                    <div className="text-[11px] font-semibold text-[#c5c9cf] mt-0.5">
-                      Qty: {item.quantity} {item.size && `• Size: ${item.size}`} {item.color && `• ${item.color}`}
+                  <div className="flex-1">
+                    <h4 className="font-bold text-white line-clamp-1">{item.title}</h4>
+                    <p className="text-[#aeb2b8] mt-0.5">
+                      {item.size && `Size: ${item.size}`}
+                      {item.size && item.color && ' • '}
+                      {item.color && `Colour: ${item.color}`}
+                    </p>
+                    <div className="flex justify-between items-center mt-1">
+                      <span className="text-[#c5c9cf]">Qty: {item.quantity}</span>
+                      <span className="text-white font-bold">
+                        £{(item.price * item.quantity).toFixed(2)}
+                      </span>
                     </div>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-base font-normal text-white font-bebas">
-                      £{(item.price * item.quantity).toFixed(2)}
-                    </span>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="border-t border-[#2d3137] pt-3 space-y-2 text-xs font-sans">
-              <div className="flex justify-between text-[#c5c9cf] font-semibold">
-                <span>Subtotal</span>
-                <span className="font-bold text-white">£{subtotal.toFixed(2)}</span>
+            {/* Calculations */}
+            <div className="border-t border-[#2d3137] pt-4 space-y-2 text-xs font-sans">
+              <div className="flex justify-between text-[#c5c9cf]">
+                <span>Items Subtotal:</span>
+                <span className="text-white font-bold">£{(totalPrice - shippingFee).toFixed(2)}</span>
               </div>
-              <div className="flex justify-between text-[#c5c9cf] font-semibold">
-                <span>Tracked UK Delivery</span>
-                <span className="font-bold text-white">
-                  {shippingFee === 0 ? <span className="text-emerald-400 uppercase font-black">FREE</span> : `£${shippingFee.toFixed(2)}`}
+              <div className="flex justify-between text-[#c5c9cf]">
+                <span>Tracked UK Shipping:</span>
+                <span className="text-white font-bold">
+                  {shippingFee === 0 ? 'FREE' : `£${shippingFee.toFixed(2)}`}
                 </span>
               </div>
-              <div className="border-t border-[#2d3137] pt-2 flex justify-between text-base font-bold text-white">
-                <span>TOTAL DUE</span>
-                <span className="text-2xl font-normal text-white font-bebas tracking-wide">
+              <div className="border-t border-[#2d3137] pt-3 flex justify-between items-baseline">
+                <span className="text-sm font-bold text-white uppercase">Total Due:</span>
+                <span className="text-3xl font-normal text-white font-bebas">
                   £{totalPrice.toFixed(2)}
                 </span>
               </div>
             </div>
 
-            <div className="p-3.5 rounded bg-[#0a0b0d] border border-[#2d3137] space-y-1 text-xs text-[#ffffff] font-medium font-sans">
-              <div className="flex items-center gap-1.5 text-white font-bold">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Instant Inkthreadable Dispatch</span>
-              </div>
-              <p className="text-[11px]">Your order will be queued directly into our UK print facility once payment is completed.</p>
+            {/* Stand with Steel pledge */}
+            <div className="rounded-lg bg-[#0c0d10] border border-[#2d3137] p-3 text-[11px] text-[#c5c9cf] space-y-1">
+              <span className="text-white font-bold block uppercase font-sans">Stand With Steel</span>
+              <p>Your order is directly fulfilled in the UK via Inkthreadable Print-on-Demand.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div className="py-24 text-center text-white font-bebas text-2xl">Loading Checkout...</div>}>
+      <CheckoutContent />
+    </Suspense>
   );
 }
