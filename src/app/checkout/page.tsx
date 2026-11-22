@@ -41,6 +41,7 @@ function CheckoutContent() {
   );
 
   const executePayment = async () => {
+    if (isProcessing) return; // Prevent double-triggering
     if (!formData.fullName.trim() || !formData.email.trim() || !formData.address1.trim() || !formData.city.trim() || !formData.postcode.trim()) {
       setErrorMessage('Please fill in all required shipping address fields before proceeding to payment.');
       return;
