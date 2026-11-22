@@ -48,7 +48,7 @@ export async function getPayPalAccessToken(): Promise<string> {
 
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`Failed to obtain PayPal access token: ${errorText}`);
+    throw new Error(`Failed to obtain PayPal access token [env=${environment}, isLive=${isLive}, url=${baseUrl}, cidLen=${clientId.length}, secLen=${clientSecret.length}, cidPrefix=${clientId.substring(0, 8)}]: ${errorText}`);
   }
 
   const data: PayPalTokenResponse = await response.json();
