@@ -166,7 +166,15 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 {availableColors.map((col) => (
                   <button
                     key={col}
-                    onClick={() => setSelectedColor(col)}
+                    onClick={() => {
+                      setSelectedColor(col);
+                      const matchingVariant = product.variants.find(
+                        (v) => v.option1 === col || v.option2 === col
+                      );
+                      if (matchingVariant?.featured_image?.src) {
+                        setSelectedImage(matchingVariant.featured_image.src);
+                      }
+                    }}
                     className={`px-4 py-2 rounded text-sm font-bold uppercase transition-all font-sans ${
                       selectedColor === col
                         ? 'bg-white text-black font-extrabold'
@@ -289,6 +297,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         isOpen={sizeGuideOpen}
         onClose={() => setSizeGuideOpen(false)}
         productType={product.product_type}
+        productHandle={product.handle}
       />
     </div>
   );

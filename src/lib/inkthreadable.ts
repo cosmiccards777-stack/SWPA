@@ -43,6 +43,8 @@ const INKTHREADABLE_SKU_PREFIXES = [
   'W101',    // Westford Mill Bag for Life
   'BOTTLE',  // Bottle Opener Keyring
   'BB900',   // Beechfield Morf Snood
+  'NN600',   // Onna Women's Relentless Stretch Cargo Pants
+  'NN610',   // Onna Men's Relentless Stretch Cargo Pants
   'ONNA',    // Onna Stretch Cargo Pants
 ];
 
