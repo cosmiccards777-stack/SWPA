@@ -40,11 +40,13 @@ export async function POST(req: Request) {
       expectedSubtotal += canonicalPrice * quantity;
 
       validatedFulfillmentItems.push({
+        handle: product.handle,
         sku: variant.sku || 'SWPA-ITEM',
         quantity: quantity,
         title: product.title,
         size: variant.option2 || variant.option1 || null,
         color: variant.option1 || null,
+        price: canonicalPrice,
       });
     }
 

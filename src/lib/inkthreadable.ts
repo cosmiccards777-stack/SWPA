@@ -1,7 +1,101 @@
 /**
  * Inkthreadable Official API Client (POST /api/orders.php with SHA-1 Signature)
  * Edge-runtime compatible using Web Crypto API (crypto.subtle).
+ * All 300 DPI print masters hosted permanently on https://assets.swpamerch.uk (Cloudflare R2).
  */
+
+const R2_BASE = 'https://assets.swpamerch.uk';
+
+export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string }> = {
+  // Hoodies
+  'original-swpa-night-patrol-hoodie': {
+    front: `${R2_BASE}/7033-7983-front.png`,
+    back: `${R2_BASE}/7033-7983-back.png`,
+  },
+  'awdis-college-hoodie-7691-7691': {
+    front: `${R2_BASE}/7691-7691-front.png`,
+    back: `${R2_BASE}/7691-7691-back.png`,
+  },
+  'awdis-college-hoodie-swpa-womens-night-patrol-hoodie': {
+    front: `${R2_BASE}/swpa-womens-night-patrol-hoodie-front.png`,
+    back: `${R2_BASE}/swpa-womens-night-patrol-hoodie-back.png`,
+  },
+  'awdis-college-hoodie-black-night-patrol-hoodie-mens': {
+    front: `${R2_BASE}/black-night-patrol-hoodie-mens-front.png`,
+    back: `${R2_BASE}/black-night-patrol-hoodie-mens-back.png`,
+  },
+  'swpa-classic-pullover-hoodie': {
+    front: `${R2_BASE}/7033-7039-front.png`,
+    back: `${R2_BASE}/7033-7039-back.png`,
+  },
+  'swpa-printed-zip-up-hoodie': {
+    front: `${R2_BASE}/7033-7039-front.png`,
+    back: `${R2_BASE}/7033-7039-back.png`,
+  },
+
+  // Sweatshirts
+  'awdis-sweatshirt-7033-7186': {
+    front: `${R2_BASE}/7033-7033-front.png`,
+    back: `${R2_BASE}/7033-7033-back.png`,
+  },
+  'awdis-sweatshirt-7033-7185': {
+    front: `${R2_BASE}/7033-7185-front.png`,
+    back: `${R2_BASE}/7033-7185-back.png`,
+  },
+
+  // Tees & Polos
+  'swpa-womens-embroidered-polo-shirt-black-pink': {
+    front: `${R2_BASE}/7691-7691-front.png`,
+  },
+  'swpa-womens-embroidered-polo-shirt': {
+    front: `${R2_BASE}/7033-7033-front.png`,
+  },
+  'swpa-classic-t-shirt': {
+    front: `${R2_BASE}/7033-7033-front.png`,
+    back: `${R2_BASE}/7033-7033-back.png`,
+  },
+  'swpa-womens-fitted-t-shirt': {
+    front: `${R2_BASE}/7691-7691-front.png`,
+    back: `${R2_BASE}/7691-7691-back.png`,
+  },
+  'swpa-classic-polo-shirt': {
+    front: `${R2_BASE}/7033-7033-front.png`,
+  },
+
+  // Joggers
+  'swpa-embroidered-cuffed-joggers': {
+    front: `${R2_BASE}/embroidered-logo-tracksuit-bottoms-back.png`,
+  },
+  'swpa-printed-cuffed-joggers': {
+    front: `${R2_BASE}/swpa-printed-tracksuit-bottoms-front-right-leg.png`,
+  },
+  'swpa-logo-joggers': {
+    front: `${R2_BASE}/embroidered-logo-tracksuit-bottoms-back.png`,
+  },
+  'swpa-leg-joggers': {
+    front: `${R2_BASE}/swpa-printed-tracksuit-bottoms-front-right-leg.png`,
+  },
+
+  // Accessories & Stickers
+  'swpa-bag-for-life-long-handles': {
+    front: `${R2_BASE}/embroidered-logo-tracksuit-bottoms-back.png`,
+  },
+  'swpa-bottle-opener-keyring': {
+    front: `${R2_BASE}/swpa-printed-tracksuit-bottoms-front-right-leg.png`,
+  },
+  'swpa-weatherproof-car-sticker-3-4in': {
+    front: `${R2_BASE}/sticker-classic-crest.png`,
+  },
+  'swpa-stop-the-boats-rectangular-car-sticker': {
+    front: `${R2_BASE}/sticker-stop-the-boats-rect.png`,
+  },
+  'swpa-whose-streets-our-streets-car-sticker': {
+    front: `${R2_BASE}/sticker-whose-streets-round.png`,
+  },
+  'swpa-stop-the-boats-round-car-sticker': {
+    front: `${R2_BASE}/sticker-stop-the-boats-round.png`,
+  },
+};
 
 export interface InkthreadableCustomerShipping {
   fullName: string;
@@ -16,6 +110,7 @@ export interface InkthreadableCustomerShipping {
 }
 
 export interface InkthreadableOrderItem {
+  handle?: string;
   sku: string;
   quantity: number;
   title?: string;
@@ -45,7 +140,6 @@ const INKTHREADABLE_SKU_PREFIXES = [
   'BB900',   // Beechfield Morf Snood
   'NN500',   // Onna Men's Relentless Stretch Cargo Pants
   'NN600',   // Onna Women's Relentless Stretch Cargo Pants
-  'NN610',   // Onna Men's Relentless Stretch Cargo Pants
   'ONNA',    // Onna Stretch Cargo Pants
   'STICKER', // Inkthreadable Core Vinyl Stickers
 ];
@@ -70,7 +164,7 @@ export async function submitOrderToInkthreadable(params: SubmitOrderParams) {
 
   console.log(`[Inkthreadable] Preparing Order ${params.orderId}...`);
 
-  // Split items into Inkthreadable-compatible vs manual fulfillment (badges, patches, etc.)
+  // Split items into Inkthreadable-compatible vs manual fulfillment
   const inkItems = params.items.filter((item) => isInkthreadableSku(item.sku));
   const manualItems = params.items.filter((item) => !isInkthreadableSku(item.sku));
 
@@ -124,12 +218,15 @@ export async function submitOrderToInkthreadable(params: SubmitOrderParams) {
     shipping: {
       shippingMethod: 'tracked',
     },
-    items: inkItems.map((item) => ({
-      pn: item.sku,
-      quantity: item.quantity,
-      ...(item.price ? { retailPrice: Number(item.price).toFixed(2) } : {}),
-      ...(item.designs ? { designs: item.designs } : {}),
-    })),
+    items: inkItems.map((item) => {
+      const resolvedDesigns = item.designs || (item.handle ? PRODUCT_DESIGN_MAP[item.handle] : undefined);
+      return {
+        pn: item.sku,
+        quantity: item.quantity,
+        ...(item.price ? { retailPrice: Number(item.price).toFixed(2) } : {}),
+        ...(resolvedDesigns ? { designs: resolvedDesigns } : {}),
+      };
+    }),
   };
 
   const bodyString = JSON.stringify(payload);
