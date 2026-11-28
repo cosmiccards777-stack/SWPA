@@ -19,8 +19,8 @@ function OrderSuccessContent() {
   const captureAttempted = useRef(false);
 
   useEffect(() => {
-    // If we already have a confirmed order in session storage
-    const existingOrder = sessionStorage.getItem('swpa_latest_order');
+    // If we already have a confirmed order in storage
+    const existingOrder = sessionStorage.getItem('swpa_latest_order') || localStorage.getItem('swpa_latest_order');
 
     if (!token) {
       if (existingOrder) {
@@ -38,7 +38,7 @@ function OrderSuccessContent() {
 
     async function completeOrder() {
       try {
-        const pendingRaw = sessionStorage.getItem('swpa_pending_order');
+        const pendingRaw = sessionStorage.getItem('swpa_pending_order') || localStorage.getItem('swpa_pending_order');
         if (!pendingRaw) {
           if (existingOrder) {
             setOrder(JSON.parse(existingOrder));
@@ -74,9 +74,13 @@ function OrderSuccessContent() {
           fulfillment: data.fulfillment,
         };
 
-        // Clear cart and clean up session
+        // Clear cart and clean up pending storage
         clearCart();
         sessionStorage.removeItem('swpa_pending_order');
+        try {
+          localStorage.removeItem('swpa_pending_order');
+          localStorage.setItem('swpa_latest_order', JSON.stringify(finalOrder));
+        } catch {}
         sessionStorage.setItem('swpa_latest_order', JSON.stringify(finalOrder));
 
         setOrder(finalOrder);

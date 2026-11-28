@@ -63,14 +63,8 @@ export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string 
   },
 
   // Joggers
-  'swpa-embroidered-cuffed-joggers': {
-    front: `${R2_BASE}/embroidered-logo-tracksuit-bottoms-back.png`,
-  },
   'swpa-printed-cuffed-joggers': {
     front: `${R2_BASE}/swpa-printed-tracksuit-bottoms-front-right-leg.png`,
-  },
-  'swpa-logo-joggers': {
-    front: `${R2_BASE}/embroidered-logo-tracksuit-bottoms-back.png`,
   },
   'swpa-leg-joggers': {
     front: `${R2_BASE}/swpa-printed-tracksuit-bottoms-front-right-leg.png`,
@@ -220,7 +214,7 @@ export async function submitOrderToInkthreadable(params: SubmitOrderParams) {
       email: params.shipping.email,
     },
     shipping: {
-      shippingMethod: 'tracked',
+      shippingMethod: 'recorded',
     },
     items: inkItems.map((item) => {
       const resolvedDesigns = item.designs || (item.handle ? PRODUCT_DESIGN_MAP[item.handle] : undefined);

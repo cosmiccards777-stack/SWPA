@@ -51,19 +51,20 @@ function CheckoutContent() {
     setErrorMessage(null);
 
     try {
-      // 1. Save customer info and cart items in session storage
-      sessionStorage.setItem(
-        'swpa_pending_order',
-        JSON.stringify({
-          customer: {
-            ...formData,
-            countryCode: 'GB',
-          },
-          items: items,
-          shippingFee: shippingFee,
-          totalPrice: totalPrice,
-        })
-      );
+      // 1. Save customer info and cart items in both sessionStorage and localStorage (survives mobile PayPal App redirects)
+      const pendingPayload = JSON.stringify({
+        customer: {
+          ...formData,
+          countryCode: 'GB',
+        },
+        items: items,
+        shippingFee: shippingFee,
+        totalPrice: totalPrice,
+      });
+      sessionStorage.setItem('swpa_pending_order', pendingPayload);
+      try {
+        localStorage.setItem('swpa_pending_order', pendingPayload);
+      } catch {}
 
       // 2. Request verified PayPal order creation from server
       const createRes = await fetch('/api/paypal/create-order', {
