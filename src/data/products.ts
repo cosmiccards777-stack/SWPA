@@ -3108,7 +3108,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3129,7 +3129,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3150,7 +3150,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3171,7 +3171,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3192,7 +3192,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3213,7 +3213,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3234,7 +3234,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3255,7 +3255,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3276,7 +3276,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990001,
-          "src": "/images/products/womens-cargo-pink.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
@@ -3297,7 +3297,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3318,7 +3318,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3339,7 +3339,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3360,7 +3360,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3381,7 +3381,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3402,7 +3402,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3423,7 +3423,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3444,7 +3444,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3465,7 +3465,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990002,
-          "src": "/images/products/womens-cargo-black.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
@@ -3486,7 +3486,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3507,7 +3507,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3528,7 +3528,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3549,7 +3549,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3570,7 +3570,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3591,7 +3591,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3612,7 +3612,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3633,7 +3633,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3654,7 +3654,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990003,
-          "src": "/images/products/womens-cargo-blue.png",
+          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
@@ -3668,17 +3668,17 @@ export const PRODUCTS: Product[] = [
     "images": [
       {
         "id": 990001,
-        "src": "/images/products/womens-cargo-pink.png",
+        "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
         "alt": "Women's Stretch Cargo Trousers - Calm Pink"
       },
       {
         "id": 990002,
-        "src": "/images/products/womens-cargo-black.png",
+        "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600BLAC_0.jpg",
         "alt": "Women's Stretch Cargo Trousers - Black"
       },
       {
         "id": 990003,
-        "src": "/images/products/womens-cargo-blue.png",
+        "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CEBL_0.jpg",
         "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
       }
     ],
@@ -3708,7 +3708,7 @@ export const PRODUCTS: Product[] = [
         ]
       }
     ],
-    "featuredImage": "/images/products/womens-cargo-pink.png",
+    "featuredImage": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
     "startingPrice": "54.99"
   },
   {
