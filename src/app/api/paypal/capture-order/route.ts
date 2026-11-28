@@ -56,7 +56,7 @@ export async function POST(req: Request) {
       });
     }
 
-    const expectedShipping = expectedSubtotal >= 60.0 ? 0.0 : 4.99;
+    const expectedShipping = expectedSubtotal >= 50.0 ? 0.0 : 4.99;
     const expectedTotal = (expectedSubtotal + expectedShipping).toFixed(2);
 
     // 2. Capture the payment directly with PayPal Orders v2 API

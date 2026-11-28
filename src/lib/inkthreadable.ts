@@ -26,21 +26,17 @@ export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string 
   },
   'swpa-classic-pullover-hoodie': {
     front: `${R2_BASE}/7033-7039-front.png`,
-    back: `${R2_BASE}/7033-7039-back.png`,
   },
   'swpa-printed-zip-up-hoodie': {
-    front: `${R2_BASE}/7033-7039-front.png`,
-    back: `${R2_BASE}/7033-7039-back.png`,
+    front: `${R2_BASE}/mens-cargo-crest-100x100mm.png`,
   },
 
-  // Tees & Polos
+  // Tees & Polos (1-sided front chest crest matching product photos)
   'swpa-classic-t-shirt': {
     front: `${R2_BASE}/7033-7033-front.png`,
-    back: `${R2_BASE}/7033-7033-back.png`,
   },
   'swpa-womens-fitted-t-shirt': {
     front: `${R2_BASE}/7691-7691-front.png`,
-    back: `${R2_BASE}/7691-7691-back.png`,
   },
   'swpa-classic-polo-shirt': {
     front: `${R2_BASE}/mens-cargo-crest-100x100mm.png`,

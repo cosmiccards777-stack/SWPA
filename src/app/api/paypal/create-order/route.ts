@@ -49,8 +49,8 @@ export async function POST(req: Request) {
       });
     }
 
-    // Server-enforced shipping logic (£60 threshold for free delivery, otherwise £4.99)
-    const shipping = subtotal >= 60.0 ? 0.0 : 4.99;
+    // Server-enforced shipping logic (£50 threshold for free delivery, otherwise £4.99)
+    const shipping = subtotal >= 50.0 ? 0.0 : 4.99;
 
     // Detect site origin dynamically
     const host = req.headers.get('host') || 'swpamerch.uk';

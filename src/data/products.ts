@@ -122,7 +122,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 1,
@@ -164,7 +164,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 2,
@@ -206,7 +206,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 3,
@@ -248,7 +248,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 4,
@@ -290,7 +290,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 5,
@@ -332,7 +332,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 6,
@@ -374,7 +374,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 7,
@@ -416,7 +416,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 8,
@@ -458,7 +458,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 9,
@@ -528,7 +528,7 @@ const ALL_PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-91c854ae960ebe6e114f8eac9ad14bda.png?v=1790804591",
-    "startingPrice": "32.99"
+    "startingPrice": "36.99"
   },
   {
     "id": 15969930215808,
@@ -572,7 +572,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 1,
@@ -612,7 +612,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 2,
@@ -652,7 +652,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 3,
@@ -692,7 +692,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 4,
@@ -732,7 +732,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 5,
@@ -772,7 +772,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 6,
@@ -812,7 +812,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 7,
@@ -854,7 +854,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 8,
@@ -896,7 +896,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 9,
@@ -938,7 +938,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 10,
@@ -980,7 +980,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 11,
@@ -1022,7 +1022,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 12,
@@ -1064,7 +1064,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 13,
@@ -1106,7 +1106,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 14,
@@ -1148,7 +1148,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 15,
@@ -1190,7 +1190,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 16,
@@ -1230,7 +1230,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 17,
@@ -1270,7 +1270,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 18,
@@ -1310,7 +1310,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 19,
@@ -1350,7 +1350,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 20,
@@ -1390,7 +1390,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 21,
@@ -1430,7 +1430,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 22,
@@ -1470,7 +1470,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 23,
@@ -1580,7 +1580,7 @@ const ALL_PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-c589e027ddb2ddd4c9a55d8b1c452bff.png?v=1790552885",
-    "startingPrice": "32.99"
+    "startingPrice": "36.99"
   },
   {
     "id": 15969930150272,
@@ -1624,7 +1624,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 1,
@@ -1664,7 +1664,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 2,
@@ -1704,7 +1704,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 3,
@@ -1744,7 +1744,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 4,
@@ -1784,7 +1784,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 5,
@@ -1824,7 +1824,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 6,
@@ -1864,7 +1864,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 7,
@@ -1906,7 +1906,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 8,
@@ -1948,7 +1948,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 9,
@@ -1990,7 +1990,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 10,
@@ -2032,7 +2032,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 11,
@@ -2074,7 +2074,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 12,
@@ -2116,7 +2116,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 13,
@@ -2158,7 +2158,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 14,
@@ -2200,7 +2200,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 15,
@@ -2242,7 +2242,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 16,
@@ -2282,7 +2282,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 17,
@@ -2322,7 +2322,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 18,
@@ -2362,7 +2362,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 19,
@@ -2402,7 +2402,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 20,
@@ -2442,7 +2442,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 21,
@@ -2482,7 +2482,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 22,
@@ -2522,7 +2522,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 23,
@@ -2632,7 +2632,7 @@ const ALL_PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-f4a76dbf9b5fa89c113fabae80c4e5b3.png?v=1790552837",
-    "startingPrice": "32.99"
+    "startingPrice": "36.99"
   },
   {
     "id": 15969929429376,
@@ -2678,7 +2678,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 1,
@@ -2720,7 +2720,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 2,
@@ -2762,7 +2762,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 3,
@@ -2804,7 +2804,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 4,
@@ -2846,7 +2846,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 5,
@@ -2888,7 +2888,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 6,
@@ -2930,7 +2930,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 7,
@@ -2972,7 +2972,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 8,
@@ -3014,7 +3014,7 @@ const ALL_PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "32.99",
+        "price": "36.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 9,
@@ -3084,7 +3084,7 @@ const ALL_PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-efa804dec56bc178afae4306ba233204.png?v=1790552525",
-    "startingPrice": "32.99"
+    "startingPrice": "36.99"
   },
   {
     "id": 15961085280640,
