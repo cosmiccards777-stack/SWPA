@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { PRODUCTS } from '@/data/products';
 
 export interface CartItem {
   id: string; // unique cart item id: `${productId}-${variantId}`
@@ -42,12 +43,30 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load cart from localStorage
+  // Load cart from localStorage and auto-heal against active catalog (drops paused/removed items & syncs canonical price/SKU/image)
   useEffect(() => {
     try {
       const saved = localStorage.getItem('swpa_cart');
       if (saved) {
-        setItems(JSON.parse(saved));
+        const parsed: CartItem[] = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          const valid = parsed
+            .map((item) => {
+              const product = PRODUCTS.find((p) => p.id === Number(item.productId));
+              const variant = product?.variants.find((v) => v.id === Number(item.variantId));
+              if (!product || !variant) return null;
+              return {
+                ...item,
+                title: product.title,
+                handle: product.handle,
+                price: parseFloat(variant.price),
+                sku: variant.sku || item.sku,
+                image: variant.featured_image?.src || product.featuredImage,
+              };
+            })
+            .filter(Boolean) as CartItem[];
+          setItems(valid);
+        }
       }
     } catch (e) {
       console.error('Failed to load cart', e);

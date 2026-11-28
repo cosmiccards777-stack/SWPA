@@ -57,16 +57,27 @@ export interface Product {
   [key: string]: any;
 }
 
+/**
+ * Temporarily paused items pending Inkthreadable human support confirmation of exact DTF / Left-Leg API placement keys.
+ * All data, variants, prices, studio photos & R2 print masters remain intact below — remove a handle from this set to reinstate instantly.
+ */
+export const PAUSED_HANDLES = new Set<string>([
+  'swpa-printed-zip-up-hoodie',
+  'swpa-classic-polo-shirt',
+  'swpa-leg-joggers',
+  'swpa-printed-cuffed-joggers',
+  'womens-plain-black-stretch-cargo-trousers',
+  'mens-plain-black-stretch-cargo-trousers',
+]);
+
 export const CATEGORIES = [
   'All',
   'T-Shirts',
   'Hoodies',
-  'Cargo Trousers',
-  'Joggers',
   'Accessories'
 ];
 
-export const PRODUCTS: Product[] = [
+const ALL_PRODUCTS: Product[] = [
   {
     "id": 15975639318912,
     "title": "Original SWPA NIGHT PATROL HOODIE.",
@@ -5531,6 +5542,8 @@ export const PRODUCTS: Product[] = [
     "startingPrice": "44.99"
   }
 ];
+
+export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => !PAUSED_HANDLES.has(p.handle));
 
 export function getProductByHandle(handle: string): Product | undefined {
   return PRODUCTS.find((p) => p.handle === handle);

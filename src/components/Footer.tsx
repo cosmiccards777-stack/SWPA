@@ -39,8 +39,10 @@ export default function Footer() {
             <div className="flex items-center gap-2.5">
               <div className="w-10 h-10 rounded border-2 border-[#555b64] overflow-hidden bg-black p-0.5">
                 <img
-                  src="https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-crest.jpg?v=1789637394"
+                  src="https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-crest.jpg?v=1789637394&width=120"
                   alt="SWPA Crest"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -71,17 +73,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/collections/tees" className="hover:text-[#d71920] transition-colors">
-                  Tees &amp; Polos
+                  T-Shirts
                 </Link>
               </li>
               <li>
                 <Link href="/collections/hoodies" className="hover:text-[#d71920] transition-colors">
                   Hoodies
-                </Link>
-              </li>
-              <li>
-                <Link href="/collections/bottoms" className="hover:text-[#d71920] transition-colors">
-                  Joggers &amp; Cargo
                 </Link>
               </li>
               <li>

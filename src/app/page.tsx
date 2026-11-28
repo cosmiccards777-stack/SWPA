@@ -11,25 +11,32 @@ const GENDER_CARDS = [
 ];
 
 const CATEGORY_CARDS = [
-  { slug: 'tees', title: 'TEES & POLOS', sub: 'Crest tees & polo shirts' },
-  { slug: 'hoodies', title: 'HOODIES', sub: 'Pullover & zip-up hoodies' },
-  { slug: 'bottoms', title: 'JOGGERS & CARGO', sub: 'Joggers & stretch cargos' },
+  { slug: 'tees', title: 'T-SHIRTS', sub: 'Classic & fitted crest tees' },
+  { slug: 'hoodies', title: 'HOODIES', sub: 'Night Patrol & classic hoodies' },
   { slug: 'accessories', title: 'ACCESSORIES', sub: 'Snoods, stickers, bags & keyrings' },
 ];
 
-export default function HomePage() {
-  const imageFor = (handle: string) => PRODUCTS.find((p) => p.handle === handle)?.featuredImage;
+function sizedImg(src: string | undefined, width: number) {
+  if (!src) return undefined;
+  if (src.includes('cdn.shopify.com')) {
+    return `${src}${src.includes('?') ? '&' : '?'}width=${width}`;
+  }
+  return src;
+}
 
-  // Featured: a hand-picked mix across men's, women's and categories
+export default function HomePage() {
+  const imageFor = (handle: string) => sizedImg(PRODUCTS.find((p) => p.handle === handle)?.featuredImage, 600);
+
+  // Featured: a hand-picked mix across men's, women's and categories (all 14 active bulletproof items)
   const FEATURED_HANDLES = [
     'original-swpa-night-patrol-hoodie',
     'awdis-college-hoodie-swpa-womens-night-patrol-hoodie',
     'swpa-classic-t-shirt',
     'awdis-college-hoodie-7691-7691',
-    'swpa-printed-zip-up-hoodie',
+    'awdis-college-hoodie-black-night-patrol-hoodie-mens',
     'swpa-womens-fitted-t-shirt',
-    'swpa-printed-cuffed-joggers',
-    'mens-plain-black-stretch-cargo-trousers',
+    'swpa-snood',
+    'swpa-bag-for-life-long-handles',
   ];
   const featured = FEATURED_HANDLES.map((h) => PRODUCTS.find((p) => p.handle === h)).filter(
     (p): p is (typeof PRODUCTS)[number] => Boolean(p)
@@ -94,11 +101,13 @@ export default function HomePage() {
             }}
           >
             <img
-              src="https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-crest.jpg?v=1789637394"
+              src="https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-crest.jpg?v=1789637394&width=1000"
               alt="Southwest Patriots Alliance crest"
               style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
               className="bg-black rounded-lg"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
 
@@ -148,6 +157,8 @@ export default function HomePage() {
                 <img
                   src={imageFor(c.handle)}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                   className="absolute right-0 bottom-0 h-full w-[55%] object-contain p-6 opacity-90 group-hover:scale-105 transition-transform duration-300"
                 />
               )}
@@ -165,7 +176,7 @@ export default function HomePage() {
         </div>
 
         {/* Product categories */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {CATEGORY_CARDS.map((c) => (
             <Link
               key={c.slug}

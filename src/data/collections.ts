@@ -46,7 +46,7 @@ export const COLLECTIONS: Collection[] = [
     slug: 'mens',
     title: "Men's",
     navLabel: "Men's",
-    description: "Men's and unisex SWPA apparel — hoodies, tees, polos, joggers and cargos.",
+    description: "Men's and unisex SWPA apparel — Night Patrol hoodies, classic hoodies and crest tees.",
     // Men's = men's-cut + unisex apparel. Never women's-cut garments.
     filter: (p) => getCategory(p) !== 'accessories' && getGender(p) !== 'womens',
   },
@@ -54,42 +54,36 @@ export const COLLECTIONS: Collection[] = [
     slug: 'womens',
     title: "Women's",
     navLabel: "Women's",
-    description: "Women's-fit SWPA apparel — Lioness hoodies, fitted tees and stretch cargos.",
+    description: "Women's-fit SWPA apparel — Lioness Edition hoodies and fitted crest tees.",
     // Women's = women's-cut garments only.
     filter: (p) => getGender(p) === 'womens',
   },
   {
     slug: 'tees',
-    title: 'Tees & Polos',
-    navLabel: 'Tees & Polos',
-    description: 'Crest T-shirts and polo shirts.',
+    title: 'T-Shirts',
+    navLabel: 'T-Shirts',
+    description: 'Crest T-shirts in men\'s, unisex and women\'s fitted cuts.',
     filter: (p) => getCategory(p) === 'tees',
   },
   {
     slug: 'hoodies',
     title: 'Hoodies',
     navLabel: 'Hoodies',
-    description: 'Heavyweight pullover and zip-up hoodies featuring the SWPA crest.',
+    description: 'Heavyweight pullover hoodies featuring the SWPA crest.',
     filter: (p) => getCategory(p) === 'hoodies',
   },
-  {
-    slug: 'bottoms',
-    title: 'Joggers & Cargo',
-    navLabel: 'Joggers & Cargo',
-    description: 'Leg-print joggers, cuffed joggers and stretch cargo trousers.',
-    filter: (p) => getCategory(p) === 'bottoms',
-  },
+  // Bottoms (Joggers & Cargo) temporarily paused pending Inkthreadable DTF placement key confirmation
   {
     slug: 'accessories',
     title: 'Accessories',
     navLabel: 'Accessories',
-    description: 'Car stickers, snoods, keyrings and bags.',
+    description: 'Pitch-black SWPA snoods, car stickers, keyrings and tote bags.',
     filter: (p) => getCategory(p) === 'accessories',
   },
 ];
 
 /** Order of links in the main navigation. */
-export const NAV_SLUGS = ['mens', 'womens', 'tees', 'hoodies', 'bottoms', 'accessories'];
+export const NAV_SLUGS = ['mens', 'womens', 'tees', 'hoodies', 'accessories'];
 
 export const ALIASES: Record<string, string> = {
   't-shirts': 'tees',
@@ -97,11 +91,12 @@ export const ALIASES: Record<string, string> = {
   'tee': 'tees',
   'men': 'mens',
   'women': 'womens',
-  'joggers': 'bottoms',
-  'jogger': 'bottoms',
-  'cargo': 'bottoms',
-  'cargos': 'bottoms',
-  'cargo-trousers': 'bottoms',
+  'bottoms': 'all',
+  'joggers': 'all',
+  'jogger': 'all',
+  'cargo': 'all',
+  'cargos': 'all',
+  'cargo-trousers': 'all',
 };
 
 export function getCollection(slug: string): Collection | undefined {
@@ -115,7 +110,7 @@ export function getCollectionProducts(slug: string): Product[] {
 }
 
 export const CATEGORY_LABELS: Record<CategoryKey, string> = {
-  tees: 'Tees & Polos',
+  tees: 'T-Shirts',
   hoodies: 'Hoodies',
   bottoms: 'Joggers & Cargo',
   accessories: 'Accessories',

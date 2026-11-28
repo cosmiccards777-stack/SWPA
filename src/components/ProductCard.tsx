@@ -6,6 +6,13 @@ interface ProductCardProps {
   product: Product;
 }
 
+function optimizeCardImage(src: string): string {
+  if (src.includes('cdn.shopify.com')) {
+    return `${src}${src.includes('?') ? '&' : '?'}width=600`;
+  }
+  return src;
+}
+
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
@@ -15,10 +22,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Product Image */}
       <div className="aspect-square w-full bg-[#0a0b0d] p-4 flex items-center justify-center relative overflow-hidden">
         <img
-          src={product.featuredImage}
+          src={optimizeCardImage(product.featuredImage)}
           alt={product.title}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
+          decoding="async"
         />
       </div>
 

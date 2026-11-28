@@ -18,9 +18,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
-        bebas: ['"Bebas Neue"', 'Impact', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-bebas)', '"Bebas Neue"', 'Impact', 'sans-serif'],
+        bebas: ['var(--font-bebas)', '"Bebas Neue"', 'Impact', 'sans-serif'],
       }
     },
   },

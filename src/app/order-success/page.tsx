@@ -19,17 +19,24 @@ function OrderSuccessContent() {
   const captureAttempted = useRef(false);
 
   useEffect(() => {
-    // If we already have a confirmed order in storage
-    const existingOrder = sessionStorage.getItem('swpa_latest_order') || localStorage.getItem('swpa_latest_order');
+    // If we already have a confirmed order in storage matching this PayPal token, display it immediately without double-capturing
+    const existingOrderRaw = sessionStorage.getItem('swpa_latest_order') || localStorage.getItem('swpa_latest_order');
+    const existingOrder = existingOrderRaw ? (() => { try { return JSON.parse(existingOrderRaw); } catch { return null; } })() : null;
 
     if (!token) {
       if (existingOrder) {
-        setOrder(JSON.parse(existingOrder));
+        setOrder(existingOrder);
         setLoading(false);
       } else {
         setError('No active order found. Please return to the store.');
         setLoading(false);
       }
+      return;
+    }
+
+    if (existingOrder && existingOrder.orderNumber === `SWPA-${token.slice(-8)}`) {
+      setOrder(existingOrder);
+      setLoading(false);
       return;
     }
 
@@ -41,7 +48,7 @@ function OrderSuccessContent() {
         const pendingRaw = sessionStorage.getItem('swpa_pending_order') || localStorage.getItem('swpa_pending_order');
         if (!pendingRaw) {
           if (existingOrder) {
-            setOrder(JSON.parse(existingOrder));
+            setOrder(existingOrder);
             setLoading(false);
             return;
           }
