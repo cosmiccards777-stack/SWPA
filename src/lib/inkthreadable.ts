@@ -133,6 +133,7 @@ export interface SubmitOrderParams {
 const INKTHREADABLE_SKU_PREFIXES = [
   'JH001',   // AWDis College Hoodie
   'JH030',   // AWDis Sweatshirt
+  'JH128',   // AWDis Heavyweight Joggers
   'STSU207', // Stanley/Stella Connector 2.0 Zip-Up Hoodie
   'STTU964', // Stanley/Stella Breezer Classic T-Shirt
   'GD72',    // Gildan SoftStyle Ladies Fitted T-Shirt
