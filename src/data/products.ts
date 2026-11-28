@@ -3934,7 +3934,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "13.99",
+        "price": "14.99",
         "grams": 50,
         "compare_at_price": null,
         "position": 1,
@@ -3992,7 +3992,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/all-over-print-neck-gaiter-white-front-6ab1ecb2e7c0b.jpg?v=1790045379",
-    "startingPrice": "13.99"
+    "startingPrice": "14.99"
   },
   {
     "id": 15961026691456,
@@ -4312,7 +4312,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 1,
@@ -4354,7 +4354,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 2,
@@ -4396,7 +4396,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 3,
@@ -4438,7 +4438,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 4,
@@ -4480,7 +4480,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 5,
@@ -4522,7 +4522,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 6,
@@ -4564,7 +4564,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "25.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 7,
@@ -4606,7 +4606,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "25.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 8,
@@ -4648,7 +4648,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "25.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 9,
@@ -4718,7 +4718,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-1471747d934107465919055b8628c283_85c2c6e4-fc44-44ce-b3a0-d9ef845ec7b7.png?v=1790038143",
-    "startingPrice": "21.99"
+    "startingPrice": "31.99"
   },
   {
     "id": 15961025937792,
@@ -4769,7 +4769,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 1,
@@ -4811,7 +4811,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 2,
@@ -4853,7 +4853,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 3,
@@ -4895,7 +4895,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 4,
@@ -4937,7 +4937,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 5,
@@ -4979,7 +4979,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "21.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 6,
@@ -5021,7 +5021,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "25.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 7,
@@ -5063,7 +5063,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "25.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 8,
@@ -5105,7 +5105,7 @@ export const PRODUCTS: Product[] = [
           ]
         },
         "available": true,
-        "price": "25.99",
+        "price": "31.99",
         "grams": 200,
         "compare_at_price": null,
         "position": 9,
@@ -5175,7 +5175,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/mockup-1471747d934107465919055b8628c283.png?v=1790038037",
-    "startingPrice": "21.99"
+    "startingPrice": "31.99"
   },
   {
     "id": 15961025839488,
