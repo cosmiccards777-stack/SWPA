@@ -46,6 +46,7 @@ const INKTHREADABLE_SKU_PREFIXES = [
   'NN600',   // Onna Women's Relentless Stretch Cargo Pants
   'NN610',   // Onna Men's Relentless Stretch Cargo Pants
   'ONNA',    // Onna Stretch Cargo Pants
+  'STICKER', // Inkthreadable Core Vinyl Stickers
 ];
 
 export function isInkthreadableSku(sku: string | null | undefined): boolean {

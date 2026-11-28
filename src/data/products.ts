@@ -3099,14 +3099,18 @@ export const PRODUCTS: Product[] = [
     "variants": [
       {
         "id": 59943376191871,
-        "title": "Black / XS",
-        "option1": "Black",
+        "title": "Calm Pink / XS",
+        "option1": "Calm Pink",
         "option2": "XS",
         "option3": null,
-        "sku": "NN600-BLK-XS",
+        "sku": "NN600-CMP-XS",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3116,14 +3120,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191872,
-        "title": "Black / S",
-        "option1": "Black",
+        "title": "Calm Pink / S",
+        "option1": "Calm Pink",
         "option2": "S",
         "option3": null,
-        "sku": "NN600-BLK-S",
+        "sku": "NN600-CMP-S",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3133,14 +3141,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191873,
-        "title": "Black / M",
-        "option1": "Black",
+        "title": "Calm Pink / M",
+        "option1": "Calm Pink",
         "option2": "M",
         "option3": null,
-        "sku": "NN600-BLK-M",
+        "sku": "NN600-CMP-M",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3150,14 +3162,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191874,
-        "title": "Black / L",
-        "option1": "Black",
+        "title": "Calm Pink / L",
+        "option1": "Calm Pink",
         "option2": "L",
         "option3": null,
-        "sku": "NN600-BLK-L",
+        "sku": "NN600-CMP-L",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3167,14 +3183,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191875,
-        "title": "Black / XL",
-        "option1": "Black",
+        "title": "Calm Pink / XL",
+        "option1": "Calm Pink",
         "option2": "XL",
         "option3": null,
-        "sku": "NN600-BLK-XL",
+        "sku": "NN600-CMP-XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3184,14 +3204,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191876,
-        "title": "Black / 2XL",
-        "option1": "Black",
+        "title": "Calm Pink / 2XL",
+        "option1": "Calm Pink",
         "option2": "2XL",
         "option3": null,
-        "sku": "NN600-BLK-2XL",
+        "sku": "NN600-CMP-2XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3201,14 +3225,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191877,
-        "title": "Black / 3XL",
-        "option1": "Black",
+        "title": "Calm Pink / 3XL",
+        "option1": "Calm Pink",
         "option2": "3XL",
         "option3": null,
-        "sku": "NN600-BLK-3XL",
+        "sku": "NN600-CMP-3XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3218,14 +3246,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191878,
-        "title": "Black / 4XL",
-        "option1": "Black",
+        "title": "Calm Pink / 4XL",
+        "option1": "Calm Pink",
         "option2": "4XL",
         "option3": null,
-        "sku": "NN600-BLK-4XL",
+        "sku": "NN600-CMP-4XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3235,14 +3267,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191879,
-        "title": "Black / 5XL",
-        "option1": "Black",
+        "title": "Calm Pink / 5XL",
+        "option1": "Calm Pink",
         "option2": "5XL",
         "option3": null,
-        "sku": "NN600-BLK-5XL",
+        "sku": "NN600-CMP-5XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990001,
+          "src": "/images/products/womens-cargo-pink.png",
+          "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3252,14 +3288,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191880,
-        "title": "Calm Pink / XS",
-        "option1": "Calm Pink",
+        "title": "Black / XS",
+        "option1": "Black",
         "option2": "XS",
         "option3": null,
-        "sku": "NN600-CMP-XS",
+        "sku": "NN600-BLK-XS",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3269,14 +3309,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191881,
-        "title": "Calm Pink / S",
-        "option1": "Calm Pink",
+        "title": "Black / S",
+        "option1": "Black",
         "option2": "S",
         "option3": null,
-        "sku": "NN600-CMP-S",
+        "sku": "NN600-BLK-S",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3286,14 +3330,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191882,
-        "title": "Calm Pink / M",
-        "option1": "Calm Pink",
+        "title": "Black / M",
+        "option1": "Black",
         "option2": "M",
         "option3": null,
-        "sku": "NN600-CMP-M",
+        "sku": "NN600-BLK-M",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3303,14 +3351,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191883,
-        "title": "Calm Pink / L",
-        "option1": "Calm Pink",
+        "title": "Black / L",
+        "option1": "Black",
         "option2": "L",
         "option3": null,
-        "sku": "NN600-CMP-L",
+        "sku": "NN600-BLK-L",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3320,14 +3372,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191884,
-        "title": "Calm Pink / XL",
-        "option1": "Calm Pink",
+        "title": "Black / XL",
+        "option1": "Black",
         "option2": "XL",
         "option3": null,
-        "sku": "NN600-CMP-XL",
+        "sku": "NN600-BLK-XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3337,14 +3393,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191885,
-        "title": "Calm Pink / 2XL",
-        "option1": "Calm Pink",
+        "title": "Black / 2XL",
+        "option1": "Black",
         "option2": "2XL",
         "option3": null,
-        "sku": "NN600-CMP-2XL",
+        "sku": "NN600-BLK-2XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3354,14 +3414,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191886,
-        "title": "Calm Pink / 3XL",
-        "option1": "Calm Pink",
+        "title": "Black / 3XL",
+        "option1": "Black",
         "option2": "3XL",
         "option3": null,
-        "sku": "NN600-CMP-3XL",
+        "sku": "NN600-BLK-3XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3371,14 +3435,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191887,
-        "title": "Calm Pink / 4XL",
-        "option1": "Calm Pink",
+        "title": "Black / 4XL",
+        "option1": "Black",
         "option2": "4XL",
         "option3": null,
-        "sku": "NN600-CMP-4XL",
+        "sku": "NN600-BLK-4XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3388,14 +3456,18 @@ export const PRODUCTS: Product[] = [
       },
       {
         "id": 59943376191888,
-        "title": "Calm Pink / 5XL",
-        "option1": "Calm Pink",
+        "title": "Black / 5XL",
+        "option1": "Black",
         "option2": "5XL",
         "option3": null,
-        "sku": "NN600-CMP-5XL",
+        "sku": "NN600-BLK-5XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990002,
+          "src": "/images/products/womens-cargo-black.png",
+          "alt": "Women's Stretch Cargo Trousers - Black"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3412,7 +3484,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-XS",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3429,7 +3505,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-S",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3446,7 +3526,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-M",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3463,7 +3547,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-L",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3480,7 +3568,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3497,7 +3589,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-2XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3514,7 +3610,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-3XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3531,7 +3631,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-4XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3548,7 +3652,11 @@ export const PRODUCTS: Product[] = [
         "sku": "NN600-CLB-5XL",
         "requires_shipping": true,
         "taxable": true,
-        "featured_image": null,
+        "featured_image": {
+          "id": 990003,
+          "src": "/images/products/womens-cargo-blue.png",
+          "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
+        },
         "available": true,
         "price": "54.99",
         "grams": 0,
@@ -3560,8 +3668,18 @@ export const PRODUCTS: Product[] = [
     "images": [
       {
         "id": 990001,
-        "src": "https://www.inkthreadable.co.uk/images/pictures/2026/product-images/womens-relentless-onna-stretch-cargo-pants-(700x840).jpg",
-        "alt": "Women's Stretch Cargo Trousers"
+        "src": "/images/products/womens-cargo-pink.png",
+        "alt": "Women's Stretch Cargo Trousers - Calm Pink"
+      },
+      {
+        "id": 990002,
+        "src": "/images/products/womens-cargo-black.png",
+        "alt": "Women's Stretch Cargo Trousers - Black"
+      },
+      {
+        "id": 990003,
+        "src": "/images/products/womens-cargo-blue.png",
+        "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
       }
     ],
     "options": [
@@ -3569,8 +3687,8 @@ export const PRODUCTS: Product[] = [
         "name": "Colour",
         "position": 1,
         "values": [
-          "Black",
           "Calm Pink",
+          "Black",
           "Ceil Blue"
         ]
       },
@@ -3590,7 +3708,7 @@ export const PRODUCTS: Product[] = [
         ]
       }
     ],
-    "featuredImage": "https://www.inkthreadable.co.uk/images/pictures/2026/product-images/womens-relentless-onna-stretch-cargo-pants-(700x840).jpg",
+    "featuredImage": "/images/products/womens-cargo-pink.png",
     "startingPrice": "54.99"
   },
   {
@@ -4034,7 +4152,7 @@ export const PRODUCTS: Product[] = [
         "option1": "Default Title",
         "option2": null,
         "option3": null,
-        "sku": "SWPA-STICKER-3X4",
+        "sku": "STICKER-DC-W-75x100mm",
         "requires_shipping": true,
         "taxable": true,
         "featured_image": null,
@@ -4102,7 +4220,7 @@ export const PRODUCTS: Product[] = [
         "option1": "Default Title",
         "option2": null,
         "option3": null,
-        "sku": "SWPA-STICKER-STOP-BOATS-RECT",
+        "sku": "STICKER-DC-W-75x100mm",
         "requires_shipping": true,
         "taxable": true,
         "featured_image": null,
@@ -4169,7 +4287,7 @@ export const PRODUCTS: Product[] = [
         "option1": "Default Title",
         "option2": null,
         "option3": null,
-        "sku": "SWPA-STICKER-WHOSE-STREETS",
+        "sku": "STICKER-DC-W-75x100mm",
         "requires_shipping": true,
         "taxable": true,
         "featured_image": null,
@@ -4237,7 +4355,7 @@ export const PRODUCTS: Product[] = [
         "option1": "Default Title",
         "option2": null,
         "option3": null,
-        "sku": "SWPA-STICKER-STOP-BOATS-RND",
+        "sku": "STICKER-DC-W-75x100mm",
         "requires_shipping": true,
         "taxable": true,
         "featured_image": null,

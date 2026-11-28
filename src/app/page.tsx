@@ -74,7 +74,7 @@ export default function HomePage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-8 pb-12 px-4 text-center bg-gradient-to-b from-[#050505] via-[#090b0e] to-[#050505]">
+      <section className="relative overflow-hidden pt-6 pb-8 px-4 text-center bg-gradient-to-b from-[#050505] via-[#090b0e] to-[#050505]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[#113f88]/20 blur-[150px] pointer-events-none rounded-full" />
 
         <div className="max-w-4xl mx-auto relative z-10">
@@ -102,19 +102,16 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="space-y-2 max-w-2xl mx-auto">
+          <div className="space-y-1 max-w-2xl mx-auto">
             <p className="text-xs sm:text-sm font-extrabold tracking-[0.22em] text-[#c5c9cf] uppercase font-sans">
               SWPA Merchandise
             </p>
             <h1 className="text-5xl sm:text-7xl font-normal text-white uppercase tracking-wider font-bebas leading-tight">
               SWPA MERCH
             </h1>
-            <p className="text-sm sm:text-base text-[#d6d7da] max-w-xl mx-auto leading-relaxed pt-1">
-              Black apparel and merchandise featuring the SWPA crest.
-            </p>
           </div>
 
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-3">
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/collections/all"
               className="inline-flex items-center justify-center min-h-[50px] px-9 py-3 rounded border border-[#d7d9dd] hover:border-white text-white font-sans text-xs font-extrabold tracking-[0.1em] uppercase transition-all shadow-md bg-gradient-to-b from-[#24272b] to-[#111315] hover:brightness-125"
