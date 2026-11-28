@@ -14,7 +14,7 @@ const CATEGORY_CARDS = [
   { slug: 'tees', title: 'TEES & POLOS', sub: 'Crest tees & polo shirts' },
   { slug: 'hoodies', title: 'HOODIES', sub: 'Pullover & zip-up hoodies' },
   { slug: 'bottoms', title: 'JOGGERS & CARGO', sub: 'Joggers & stretch cargos' },
-  { slug: 'accessories', title: 'ACCESSORIES', sub: 'Badges, patches & stickers' },
+  { slug: 'accessories', title: 'ACCESSORIES', sub: 'Snoods, stickers, bags & keyrings' },
 ];
 
 export default function HomePage() {
@@ -36,7 +36,7 @@ export default function HomePage() {
   );
 
   return (
-    <div className="space-y-20 pb-24">
+    <div className="space-y-10 pb-16">
       {/* Immediate redirect for legacy bookmark / cache hash URLs */}
       <script
         dangerouslySetInnerHTML={{
@@ -74,7 +74,7 @@ export default function HomePage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-6 pb-8 px-4 text-center bg-gradient-to-b from-[#050505] via-[#090b0e] to-[#050505]">
+      <section className="!mt-0 relative overflow-hidden pt-4 pb-2 px-4 text-center bg-gradient-to-b from-[#050505] via-[#090b0e] to-[#050505]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[#113f88]/20 blur-[150px] pointer-events-none rounded-full" />
 
         <div className="max-w-4xl mx-auto relative z-10">
