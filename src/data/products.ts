@@ -72,7 +72,7 @@ export const PRODUCTS: Product[] = [
     "id": 15975639318912,
     "title": "Original SWPA NIGHT PATROL HOODIE.",
     "handle": "original-swpa-night-patrol-hoodie",
-    "body_html": "<p><b>Material:\u00a0</b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>280 gsm</p>\n",
+    "body_html": "<p><b>Material: </b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight: </b>280 gsm</p>\n",
     "published_at": "2026-09-30T22:42:28+01:00",
     "created_at": "2026-09-30T22:42:28+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -522,9 +522,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     "id": 15969930215808,
-    "title": "SWPA Women\u2019s Lioness Crest Hoodie",
+    "title": "SWPA Women’s Lioness Crest Hoodie",
     "handle": "awdis-college-hoodie-7691-7691",
-    "body_html": "<p><b>Material:\u00a0</b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>280 gsm</p>\n",
+    "body_html": "<p><b>Material: </b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight: </b>280 gsm</p>\n",
     "published_at": "2026-09-28T00:47:48+01:00",
     "created_at": "2026-09-28T00:47:48+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -1574,9 +1574,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     "id": 15969930150272,
-    "title": "SWPA Women\u2019s Night Patrol Hoodie \u2013 Lioness Edition",
+    "title": "SWPA Women’s Night Patrol Hoodie – Lioness Edition",
     "handle": "awdis-college-hoodie-swpa-womens-night-patrol-hoodie",
-    "body_html": "<p><b>Material:\u00a0</b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>280 gsm</p>\n",
+    "body_html": "<p><b>Material: </b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight: </b>280 gsm</p>\n",
     "published_at": "2026-09-28T00:46:19+01:00",
     "created_at": "2026-09-28T00:46:19+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -2626,9 +2626,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     "id": 15969929429376,
-    "title": "SWPA Night Patrol Hoodie \u2013 Black",
+    "title": "SWPA Night Patrol Hoodie – Black",
     "handle": "awdis-college-hoodie-black-night-patrol-hoodie-mens",
-    "body_html": "<p><b>Material:\u00a0</b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>280 gsm</p>\n",
+    "body_html": "<p><b>Material: </b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Double fabric hood with self colour drawcord.</li>\n\t<li>Front pouch pocket with small hidden opening for ear phone cord feed.</li>\n\t<li>Ribbed cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight: </b>280 gsm</p>\n",
     "published_at": "2026-09-28T00:41:09+01:00",
     "created_at": "2026-09-28T00:41:09+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -3080,7 +3080,7 @@ export const PRODUCTS: Product[] = [
     "id": 15961085280640,
     "title": "Women's Plain Black Stretch Cargo Trousers",
     "handle": "womens-plain-black-stretch-cargo-trousers",
-    "body_html": "<p>Plain black women's stretch cargo trousers with a regular workwear fit. Comfortable four-way stretch fabric, durable easy-care construction and practical multi-pocket storage.</p><ul>\n<li>Plain black with no customisation or branding</li>\n<li>210 gsm stretch fabric</li>\n<li>42% polyester, 33% recycled polyester, 19% viscose, 6% elastane</li>\n<li>Buttoned waistband, drawcord and zip fly</li>\n<li>Multiple mobile-friendly, coin and zip pockets</li>\n<li>Hem vents for easier movement</li>\n<li>Inside leg: 74 cm</li>\n<li>Wash at 30\u00b0C</li>\n</ul><p>Sizes: XS to 5XL. Supplied via Inkthreadable.</p>",
+    "body_html": "<p>Plain black women's stretch cargo trousers with a regular workwear fit. Comfortable four-way stretch fabric, durable easy-care construction and practical multi-pocket storage.</p><ul>\n<li>Plain black with no customisation or branding</li>\n<li>210 gsm stretch fabric</li>\n<li>42% polyester, 33% recycled polyester, 19% viscose, 6% elastane</li>\n<li>Buttoned waistband, drawcord and zip fly</li>\n<li>Multiple mobile-friendly, coin and zip pockets</li>\n<li>Hem vents for easier movement</li>\n<li>Inside leg: 74 cm</li>\n<li>Wash at 30°C</li>\n</ul><p>Sizes: XS to 5XL. Supplied via Inkthreadable.</p>",
     "published_at": "2026-09-22T03:55:12+01:00",
     "created_at": "2026-09-22T03:55:11+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -3324,7 +3324,7 @@ export const PRODUCTS: Product[] = [
     "id": 15961085247872,
     "title": "Men's Plain Black Stretch Cargo Trousers",
     "handle": "mens-plain-black-stretch-cargo-trousers",
-    "body_html": "<p>Plain black stretch cargo trousers with a regular workwear fit. Comfortable four-way stretch fabric, durable easy-care construction and practical multi-pocket storage.</p><ul>\n<li>Plain black with no customisation or branding</li>\n<li>210 gsm stretch fabric</li>\n<li>42% polyester, 33% recycled polyester, 19% viscose, 6% elastane</li>\n<li>Buttoned waistband, drawcord and zip fly</li>\n<li>Multiple mobile-friendly, coin and zip pockets</li>\n<li>Hem vents for easier movement</li>\n<li>Regular leg: 75 cm</li>\n<li>Long leg: 86 cm</li>\n<li>Wash at 30\u00b0C</li>\n</ul><p>Sizes: S to 3XL. Supplied via Inkthreadable.</p>",
+    "body_html": "<p>Plain black stretch cargo trousers with a regular workwear fit. Comfortable four-way stretch fabric, durable easy-care construction and practical multi-pocket storage.</p><ul>\n<li>Plain black with no customisation or branding</li>\n<li>210 gsm stretch fabric</li>\n<li>42% polyester, 33% recycled polyester, 19% viscose, 6% elastane</li>\n<li>Buttoned waistband, drawcord and zip fly</li>\n<li>Multiple mobile-friendly, coin and zip pockets</li>\n<li>Hem vents for easier movement</li>\n<li>Regular leg: 75 cm</li>\n<li>Long leg: 86 cm</li>\n<li>Wash at 30°C</li>\n</ul><p>Sizes: S to 3XL. Supplied via Inkthreadable.</p>",
     "published_at": "2026-09-22T03:55:09+01:00",
     "created_at": "2026-09-22T03:55:08+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -3738,7 +3738,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     "id": 15961026691456,
-    "title": "SWPA Classic Crest Weatherproof Car Sticker \u2013 3\u00d74in",
+    "title": "SWPA Classic Crest Weatherproof Car Sticker – 3×4in",
     "handle": "swpa-weatherproof-car-sticker-3-4in",
     "body_html": "<p>Small SWPA kiss-cut vinyl sticker suitable for cars, windows and other smooth surfaces. Waterproof and designed for outdoor use for up to 18 months. Printed on demand and fulfilled by Prodigi.</p>",
     "published_at": "2026-09-22T02:58:59+01:00",
@@ -3803,407 +3803,10 @@ export const PRODUCTS: Product[] = [
     "startingPrice": "8.99"
   },
   {
-    "id": 15961026658688,
-    "title": "SWPA Classic Crest Pin Badge \u2013 32mm",
-    "handle": "swpa-pin-badge-30mm",
-    "body_html": "<p>Compact 30mm SWPA pin badge with a metal shell and safety-pin fastening. Printed on demand in the UK and fulfilled by Prodigi.</p>",
-    "published_at": "2026-09-22T02:58:59+01:00",
-    "created_at": "2026-09-22T01:56:02+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Accessories",
-    "tags": [
-      "30mm",
-      "Accessories",
-      "Pin Badge",
-      "Prodigi",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943222346112,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-PIN-30",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "7.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961026658688,
-        "created_at": "2026-09-22T01:56:02+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "3.99",
-        "exact_new_price": "7.51"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061623243136,
-        "created_at": "2026-09-22T03:22:01+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T03:22:04+01:00",
-        "product_id": 15961026658688,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-classic-crest-sew-on-patch_16059c4f-5453-4bbe-a2bd-581f6c00cf9a.png?v=1790043724",
-        "width": 1254,
-        "height": 1254
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-classic-crest-sew-on-patch_16059c4f-5453-4bbe-a2bd-581f6c00cf9a.png?v=1790043724",
-    "startingPrice": "7.99"
-  },
-  {
-    "id": 15961038913920,
-    "title": "SWPA Mini Patriot Pin Badge \u2013 32mm",
-    "handle": "swpa-mini-patriot-pin-badge-32mm",
-    "body_html": "<p>A compact 32mm SWPA Mini Patriot pin badge featuring the young lion design with Union Jack and St George flags. Printed on demand and fulfilled through Prodigi once configured.</p>",
-    "published_at": "2026-09-22T02:58:58+01:00",
-    "created_at": "2026-09-22T02:20:42+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Accessories",
-    "tags": [
-      "32mm",
-      "Accessories",
-      "Mini Patriot",
-      "Pin Badge",
-      "Prodigi",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943294960000,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-MINI-PIN-32",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "7.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961038913920,
-        "created_at": "2026-09-22T02:20:42+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "3.99",
-        "exact_new_price": "7.51"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061447803264,
-        "created_at": "2026-09-22T02:20:27+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T02:20:31+01:00",
-        "product_id": 15961038913920,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-mini-patriot-pin-badge.png?v=1790040031",
-        "width": 1254,
-        "height": 1254
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-mini-patriot-pin-badge.png?v=1790040031",
-    "startingPrice": "7.99"
-  },
-  {
-    "id": 15961043009920,
-    "title": "SW Patriots Women Sew-On Patch \u2013 8cm",
-    "handle": "sw-patriots-women-sew-on-patch-8cm",
-    "body_html": "<p>8cm round SW Patriots Women fabric patch with overlocked edges. Designed for sewing onto jackets, bags, hats and other suitable fabric items. Printed on demand and ready to configure for Prodigi fulfilment.</p>",
-    "published_at": "2026-09-22T02:58:57+01:00",
-    "created_at": "2026-09-22T02:32:08+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Patches",
-    "tags": [
-      "8cm",
-      "Accessories",
-      "Patch",
-      "Prodigi",
-      "Sew-On Patch",
-      "SW Patriots Women",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943303446912,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-WOMEN-PATCH-80",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "11.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961043009920,
-        "created_at": "2026-09-22T02:32:08+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "7.99",
-        "exact_new_price": "11.63"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061448163712,
-        "created_at": "2026-09-22T02:20:36+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T02:20:40+01:00",
-        "product_id": 15961043009920,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/sw-patriots-women-pin-badge.png?v=1790040040",
-        "width": 1254,
-        "height": 1254
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/sw-patriots-women-pin-badge.png?v=1790040040",
-    "startingPrice": "11.99"
-  },
-  {
-    "id": 15961038946688,
-    "title": "SW Patriots Women Pin Badge \u2013 32mm",
-    "handle": "sw-patriots-women-pin-badge-32mm",
-    "body_html": "<p>A 32mm SW Patriots Women pin badge featuring the lioness crest with Union Jack and St George flags. Printed on demand and fulfilled through Prodigi once configured.</p>",
-    "published_at": "2026-09-22T02:58:57+01:00",
-    "created_at": "2026-09-22T02:20:45+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Accessories",
-    "tags": [
-      "32mm",
-      "Accessories",
-      "Pin Badge",
-      "Prodigi",
-      "SW Patriots Women",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943294992768,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-WOMEN-PIN-32",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "7.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961038946688,
-        "created_at": "2026-09-22T02:20:45+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "3.99",
-        "exact_new_price": "7.51"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061448163712,
-        "created_at": "2026-09-22T02:20:36+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T02:20:40+01:00",
-        "product_id": 15961038946688,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/sw-patriots-women-pin-badge.png?v=1790040040",
-        "width": 1254,
-        "height": 1254
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/sw-patriots-women-pin-badge.png?v=1790040040",
-    "startingPrice": "7.99"
-  },
-  {
-    "id": 15961042911616,
-    "title": "SWPA Mini Patriot Sew-On Patch \u2013 8cm",
-    "handle": "swpa-mini-patriot-sew-on-patch-8cm",
-    "body_html": "<p>8cm round Mini Patriot fabric patch with overlocked edges. Designed for sewing onto jackets, bags, hats and other suitable fabric items. Printed on demand and ready to configure for Prodigi fulfilment.</p>",
-    "published_at": "2026-09-22T02:58:56+01:00",
-    "created_at": "2026-09-22T02:32:04+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Patches",
-    "tags": [
-      "8cm",
-      "Accessories",
-      "Mini Patriot",
-      "Patch",
-      "Prodigi",
-      "Sew-On Patch",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943303217536,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-MINI-PATCH-80",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "11.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961042911616,
-        "created_at": "2026-09-22T02:32:04+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "7.99",
-        "exact_new_price": "11.63"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061447803264,
-        "created_at": "2026-09-22T02:20:27+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T02:20:31+01:00",
-        "product_id": 15961042911616,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-mini-patriot-pin-badge.png?v=1790040031",
-        "width": 1254,
-        "height": 1254
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-mini-patriot-pin-badge.png?v=1790040031",
-    "startingPrice": "11.99"
-  },
-  {
-    "id": 15961040355712,
-    "title": "Stop The Boats Pin Badge \u2013 32mm",
-    "handle": "stop-the-boats-pin-badge-32mm",
-    "body_html": "<p>A 32mm round pin badge featuring the Stop The Boats crest design. Printed on demand and ready to be configured for fulfilment through Prodigi.</p>",
-    "published_at": "2026-09-22T02:58:56+01:00",
-    "created_at": "2026-09-22T02:24:22+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Accessories",
-    "tags": [
-      "32mm",
-      "Accessories",
-      "Pin Badge",
-      "Prodigi",
-      "Stop The Boats",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943298597248,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-STB-PIN-32",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "7.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961040355712,
-        "created_at": "2026-09-22T02:24:22+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "3.99",
-        "exact_new_price": "7.51"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061465465216,
-        "created_at": "2026-09-22T02:24:17+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T02:24:20+01:00",
-        "product_id": 15961040355712,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/stop-the-boats-pin-badge.jpg?v=1790040260",
-        "width": 1536,
-        "height": 1536
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/stop-the-boats-pin-badge.jpg?v=1790040260",
-    "startingPrice": "7.99"
-  },
-  {
     "id": 15961044550016,
-    "title": "SWPA \u201cStop the Boats\u201d Rectangular Car Sticker",
+    "title": "SWPA “Stop the Boats” Rectangular Car Sticker",
     "handle": "swpa-stop-the-boats-rectangular-car-sticker",
-    "body_html": "<p>Rectangular SWPA car sticker featuring the \u201cStop the Boats\u201d design with a Union Jack background, masked megaphone figure and British heraldic details. Vinyl sticker suitable for cars, windows and other smooth surfaces. Waterproof and designed for outdoor use for up to 18 months. Printed on demand and fulfilled by Prodigi.</p>",
+    "body_html": "<p>Rectangular SWPA car sticker featuring the “Stop the Boats” design with a Union Jack background, masked megaphone figure and British heraldic details. Vinyl sticker suitable for cars, windows and other smooth surfaces. Waterproof and designed for outdoor use for up to 18 months. Printed on demand and fulfilled by Prodigi.</p>",
     "published_at": "2026-09-22T02:58:55+01:00",
     "created_at": "2026-09-22T02:43:54+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -4268,77 +3871,10 @@ export const PRODUCTS: Product[] = [
     "startingPrice": "8.99"
   },
   {
-    "id": 15961043075456,
-    "title": "Stop The Boats Sew-On Patch \u2013 8cm",
-    "handle": "stop-the-boats-sew-on-patch-8cm",
-    "body_html": "<p>8cm round Stop The Boats fabric patch with overlocked edges. Designed for sewing onto jackets, bags, hats and other suitable fabric items. Printed on demand and ready to configure for Prodigi fulfilment.</p>",
-    "published_at": "2026-09-22T02:58:55+01:00",
-    "created_at": "2026-09-22T02:32:11+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Patches",
-    "tags": [
-      "8cm",
-      "Accessories",
-      "Patch",
-      "Prodigi",
-      "Sew-On Patch",
-      "Stop The Boats",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943303512448,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-STB-PATCH-80",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "11.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961043075456,
-        "created_at": "2026-09-22T02:32:11+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "7.99",
-        "exact_new_price": "11.63"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061465465216,
-        "created_at": "2026-09-22T02:24:17+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T02:24:20+01:00",
-        "product_id": 15961043075456,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/stop-the-boats-pin-badge.jpg?v=1790040260",
-        "width": 1536,
-        "height": 1536
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/stop-the-boats-pin-badge.jpg?v=1790040260",
-    "startingPrice": "11.99"
-  },
-  {
     "id": 15961044484480,
-    "title": "SWPA \u201cWhose Streets? Our Streets!\u201d Car Sticker",
+    "title": "SWPA “Whose Streets? Our Streets!” Car Sticker",
     "handle": "swpa-whose-streets-our-streets-car-sticker",
-    "body_html": "<p>SWPA car sticker featuring the \u201cWhose Streets? Our Streets!\u201d design with a Union Jack background, masked megaphone figure and British heraldic details. Kiss-cut vinyl sticker suitable for cars, windows and other smooth surfaces. Waterproof and designed for outdoor use for up to 18 months. Printed on demand and fulfilled by Prodigi.</p>",
+    "body_html": "<p>SWPA car sticker featuring the “Whose Streets? Our Streets!” design with a Union Jack background, masked megaphone figure and British heraldic details. Kiss-cut vinyl sticker suitable for cars, windows and other smooth surfaces. Waterproof and designed for outdoor use for up to 18 months. Printed on demand and fulfilled by Prodigi.</p>",
     "published_at": "2026-09-22T02:58:54+01:00",
     "created_at": "2026-09-22T02:43:48+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -4402,77 +3938,10 @@ export const PRODUCTS: Product[] = [
     "startingPrice": "8.99"
   },
   {
-    "id": 15961042878848,
-    "title": "SWPA Classic Crest Sew-On Patch \u2013 8cm",
-    "handle": "swpa-classic-crest-sew-on-patch-8cm",
-    "body_html": "<p>8cm round SWPA Classic Crest fabric patch with overlocked edges. Designed for sewing onto jackets, bags, hats and other suitable fabric items. Printed on demand and ready to configure for Prodigi fulfilment.</p>",
-    "published_at": "2026-09-22T02:58:54+01:00",
-    "created_at": "2026-09-22T02:32:00+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
-    "vendor": "SWPA Merch",
-    "product_type": "Patches",
-    "tags": [
-      "8cm",
-      "Accessories",
-      "Classic Crest",
-      "Patch",
-      "Prodigi",
-      "Sew-On Patch",
-      "SWPA"
-    ],
-    "variants": [
-      {
-        "id": 59943303184768,
-        "title": "Default Title",
-        "option1": "Default Title",
-        "option2": null,
-        "option3": null,
-        "sku": "SWPA-CLASSIC-PATCH-80",
-        "requires_shipping": true,
-        "taxable": true,
-        "featured_image": null,
-        "available": true,
-        "price": "11.99",
-        "grams": 0,
-        "compare_at_price": null,
-        "position": 1,
-        "product_id": 15961042878848,
-        "created_at": "2026-09-22T02:32:00+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
-        "old_price": "7.99",
-        "exact_new_price": "11.63"
-      }
-    ],
-    "images": [
-      {
-        "id": 87061482111360,
-        "created_at": "2026-09-22T02:31:54+01:00",
-        "position": 1,
-        "updated_at": "2026-09-22T02:31:57+01:00",
-        "product_id": 15961042878848,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-classic-crest-sew-on-patch.png?v=1790040717",
-        "width": 1254,
-        "height": 1254
-      }
-    ],
-    "options": [
-      {
-        "name": "Title",
-        "position": 1,
-        "values": [
-          "Default Title"
-        ]
-      }
-    ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-classic-crest-sew-on-patch.png?v=1790040717",
-    "startingPrice": "11.99"
-  },
-  {
     "id": 15961044517248,
-    "title": "SWPA \u201cStop the Boats\u201d Round Car Sticker",
+    "title": "SWPA “Stop the Boats” Round Car Sticker",
     "handle": "swpa-stop-the-boats-round-car-sticker",
-    "body_html": "<p>Round SWPA car sticker featuring the \u201cStop the Boats\u201d design with a Union Jack background, masked megaphone figure and British heraldic details. Vinyl sticker suitable for cars, windows and other smooth surfaces. Waterproof and designed for outdoor use for up to 18 months. Printed on demand and fulfilled by Prodigi.</p>",
+    "body_html": "<p>Round SWPA car sticker featuring the “Stop the Boats” design with a Union Jack background, masked megaphone figure and British heraldic details. Vinyl sticker suitable for cars, windows and other smooth surfaces. Waterproof and designed for outdoor use for up to 18 months. Printed on demand and fulfilled by Prodigi.</p>",
     "published_at": "2026-09-22T02:58:53+01:00",
     "created_at": "2026-09-22T02:43:51+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -4540,7 +4009,7 @@ export const PRODUCTS: Product[] = [
     "id": 15961026036096,
     "title": "SWPA Sweatshirt Design 2",
     "handle": "awdis-sweatshirt-7033-7186",
-    "body_html": "<p><b>Material:\u00a0</b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Stylish fit.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Taped neck.</li>\n\t<li>Ribbed collar, cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>280 gsm</p>\n",
+    "body_html": "<p><b>Material: </b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Stylish fit.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Taped neck.</li>\n\t<li>Ribbed collar, cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight: </b>280 gsm</p>\n",
     "published_at": "2026-09-22T01:48:27+01:00",
     "created_at": "2026-09-22T01:48:27+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -4997,7 +4466,7 @@ export const PRODUCTS: Product[] = [
     "id": 15961025937792,
     "title": "SWPA Sweatshirt Design 1",
     "handle": "awdis-sweatshirt-7033-7185",
-    "body_html": "<p><b>Material:\u00a0</b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Stylish fit.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Taped neck.</li>\n\t<li>Ribbed collar, cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>280 gsm</p>\n",
+    "body_html": "<p><b>Material: </b>80% ringspun cotton/20% polyester.</p>\n\n<ul>\n\t<li>Drop shoulder style.</li>\n\t<li>Stylish fit.</li>\n\t<li>Soft cotton faced fabric.</li>\n\t<li>Taped neck.</li>\n\t<li>Ribbed collar, cuffs and hem.</li>\n\t<li>Twin needle stitching.</li>\n\t<li>WRAP Certified Production.</li>\n</ul>\n\n<p><b>Weight: </b>280 gsm</p>\n",
     "published_at": "2026-09-22T01:47:09+01:00",
     "created_at": "2026-09-22T01:47:09+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -6303,7 +5772,7 @@ export const PRODUCTS: Product[] = [
     "id": 15961019482496,
     "title": "SWPA Embroidered Cuffed Joggers",
     "handle": "swpa-embroidered-cuffed-joggers",
-    "body_html": "<p><span style=\"font-weight:600\">Fabric:</span>\u00a0100% Organic Ringpsun Combed Cotton, Single Jersey.</p>\n\n<p><span style=\"font-weight:600\">Fabric Weight:</span>\u00a0350gsm.\u00a0</p>\n\n<p style=\"margin-bottom:0;\"><span style=\"font-weight:600\">Key Features:</span></p>\n\n<div class=\"col-md-6\">\n<ul style=\"margin-left:10;\">\n\t<li>Round drawcords in matching body colour</li>\n\t<li>Closed end metal tipping</li>\n</ul>\n</div>\n\n<div class=\"col-md-6\">\n<ul style=\"margin-left:10;\">\n\t<li>Buttonhole drawcord exit eyelets</li>\n\t<li>Pocket bags in self-fabric and single jersey</li>\n</ul>\n</div>\n\n<p style=\"margin-bottom:0;\"></p>\n",
+    "body_html": "<p><span style=\"font-weight:600\">Fabric:</span> 100% Organic Ringpsun Combed Cotton, Single Jersey.</p>\n\n<p><span style=\"font-weight:600\">Fabric Weight:</span> 350gsm. </p>\n\n<p style=\"margin-bottom:0;\"><span style=\"font-weight:600\">Key Features:</span></p>\n\n<div class=\"col-md-6\">\n<ul style=\"margin-left:10;\">\n\t<li>Round drawcords in matching body colour</li>\n\t<li>Closed end metal tipping</li>\n</ul>\n</div>\n\n<div class=\"col-md-6\">\n<ul style=\"margin-left:10;\">\n\t<li>Buttonhole drawcord exit eyelets</li>\n\t<li>Pocket bags in self-fabric and single jersey</li>\n</ul>\n</div>\n\n<p style=\"margin-bottom:0;\"></p>\n",
     "published_at": "2026-09-22T01:22:44+01:00",
     "created_at": "2026-09-22T01:22:44+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -6699,7 +6168,7 @@ export const PRODUCTS: Product[] = [
     "id": 15960998871424,
     "title": "SWPA Bag for Life - Long Handles",
     "handle": "swpa-bag-for-life-long-handles",
-    "body_html": "<p><b>Material:\u00a0</b>100% cotton.</p>\n\n<ul>\n\t<li>Carry/shoulder straps (67cm long).</li>\n\t<li>Capacity 10 litres.</li>\n</ul>\n\n<p><b>Weight:\u00a0</b>140 gsm.</p>\n",
+    "body_html": "<p><b>Material: </b>100% cotton.</p>\n\n<ul>\n\t<li>Carry/shoulder straps (67cm long).</li>\n\t<li>Capacity 10 litres.</li>\n</ul>\n\n<p><b>Weight: </b>140 gsm.</p>\n",
     "vendor": "SWPA Merch",
     "product_type": "Accessories",
     "tags": [],
