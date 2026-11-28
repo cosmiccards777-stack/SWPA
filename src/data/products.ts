@@ -3864,11 +3864,6 @@ export const PRODUCTS: Product[] = [
         "id": 990101,
         "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
         "alt": "Men's Plain Black Stretch Cargo Trousers - Front"
-      },
-      {
-        "id": 990102,
-        "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_1.jpg",
-        "alt": "Men's Plain Black Stretch Cargo Trousers - Back"
       }
     ],
     "options": [
