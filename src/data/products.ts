@@ -3112,7 +3112,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 1,
@@ -3133,7 +3133,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 2,
@@ -3154,7 +3154,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 3,
@@ -3175,7 +3175,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 4,
@@ -3196,7 +3196,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 5,
@@ -3217,7 +3217,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 6,
@@ -3238,7 +3238,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 7,
@@ -3259,7 +3259,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 8,
@@ -3280,7 +3280,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Calm Pink"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 9,
@@ -3301,7 +3301,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 10,
@@ -3322,7 +3322,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 11,
@@ -3343,7 +3343,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 12,
@@ -3364,7 +3364,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 13,
@@ -3385,7 +3385,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 14,
@@ -3406,7 +3406,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 15,
@@ -3427,7 +3427,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 16,
@@ -3448,7 +3448,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 17,
@@ -3469,7 +3469,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 18,
@@ -3490,7 +3490,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 19,
@@ -3511,7 +3511,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 20,
@@ -3532,7 +3532,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 21,
@@ -3553,7 +3553,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 22,
@@ -3574,7 +3574,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 23,
@@ -3595,7 +3595,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 24,
@@ -3616,7 +3616,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 25,
@@ -3637,7 +3637,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 26,
@@ -3658,7 +3658,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Women's Stretch Cargo Trousers - Ceil Blue"
         },
         "available": true,
-        "price": "54.99",
+        "price": "49.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 27,
@@ -3709,7 +3709,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN600/flatshots/NN600CAPK_0.jpg",
-    "startingPrice": "54.99"
+    "startingPrice": "49.99"
   },
   {
     "id": 15961085247872,
@@ -3747,7 +3747,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "50.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 1,
@@ -3768,7 +3768,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "50.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 2,
@@ -3789,7 +3789,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "50.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 3,
@@ -3810,7 +3810,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "50.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 4,
@@ -3831,7 +3831,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "50.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 5,
@@ -3852,7 +3852,7 @@ export const PRODUCTS: Product[] = [
           "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
         },
         "available": true,
-        "price": "54.99",
+        "price": "50.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 6,
@@ -3888,7 +3888,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-    "startingPrice": "54.99"
+    "startingPrice": "50.99"
   },
   {
     "id": 15961082921344,
@@ -4024,7 +4024,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": null,
         "available": true,
-        "price": "8.99",
+        "price": "4.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 1,
@@ -4058,7 +4058,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-classic-crest-sew-on-patch_de11e2b5-eede-48d2-83f2-48cf4bf2b41f.png?v=1790043726",
-    "startingPrice": "8.99"
+    "startingPrice": "4.99"
   },
   {
     "id": 15961044550016,
@@ -4092,7 +4092,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": null,
         "available": true,
-        "price": "8.99",
+        "price": "4.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 1,
@@ -4126,7 +4126,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-stop-the-boats-rectangle-car-sticker.png?v=1790041392",
-    "startingPrice": "8.99"
+    "startingPrice": "4.99"
   },
   {
     "id": 15961044484480,
@@ -4159,7 +4159,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": null,
         "available": true,
-        "price": "8.99",
+        "price": "4.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 1,
@@ -4193,7 +4193,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-whose-streets-our-streets-car-sticker.png?v=1790041376",
-    "startingPrice": "8.99"
+    "startingPrice": "4.99"
   },
   {
     "id": 15961044517248,
@@ -4227,7 +4227,7 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": null,
         "available": true,
-        "price": "8.99",
+        "price": "4.99",
         "grams": 0,
         "compare_at_price": null,
         "position": 1,
@@ -4261,7 +4261,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/swpa-stop-the-boats-round-car-sticker.png?v=1790041384",
-    "startingPrice": "8.99"
+    "startingPrice": "4.99"
   },
   {
     "id": 15961026036096,
