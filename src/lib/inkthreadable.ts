@@ -133,7 +133,10 @@ export interface SubmitOrderParams {
 const INKTHREADABLE_SKU_PREFIXES = [
   'JH001',   // AWDis College Hoodie
   'JH030',   // AWDis Sweatshirt
-  'STPW977', // Stanley/Stella Women's Polo
+  'STSU207', // Stanley/Stella Connector 2.0 Zip-Up Hoodie
+  'STTU964', // Stanley/Stella Breezer Classic T-Shirt
+  'GD72',    // Gildan SoftStyle Ladies Fitted T-Shirt
+  'STPU222', // Stanley/Stella Prepster Polo 2.0
   'STBU185', // Stanley/Stella Cuffed Joggers
   'W101',    // Westford Mill Bag for Life
   'BOTTLE',  // Bottle Opener Keyring

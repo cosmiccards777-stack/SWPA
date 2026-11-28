@@ -25,7 +25,7 @@ export default function HomePage() {
     'original-swpa-night-patrol-hoodie',
     'awdis-college-hoodie-swpa-womens-night-patrol-hoodie',
     'swpa-classic-t-shirt',
-    'swpa-womens-embroidered-polo-shirt-black-pink',
+    'awdis-college-hoodie-7691-7691',
     'swpa-printed-zip-up-hoodie',
     'swpa-womens-fitted-t-shirt',
     'swpa-printed-cuffed-joggers',
