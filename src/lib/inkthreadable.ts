@@ -61,6 +61,9 @@ export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string 
   },
 
   // Accessories & Stickers
+  'swpa-snood': {
+    front: `${R2_BASE}/swpa-snood-30x55cm-300dpi.png`,
+  },
   'swpa-bag-for-life-long-handles': {
     front: `${R2_BASE}/embroidered-logo-tracksuit-bottoms-back.png`,
   },
@@ -88,6 +91,7 @@ export const PRINT_INSTRUCTIONS_MAP: Record<string, string> = {
   'mens-plain-black-stretch-cargo-trousers': 'DECORATION: PRINTING ONLY (DO NOT EMBROIDER). Placement: Left Leg (100x100mm).',
   'swpa-printed-cuffed-joggers': 'DECORATION: PRINTING / DTF ONLY (DO NOT EMBROIDER). Placement: Front Right Leg (100x390mm).',
   'swpa-leg-joggers': 'DECORATION: PRINTING / DTF ONLY (DO NOT EMBROIDER). Placement: DTF - Front Right Leg (100x390mm).',
+  'swpa-snood': 'DECORATION: FULL-BLEED DYE SUBLIMATION (300x550mm). Pitch-black wrap with centered SWPA crest.',
 };
 
 export interface InkthreadableCustomerShipping {

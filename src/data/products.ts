@@ -3089,7 +3089,6 @@ export const PRODUCTS: Product[] = [
       "Black",
       "Bottoms",
       "Cargo Trousers",
-      "Inkthreadable",
       "Plain",
       "Unbranded",
       "Women's",
@@ -3724,7 +3723,6 @@ export const PRODUCTS: Product[] = [
       "Black",
       "Bottoms",
       "Cargo Trousers",
-      "Inkthreadable",
       "Men's",
       "Plain",
       "Unbranded",
@@ -3893,10 +3891,10 @@ export const PRODUCTS: Product[] = [
     "id": 15961082921344,
     "title": "SWPA Snood",
     "handle": "swpa-snood",
-    "body_html": "<p><strong>SWPA Snood</strong></p>\n<p>A black multi-use neck gaiter featuring the SWPA lion crest. Wear it as a snood, neck warmer, headband, bandana or non-medical face covering.</p>\n<ul>\n<li>One size</li>\n<li>Smooth, breathable two-way stretch fabric</li>\n<li>Washable and reusable</li>\n<li>EU fabric composition: 96% polyester, 4% spandex</li>\n<li>Printed on one side; reverse side is unprinted</li>\n</ul>\n<p>Made to order and fulfilled by Printful.</p>\n<p><small>This product is not personal protective equipment (PPE) or a medical face covering.</small></p>",
+    "body_html": "<p><strong>SWPA Snood</strong></p>\n<p>A pitch-black seamless multi-use neck gaiter featuring the centered Southwest Patriots Alliance lion crest. Wear it as a snood, neck warmer, headband, bandana or non-medical face covering.</p>\n<ul>\n<li>One size fits all — seamless tubular design for comfort</li>\n<li>100% breathable microfibre polyester</li>\n<li>Full-coverage dye-sublimation print in deep black with crisp centered SWPA crest</li>\n<li>Machine washable, quick-drying and reusable</li>\n</ul>\n<p><small>Note: Because of the all-over dye-sublimation process, subtle print creasing along natural fold lines is normal. This product is not personal protective equipment (PPE) or a medical face covering.</small></p>",
     "published_at": "2026-09-22T03:49:42+01:00",
     "created_at": "2026-09-22T03:49:35+01:00",
-    "updated_at": "2026-11-13T23:30:50+00:00",
+    "updated_at": "2026-11-28T18:05:00+00:00",
     "vendor": "SWPA Merch",
     "product_type": "Snoods & Neck Gaiters",
     "tags": [
@@ -3904,7 +3902,6 @@ export const PRODUCTS: Product[] = [
       "Black",
       "Neck Gaiter",
       "One Size",
-      "Printful",
       "Snood",
       "SWPA"
     ],
@@ -3923,11 +3920,11 @@ export const PRODUCTS: Product[] = [
           "product_id": 15961082921344,
           "position": 1,
           "created_at": "2026-09-22T03:49:36+01:00",
-          "updated_at": "2026-09-22T03:49:39+01:00",
-          "alt": "Product mockup",
-          "width": 2000,
-          "height": 2000,
-          "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/all-over-print-neck-gaiter-white-front-6ab1ecb2e7c0b.jpg?v=1790045379",
+          "updated_at": "2026-11-28T18:05:00+00:00",
+          "alt": "SWPA Snood - Pitch Black with Centered Crest",
+          "width": 1200,
+          "height": 1200,
+          "src": "/images/products/swpa-snood-black.jpg",
           "variant_ids": [
             59943368327552
           ]
@@ -3939,7 +3936,7 @@ export const PRODUCTS: Product[] = [
         "position": 1,
         "product_id": 15961082921344,
         "created_at": "2026-09-22T03:49:41+01:00",
-        "updated_at": "2026-11-13T23:30:50+00:00",
+        "updated_at": "2026-11-28T18:05:00+00:00",
         "old_price": "9.99",
         "exact_new_price": "13.69"
       }
@@ -3949,36 +3946,14 @@ export const PRODUCTS: Product[] = [
         "id": 87061928345984,
         "created_at": "2026-09-22T03:49:36+01:00",
         "position": 1,
-        "updated_at": "2026-09-22T03:49:39+01:00",
+        "updated_at": "2026-11-28T18:05:00+00:00",
         "product_id": 15961082921344,
         "variant_ids": [
           59943368327552
         ],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/all-over-print-neck-gaiter-white-front-6ab1ecb2e7c0b.jpg?v=1790045379",
-        "width": 2000,
-        "height": 2000
-      },
-      {
-        "id": 87061928378752,
-        "created_at": "2026-09-22T03:49:36+01:00",
-        "position": 2,
-        "updated_at": "2026-09-22T03:49:40+01:00",
-        "product_id": 15961082921344,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/all-over-print-neck-gaiter-white-left-6ab1ecb2e84b0.jpg?v=1790045380",
-        "width": 2000,
-        "height": 2000
-      },
-      {
-        "id": 87061928411520,
-        "created_at": "2026-09-22T03:49:36+01:00",
-        "position": 3,
-        "updated_at": "2026-09-22T03:49:40+01:00",
-        "product_id": 15961082921344,
-        "variant_ids": [],
-        "src": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/all-over-print-neck-gaiter-white-right-6ab1ecb2e88c4.jpg?v=1790045380",
-        "width": 2000,
-        "height": 2000
+        "src": "/images/products/swpa-snood-black.jpg",
+        "width": 1200,
+        "height": 1200
       }
     ],
     "options": [
@@ -3990,7 +3965,7 @@ export const PRODUCTS: Product[] = [
         ]
       }
     ],
-    "featuredImage": "https://cdn.shopify.com/s/files/1/1020/0249/1776/files/all-over-print-neck-gaiter-white-front-6ab1ecb2e7c0b.jpg?v=1790045379",
+    "featuredImage": "/images/products/swpa-snood-black.jpg",
     "startingPrice": "14.99"
   },
   {
@@ -4007,7 +3982,6 @@ export const PRODUCTS: Product[] = [
       "3x4",
       "Accessories",
       "Car Sticker",
-      "Prodigi",
       "SWPA",
       "Vinyl Sticker"
     ],
@@ -4073,7 +4047,6 @@ export const PRODUCTS: Product[] = [
       "Accessories",
       "British",
       "Car Sticker",
-      "Prodigi",
       "Rectangle",
       "Stop the Boats",
       "SWPA",
@@ -4141,7 +4114,6 @@ export const PRODUCTS: Product[] = [
       "Accessories",
       "British",
       "Car Sticker",
-      "Prodigi",
       "SWPA",
       "Vinyl Sticker",
       "Whose Streets"
@@ -4208,7 +4180,6 @@ export const PRODUCTS: Product[] = [
       "Accessories",
       "British",
       "Car Sticker",
-      "Prodigi",
       "Round",
       "Stop the Boats",
       "SWPA",
