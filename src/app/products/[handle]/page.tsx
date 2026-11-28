@@ -272,7 +272,9 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           <div className="border border-[#33373e] rounded-lg p-4 bg-[#111316] space-y-2.5 text-xs text-[#ffffff] font-medium font-sans">
             <div className="flex items-center gap-2.5">
               <Truck className="w-4 h-4 text-white flex-shrink-0" />
-              <span>Fast Tracked UK Delivery</span>
+              <span>
+                Fast Tracked UK Delivery — <strong className="text-emerald-400">FREE over £50</strong> (£4.99 under £50)
+              </span>
             </div>
             <div className="flex items-center gap-2.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />

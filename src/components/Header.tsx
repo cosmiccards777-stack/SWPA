@@ -28,6 +28,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 w-full bg-[#08090a]/95 backdrop-blur-md border-b border-[#1c1f24] shadow-sm">
       <div className="swpa-patriot-accent w-full" style={{ height: '4px' }} />
 
+      {/* Free shipping promo strip */}
+      <div className="bg-[#111318] border-b border-[#1e2229] px-3 py-1.5 text-center">
+        <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.14em] uppercase text-[#e5e7eb] font-sans">
+          Free UK Tracked Delivery on Orders Over <span className="text-white font-black">£50</span>
+          <span className="hidden sm:inline text-[#8f959d]"> &nbsp;•&nbsp; Dispatched Direct Across the UK</span>
+        </p>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-6 xl:gap-8">

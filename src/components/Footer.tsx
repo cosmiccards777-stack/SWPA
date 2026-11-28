@@ -11,8 +11,8 @@ export default function Footer() {
           <div className="flex items-center justify-center sm:justify-start gap-3">
             <Truck className="w-6 h-6 text-white flex-shrink-0" />
             <div>
-              <div className="text-white font-bold uppercase text-xs font-sans">UK Tracked Delivery</div>
-              <div className="text-[11px] text-[#c5c9cf]">Dispatched tracked direct across the UK</div>
+              <div className="text-white font-bold uppercase text-xs font-sans">Free UK Tracked Delivery Over £50</div>
+              <div className="text-[11px] text-[#c5c9cf]">£4.99 tracked UK delivery on orders under £50</div>
             </div>
           </div>
           <div className="flex items-center justify-center sm:justify-start gap-3">
