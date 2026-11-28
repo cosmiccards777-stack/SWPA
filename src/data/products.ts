@@ -3713,9 +3713,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     "id": 15961085247872,
-    "title": "Men's Plain Black Stretch Cargo Trousers",
+    "title": "Men's Black Stretch Cargo Trousers",
     "handle": "mens-plain-black-stretch-cargo-trousers",
-    "body_html": "<p>Plain black stretch cargo trousers with a regular workwear fit. Comfortable four-way stretch fabric, durable easy-care construction and practical multi-pocket storage.</p><ul>\n<li>Plain black with no customisation or branding</li>\n<li>210 gsm stretch fabric</li>\n<li>42% polyester, 33% recycled polyester, 19% viscose, 6% elastane</li>\n<li>Buttoned waistband, drawcord and zip fly</li>\n<li>Multiple mobile-friendly, coin and zip pockets</li>\n<li>Hem vents for easier movement</li>\n<li>Regular leg: 75 cm</li>\n<li>Long leg: 86 cm</li>\n<li>Wash at 30°C</li>\n</ul><p>Sizes: S to 3XL.</p>",
+    "body_html": "<p>Black men's stretch cargo trousers featuring the official Southwest Patriots Alliance crest on the left leg. Regular workwear fit with breathable four-way stretch fabric, durable easy-care construction, and practical multi-pocket storage.</p><p><strong>Fabric:</strong> 42% Polyester, 33% Recycled Polyester, 19% Viscose, 6% Elastane.</p><p><strong>Fabric Weight:</strong> 210 gsm.</p><p><strong>Key Features:</strong></p><ul><li>Official SWPA crest on left leg</li><li>Breathable four-way stretch for easy movement and all-day comfort</li><li>Durable, crease-resistant and easy-care</li><li>Buttoned waistband, drawcord and zip fly</li><li>Multiple mobile-friendly, coin and zip pockets</li><li>Hem vents for easier movement</li><li>Regular leg: 75 cm / Long leg: 86 cm</li></ul><p><strong>Washing Instructions:</strong> Wash at 30°C. Do not tumble dry. Do not iron.</p>",
     "published_at": "2026-09-22T03:55:09+01:00",
     "created_at": "2026-09-22T03:55:08+01:00",
     "updated_at": "2026-11-13T23:30:50+00:00",
@@ -3743,8 +3743,8 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990101,
-          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-          "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
+          "src": "/images/products/mens-cargo-black.jpg?v=2",
+          "alt": "Men's Black Stretch Cargo Trousers - Black"
         },
         "available": true,
         "price": "46.99",
@@ -3764,8 +3764,8 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990101,
-          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-          "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
+          "src": "/images/products/mens-cargo-black.jpg?v=2",
+          "alt": "Men's Black Stretch Cargo Trousers - Black"
         },
         "available": true,
         "price": "46.99",
@@ -3785,8 +3785,8 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990101,
-          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-          "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
+          "src": "/images/products/mens-cargo-black.jpg?v=2",
+          "alt": "Men's Black Stretch Cargo Trousers - Black"
         },
         "available": true,
         "price": "46.99",
@@ -3806,8 +3806,8 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990101,
-          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-          "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
+          "src": "/images/products/mens-cargo-black.jpg?v=2",
+          "alt": "Men's Black Stretch Cargo Trousers - Black"
         },
         "available": true,
         "price": "46.99",
@@ -3827,8 +3827,8 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990101,
-          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-          "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
+          "src": "/images/products/mens-cargo-black.jpg?v=2",
+          "alt": "Men's Black Stretch Cargo Trousers - Black"
         },
         "available": true,
         "price": "46.99",
@@ -3848,8 +3848,8 @@ export const PRODUCTS: Product[] = [
         "taxable": true,
         "featured_image": {
           "id": 990101,
-          "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-          "alt": "Men's Plain Black Stretch Cargo Trousers - Black"
+          "src": "/images/products/mens-cargo-black.jpg?v=2",
+          "alt": "Men's Black Stretch Cargo Trousers - Black"
         },
         "available": true,
         "price": "46.99",
@@ -3862,8 +3862,8 @@ export const PRODUCTS: Product[] = [
     "images": [
       {
         "id": 990101,
-        "src": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
-        "alt": "Men's Plain Black Stretch Cargo Trousers - Front"
+        "src": "/images/products/mens-cargo-black.jpg?v=2",
+        "alt": "Men's Black Stretch Cargo Trousers - SWPA Crest"
       }
     ],
     "options": [
@@ -3887,7 +3887,7 @@ export const PRODUCTS: Product[] = [
         ]
       }
     ],
-    "featuredImage": "https://eunpremierstr.blob.core.windows.net/premierworkwear-live/thumbs/1200-1525/NN500/flatshots/NN500BLAC_0.jpg",
+    "featuredImage": "/images/products/mens-cargo-black.jpg?v=2",
     "startingPrice": "46.99"
   },
   {

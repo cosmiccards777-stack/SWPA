@@ -66,6 +66,9 @@ export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string 
   'womens-plain-black-stretch-cargo-trousers': {
     front: `${R2_BASE}/womens-cargo-crest-100x100mm.png`,
   },
+  'mens-plain-black-stretch-cargo-trousers': {
+    front: `${R2_BASE}/mens-cargo-crest-100x100mm.png`,
+  },
   'swpa-printed-cuffed-joggers': {
     front: `${R2_BASE}/swpa-printed-tracksuit-bottoms-front-right-leg.png`,
   },
