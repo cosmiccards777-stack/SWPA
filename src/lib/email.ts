@@ -212,3 +212,74 @@ export async function sendDispatchEmail(params: DispatchEmailParams) {
     html: html,
   });
 }
+
+/**
+ * Sends instant New Order Alert to store owner (sales@swpamerch.uk) with full customer details and fulfillment status
+ */
+export async function sendAdminOrderAlertEmail(params: {
+  orderNumber: string;
+  total: number | string;
+  customerName: string;
+  customerEmail: string;
+  customerPhone?: string;
+  shippingAddress: {
+    address1: string;
+    address2?: string;
+    city: string;
+    county?: string;
+    postcode: string;
+  };
+  items: Array<{
+    title: string;
+    sku?: string;
+    size?: string | null;
+    color?: string | null;
+    quantity: number;
+    price: number | string;
+  }>;
+  fulfillmentStatus: string;
+}) {
+  const rows = params.items
+    .map(
+      (i) => `
+      <tr style="border-bottom: 1px solid #e5e7eb;">
+        <td style="padding: 8px 4px;"><strong>${i.title}</strong><br><span style="color:#6b7280;font-size:12px;">${[i.color, i.size].filter(Boolean).join(' / ')} | SKU: ${i.sku || 'N/A'}</span></td>
+        <td style="padding: 8px 4px; text-align:center;">${i.quantity}</td>
+        <td style="padding: 8px 4px; text-align:right;">£${(Number(i.price) * i.quantity).toFixed(2)}</td>
+      </tr>`
+    )
+    .join('');
+
+  const html = `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #111827;">
+      <h2 style="margin: 0 0 8px 0;">New Order Paid: #${params.orderNumber} (£${Number(params.total).toFixed(2)})</h2>
+      <p style="margin: 0 0 16px 0; padding: 10px 14px; background: #f3f4f6; border-radius: 6px; font-size: 13px;">
+        <strong>Fulfillment Status:</strong> ${params.fulfillmentStatus}
+      </p>
+      <h3 style="margin: 16px 0 8px 0; font-size: 14px; text-transform: uppercase;">Customer &amp; Shipping</h3>
+      <p style="margin: 0 0 16px 0; font-size: 14px; line-height: 1.5;">
+        <strong>${params.customerName}</strong><br>
+        ${params.shippingAddress.address1}${params.shippingAddress.address2 ? ', ' + params.shippingAddress.address2 : ''}<br>
+        ${params.shippingAddress.city}${params.shippingAddress.county ? ', ' + params.shippingAddress.county : ''}, ${params.shippingAddress.postcode}<br>
+        Email: ${params.customerEmail}${params.customerPhone ? ' | Phone: ' + params.customerPhone : ''}
+      </p>
+      <h3 style="margin: 16px 0 8px 0; font-size: 14px; text-transform: uppercase;">Items Ordered</h3>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <thead>
+          <tr style="border-bottom: 2px solid #111827; text-align:left;">
+            <th style="padding: 6px 4px;">Item</th>
+            <th style="padding: 6px 4px; text-align:center;">Qty</th>
+            <th style="padding: 6px 4px; text-align:right;">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+
+  return sendEmailViaResendRest({
+    to: ['sales@swpamerch.uk'],
+    subject: `[NEW SALE £${Number(params.total).toFixed(2)}] Order #${params.orderNumber} — ${params.customerName}`,
+    html,
+  });
+}

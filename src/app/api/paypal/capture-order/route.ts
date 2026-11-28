@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { capturePayPalOrder } from '@/lib/paypal';
 import { submitOrderToInkthreadable } from '@/lib/inkthreadable';
 import { PRODUCTS } from '@/data/products';
-import { sendOrderConfirmationEmail } from '@/lib/email';
+import { sendOrderConfirmationEmail, sendAdminOrderAlertEmail } from '@/lib/email';
 
 export const runtime = 'edge';
 
@@ -157,6 +157,43 @@ export async function POST(req: Request) {
       });
     } catch (emailErr) {
       console.error('[Confirmation Email Error]', emailErr);
+    }
+
+    // 8. Fire instant New Sale Alert Email to store owner (sales@swpamerch.uk)
+    try {
+      const statusSummary = fulfillmentResult?.mode === 'live'
+        ? `Submitted to Inkthreadable (Order ID: ${fulfillmentResult.inkthreadableOrderId || 'Accepted'})${fulfillmentResult.manualItemsCount ? ` + ${fulfillmentResult.manualItemsCount} manual item(s) to post` : ''}`
+        : fulfillmentResult?.mode === 'manual_only'
+          ? 'Manual fulfillment required (badges/stickers/patches — not sent to Inkthreadable)'
+          : fulfillmentResult?.mode === 'sandbox_simulation'
+            ? 'Sandbox test order (Inkthreadable skipped safely)'
+            : `Attention needed: ${fulfillmentResult?.error || fulfillmentResult?.message || 'Check Inkthreadable'}`;
+
+      await sendAdminOrderAlertEmail({
+        orderNumber: generatedOrderNumber,
+        total: capturedValue,
+        customerName: shipping.fullName,
+        customerEmail: shipping.email,
+        customerPhone: shipping.phone,
+        shippingAddress: {
+          address1: shipping.address1,
+          address2: shipping.address2,
+          city: shipping.city,
+          county: shipping.county,
+          postcode: shipping.postcode,
+        },
+        items: cartItems.map((ci: any) => ({
+          title: ci.title,
+          sku: ci.sku,
+          size: ci.size,
+          color: ci.color,
+          quantity: ci.quantity,
+          price: ci.price,
+        })),
+        fulfillmentStatus: statusSummary,
+      });
+    } catch (adminEmailErr) {
+      console.error('[Admin Alert Email Error]', adminEmailErr);
     }
 
     return NextResponse.json({

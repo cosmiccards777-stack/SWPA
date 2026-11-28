@@ -1,6 +1,6 @@
 /**
- * Inkthreadable API Client
- * Automatically pushes confirmed orders directly into the customer's Inkthreadable account.
+ * Inkthreadable Official API Client (POST /api/orders.php with SHA-1 Signature)
+ * Edge-runtime compatible using Web Crypto API (crypto.subtle).
  */
 
 export interface InkthreadableCustomerShipping {
@@ -21,6 +21,11 @@ export interface InkthreadableOrderItem {
   title?: string;
   size?: string | null;
   color?: string | null;
+  price?: number | string;
+  designs?: {
+    front?: string;
+    back?: string;
+  };
 }
 
 export interface SubmitOrderParams {
@@ -29,77 +34,140 @@ export interface SubmitOrderParams {
   items: InkthreadableOrderItem[];
 }
 
-export async function submitOrderToInkthreadable(params: SubmitOrderParams) {
-  const appId = process.env.INKTHREADABLE_APP_ID;
-  const apiKey = process.env.INKTHREADABLE_API_KEY;
+// Known Inkthreadable blank garment / accessory SKU prefixes
+const INKTHREADABLE_SKU_PREFIXES = [
+  'JH001',   // AWDis College Hoodie
+  'JH030',   // AWDis Sweatshirt
+  'STPW977', // Stanley/Stella Women's Polo
+  'STBU185', // Stanley/Stella Cuffed Joggers
+  'W101',    // Westford Mill Bag for Life
+  'BOTTLE',  // Bottle Opener Keyring
+  'BB900',   // Beechfield Morf Snood
+  'ONNA',    // Onna Stretch Cargo Pants
+];
 
-  console.log(`[Inkthreadable] Submitting Order ${params.orderId}...`);
+export function isInkthreadableSku(sku: string | null | undefined): boolean {
+  if (!sku) return false;
+  const upper = sku.toUpperCase().trim();
+  return INKTHREADABLE_SKU_PREFIXES.some((prefix) => upper.startsWith(prefix));
+}
+
+async function sha1Hex(input: string): Promise<string> {
+  const data = new TextEncoder().encode(input);
+  const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+export async function submitOrderToInkthreadable(params: SubmitOrderParams) {
+  const appId = (process.env.INKTHREADABLE_APP_ID || '').trim();
+  const apiKey = (process.env.INKTHREADABLE_API_KEY || '').trim();
+
+  console.log(`[Inkthreadable] Preparing Order ${params.orderId}...`);
+
+  // Split items into Inkthreadable-compatible vs manual fulfillment (badges, patches, etc.)
+  const inkItems = params.items.filter((item) => isInkthreadableSku(item.sku));
+  const manualItems = params.items.filter((item) => !isInkthreadableSku(item.sku));
+
+  if (inkItems.length === 0) {
+    console.log(`[Inkthreadable] Order ${params.orderId} contains only manual fulfillment items. Skipping Inkthreadable API.`);
+    return {
+      success: true,
+      mode: 'manual_only',
+      inkthreadableOrderId: null,
+      manualItemsCount: manualItems.length,
+      message: 'All items require manual fulfillment (notified via sales@swpamerch.uk).',
+    };
+  }
 
   // Handle mock mode if credentials are not yet set
   if (!appId || !apiKey || appId === 'test_inkthreadable_app_id') {
     console.log('[Inkthreadable DEV MODE] Order simulated successfully:', {
       orderId: params.orderId,
-      items: params.items.length,
+      items: inkItems.length,
       destination: `${params.shipping.city}, ${params.shipping.postcode}`,
     });
     return {
       success: true,
       mode: 'mock',
       inkthreadableOrderId: `INK-MOCK-${Date.now()}`,
-      message: 'Dev simulated Inkthreadable submission (Provide real API keys in .env.local for production fulfillment)',
+      manualItemsCount: manualItems.length,
+      message: 'Dev simulated Inkthreadable submission',
     };
   }
 
-  // Inkthreadable v1 Order creation payload
+  const nameParts = params.shipping.fullName.trim().split(/\s+/);
+  const firstName = nameParts[0] || 'Customer';
+  const lastName = nameParts.slice(1).join(' ') || '-';
+
+  // Official Inkthreadable POST /api/orders.php JSON payload
   const payload = {
-    order: {
-      external_id: params.orderId,
-      shipping_name: params.shipping.fullName,
-      shipping_address_1: params.shipping.address1,
-      shipping_address_2: params.shipping.address2 || '',
-      shipping_city: params.shipping.city,
-      shipping_county: params.shipping.county || '',
-      shipping_postcode: params.shipping.postcode,
-      shipping_country: params.shipping.countryCode || 'GB',
-      shipping_phone: params.shipping.phone || '',
-      shipping_email: params.shipping.email,
-      shipping_service: 'standard', // or 'tracked' depending on inkthreadable setup
-      items: params.items.map((item) => ({
-        sku: item.sku,
-        quantity: item.quantity,
-      })),
+    brandName: 'SWPA Merch',
+    external_id: params.orderId,
+    shipping_address: {
+      firstName,
+      lastName,
+      address1: params.shipping.address1,
+      address2: params.shipping.address2 || '',
+      city: params.shipping.city,
+      county: params.shipping.county || '',
+      country: params.shipping.countryCode === 'GB' ? 'United Kingdom' : params.shipping.countryCode,
+      postcode: params.shipping.postcode,
+      phone1: params.shipping.phone || '',
+      email: params.shipping.email,
     },
+    shipping: {
+      shippingMethod: 'tracked',
+    },
+    items: inkItems.map((item) => ({
+      pn: item.sku,
+      quantity: item.quantity,
+      ...(item.price ? { retailPrice: Number(item.price).toFixed(2) } : {}),
+      ...(item.designs ? { designs: item.designs } : {}),
+    })),
   };
 
+  const bodyString = JSON.stringify(payload);
+  const signature = await sha1Hex(bodyString + apiKey);
+  const url = `https://www.inkthreadable.co.uk/api/orders.php?AppId=${encodeURIComponent(appId)}&Signature=${signature}`;
+
   try {
-    const res = await fetch('https://www.inkthreadable.co.uk/api/orders', {
+    const res = await fetch(url, {
       method: 'POST',
       headers: {
-        'X-App-Id': appId,
-        'X-Api-Key': apiKey,
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify(payload),
+      body: bodyString,
     });
 
-    const data = await res.json();
+    const responseText = await res.text();
+    let data: any;
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      data = { raw: responseText };
+    }
 
-    if (!res.ok) {
-      console.error('[Inkthreadable Error Response]', data);
-      throw new Error(data.message || data.error || 'Failed to place order in Inkthreadable');
+    if (!res.ok || data?.error) {
+      console.error('[Inkthreadable Error Response]', res.status, data);
+      throw new Error(data?.error || data?.message || `Inkthreadable returned HTTP ${res.status}`);
     }
 
     return {
       success: true,
       mode: 'live',
-      inkthreadableOrderId: data.order?.id || data.id,
+      inkthreadableOrderId: data?.order?.id || data?.id || null,
+      manualItemsCount: manualItems.length,
       data,
     };
   } catch (error: any) {
     console.error('[Inkthreadable API Exception]', error);
     return {
       success: false,
+      mode: 'error',
+      manualItemsCount: manualItems.length,
       error: error.message || 'Unknown network error connecting to Inkthreadable API',
     };
   }
