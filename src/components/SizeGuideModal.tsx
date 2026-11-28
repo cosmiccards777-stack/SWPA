@@ -222,7 +222,7 @@ export default function SizeGuideModal({
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                 <p>
-                  <strong className="text-white">Fit Advice:</strong> All hoodies and sweatshirts fit true to size. For an oversized streetwear aesthetic, order one size larger.
+                  <strong className="text-white">Fit Advice:</strong> All hoodies fit true to size. For an oversized streetwear aesthetic, order one size larger.
                 </p>
               </div>
               <div className="flex items-start gap-2">

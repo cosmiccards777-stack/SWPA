@@ -33,23 +33,7 @@ export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string 
     back: `${R2_BASE}/7033-7039-back.png`,
   },
 
-  // Sweatshirts
-  'awdis-sweatshirt-7033-7186': {
-    front: `${R2_BASE}/7033-7033-front.png`,
-    back: `${R2_BASE}/7033-7033-back.png`,
-  },
-  'awdis-sweatshirt-7033-7185': {
-    front: `${R2_BASE}/7033-7185-front.png`,
-    back: `${R2_BASE}/7033-7185-back.png`,
-  },
-
   // Tees & Polos
-  'swpa-womens-embroidered-polo-shirt-black-pink': {
-    front: `${R2_BASE}/7691-7691-front.png`,
-  },
-  'swpa-womens-embroidered-polo-shirt': {
-    front: `${R2_BASE}/7033-7033-front.png`,
-  },
   'swpa-classic-t-shirt': {
     front: `${R2_BASE}/7033-7033-front.png`,
     back: `${R2_BASE}/7033-7033-back.png`,
@@ -59,7 +43,7 @@ export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string 
     back: `${R2_BASE}/7691-7691-back.png`,
   },
   'swpa-classic-polo-shirt': {
-    front: `${R2_BASE}/7033-7033-front.png`,
+    front: `${R2_BASE}/mens-cargo-crest-100x100mm.png`,
   },
 
   // Joggers & Cargo
@@ -97,6 +81,15 @@ export const PRODUCT_DESIGN_MAP: Record<string, { front?: string; back?: string 
   },
 };
 
+// Explicit print-only instructions so Inkthreadable NEVER defaults multi-method SKUs to embroidery
+export const PRINT_INSTRUCTIONS_MAP: Record<string, string> = {
+  'swpa-classic-polo-shirt': 'DECORATION: PRINTING / DTF ONLY (DO NOT EMBROIDER). Placement: DTF - Left Chest (100x100mm).',
+  'womens-plain-black-stretch-cargo-trousers': 'DECORATION: PRINTING ONLY (DO NOT EMBROIDER). Placement: Left Leg (100x100mm).',
+  'mens-plain-black-stretch-cargo-trousers': 'DECORATION: PRINTING ONLY (DO NOT EMBROIDER). Placement: Left Leg (100x100mm).',
+  'swpa-printed-cuffed-joggers': 'DECORATION: PRINTING / DTF ONLY (DO NOT EMBROIDER). Placement: Front Right Leg (100x390mm).',
+  'swpa-leg-joggers': 'DECORATION: PRINTING / DTF ONLY (DO NOT EMBROIDER). Placement: DTF - Front Right Leg (100x390mm).',
+};
+
 export interface InkthreadableCustomerShipping {
   fullName: string;
   address1: string;
@@ -117,6 +110,7 @@ export interface InkthreadableOrderItem {
   size?: string | null;
   color?: string | null;
   price?: number | string;
+  mockup?: string;
   designs?: {
     front?: string;
     back?: string;
@@ -131,21 +125,21 @@ export interface SubmitOrderParams {
 
 // Known Inkthreadable blank garment / accessory SKU prefixes
 const INKTHREADABLE_SKU_PREFIXES = [
-  'JH001',   // AWDis College Hoodie
-  'JH030',   // AWDis Sweatshirt
-  'JH128',   // AWDis Heavyweight Joggers
-  'STSU207', // Stanley/Stella Connector 2.0 Zip-Up Hoodie
-  'STTU964', // Stanley/Stella Breezer Classic T-Shirt
-  'GD72',    // Gildan SoftStyle Ladies Fitted T-Shirt
-  'STPU222', // Stanley/Stella Prepster Polo 2.0
-  'STBU185', // Stanley/Stella Cuffed Joggers
-  'W101',    // Westford Mill Bag for Life
-  'BOTTLE',  // Bottle Opener Keyring
-  'BB900',   // Beechfield Morf Snood
-  'NN500',   // Onna Men's Relentless Stretch Cargo Pants
-  'NN600',   // Onna Women's Relentless Stretch Cargo Pants
-  'ONNA',    // Onna Stretch Cargo Pants
-  'STICKER', // Inkthreadable Core Vinyl Stickers
+  'JH001',       // AWDis College Hoodie
+  'JH128',       // AWDis Heavyweight Joggers
+  'STSU207',     // Stanley/Stella Connector 2.0 Zip-Up Hoodie
+  'STTU964',     // Stanley/Stella Breezer Classic T-Shirt
+  'GD72',        // Gildan SoftStyle Ladies Fitted T-Shirt
+  'EMB-STPU222', // Stanley/Stella Prepster Polo 2.0 (DTF - Left Chest Printing)
+  'STPU222',     // Stanley/Stella Prepster Polo 2.0 fallback prefix
+  'STBU185',     // Stanley/Stella Mover 2.0 Cuffed Joggers
+  'W101',        // Westford Mill Bag for Life
+  'BOTTLE',      // Bottle Opener Keyring
+  'BB900',       // Beechfield Morf Snood
+  'NN500',       // Onna Men's Relentless Stretch Cargo Pants
+  'NN600',       // Onna Women's Relentless Stretch Cargo Pants
+  'ONNA',        // Onna Stretch Cargo Pants
+  'STICKER',     // Inkthreadable Core Vinyl Stickers
 ];
 
 export function isInkthreadableSku(sku: string | null | undefined): boolean {
@@ -224,11 +218,14 @@ export async function submitOrderToInkthreadable(params: SubmitOrderParams) {
     },
     items: inkItems.map((item) => {
       const resolvedDesigns = item.designs || (item.handle ? PRODUCT_DESIGN_MAP[item.handle] : undefined);
+      const printInstructions = item.handle ? PRINT_INSTRUCTIONS_MAP[item.handle] : undefined;
       return {
         pn: item.sku,
         quantity: item.quantity,
         ...(item.price ? { retailPrice: Number(item.price).toFixed(2) } : {}),
+        description: printInstructions || 'DECORATION: PRINTING ONLY (DTG/DTF — DO NOT EMBROIDER).',
         ...(resolvedDesigns ? { designs: resolvedDesigns } : {}),
+        ...(item.mockup ? { mockups: { front: item.mockup } } : {}),
       };
     }),
   };

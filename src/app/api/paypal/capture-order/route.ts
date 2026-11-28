@@ -39,6 +39,11 @@ export async function POST(req: Request) {
       const canonicalPrice = parseFloat(variant.price);
       expectedSubtotal += canonicalPrice * quantity;
 
+      const rawMockup = variant.featured_image?.src || product.featuredImage || '';
+      const absoluteMockup = rawMockup.startsWith('/')
+        ? `https://swpamerch.uk${rawMockup}`
+        : rawMockup || undefined;
+
       validatedFulfillmentItems.push({
         handle: product.handle,
         sku: variant.sku || 'SWPA-ITEM',
@@ -47,6 +52,7 @@ export async function POST(req: Request) {
         size: variant.option2 || variant.option1 || null,
         color: variant.option1 || null,
         price: canonicalPrice,
+        mockup: absoluteMockup,
       });
     }
 

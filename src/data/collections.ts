@@ -1,13 +1,12 @@
 import { PRODUCTS, Product } from './products';
 
-export type CategoryKey = 'tees' | 'hoodies' | 'sweatshirts' | 'bottoms' | 'accessories';
+export type CategoryKey = 'tees' | 'hoodies' | 'bottoms' | 'accessories';
 export type Gender = 'mens' | 'womens' | 'unisex';
 
 /** Which product category a product belongs to (based on its product type). */
 export function getCategory(p: Product): CategoryKey {
   const type = p.product_type.toLowerCase();
   if (type.includes('hoodie')) return 'hoodies';
-  if (type.includes('sweatshirt')) return 'sweatshirts';
   if (type.includes('t-shirt') || type.includes('polo')) return 'tees';
   if (type.includes('jogger') || type.includes('cargo') || type.includes('trouser')) return 'bottoms';
   return 'accessories';
@@ -40,14 +39,14 @@ export const COLLECTIONS: Collection[] = [
     slug: 'all',
     title: 'All Products',
     navLabel: 'Shop All',
-    description: 'The full SWPA range — apparel, accessories, badges, patches and stickers.',
+    description: 'The full SWPA range — apparel, accessories and car stickers.',
     filter: () => true,
   },
   {
     slug: 'mens',
     title: "Men's",
     navLabel: "Men's",
-    description: "Men's and unisex SWPA apparel — hoodies, tees, polos, sweatshirts, joggers and cargos.",
+    description: "Men's and unisex SWPA apparel — hoodies, tees, polos, joggers and cargos.",
     // Men's = men's-cut + unisex apparel. Never women's-cut garments.
     filter: (p) => getCategory(p) !== 'accessories' && getGender(p) !== 'womens',
   },
@@ -55,7 +54,7 @@ export const COLLECTIONS: Collection[] = [
     slug: 'womens',
     title: "Women's",
     navLabel: "Women's",
-    description: "Women's-fit SWPA apparel — Lioness hoodies, fitted tees, embroidered polos and cargos.",
+    description: "Women's-fit SWPA apparel — Lioness hoodies, fitted tees and stretch cargos.",
     // Women's = women's-cut garments only.
     filter: (p) => getGender(p) === 'womens',
   },
@@ -63,7 +62,7 @@ export const COLLECTIONS: Collection[] = [
     slug: 'tees',
     title: 'Tees & Polos',
     navLabel: 'Tees & Polos',
-    description: 'Crest T-shirts and embroidered polo shirts.',
+    description: 'Crest T-shirts and polo shirts.',
     filter: (p) => getCategory(p) === 'tees',
   },
   {
@@ -74,30 +73,23 @@ export const COLLECTIONS: Collection[] = [
     filter: (p) => getCategory(p) === 'hoodies',
   },
   {
-    slug: 'sweatshirts',
-    title: 'Sweatshirts',
-    navLabel: 'Sweatshirts',
-    description: 'Classic crew-neck sweatshirts with the SWPA crest.',
-    filter: (p) => getCategory(p) === 'sweatshirts',
-  },
-  {
     slug: 'bottoms',
     title: 'Joggers & Cargo',
     navLabel: 'Joggers & Cargo',
-    description: 'Logo joggers, leg-print joggers, cuffed joggers and stretch cargo trousers.',
+    description: 'Leg-print joggers, cuffed joggers and stretch cargo trousers.',
     filter: (p) => getCategory(p) === 'bottoms',
   },
   {
     slug: 'accessories',
     title: 'Accessories',
     navLabel: 'Accessories',
-    description: 'Pin badges, sew-on patches, car stickers, snoods, keyrings and bags.',
+    description: 'Car stickers, snoods, keyrings and bags.',
     filter: (p) => getCategory(p) === 'accessories',
   },
 ];
 
 /** Order of links in the main navigation. */
-export const NAV_SLUGS = ['mens', 'womens', 'tees', 'hoodies', 'sweatshirts', 'bottoms', 'accessories'];
+export const NAV_SLUGS = ['mens', 'womens', 'tees', 'hoodies', 'bottoms', 'accessories'];
 
 export const ALIASES: Record<string, string> = {
   't-shirts': 'tees',
@@ -125,7 +117,6 @@ export function getCollectionProducts(slug: string): Product[] {
 export const CATEGORY_LABELS: Record<CategoryKey, string> = {
   tees: 'Tees & Polos',
   hoodies: 'Hoodies',
-  sweatshirts: 'Sweatshirts',
   bottoms: 'Joggers & Cargo',
   accessories: 'Accessories',
 };

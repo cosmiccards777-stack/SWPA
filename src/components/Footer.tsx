@@ -80,18 +80,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/collections/sweatshirts" className="hover:text-[#d71920] transition-colors">
-                  Sweatshirts
-                </Link>
-              </li>
-              <li>
                 <Link href="/collections/bottoms" className="hover:text-[#d71920] transition-colors">
                   Joggers &amp; Cargo
                 </Link>
               </li>
               <li>
                 <Link href="/collections/accessories" className="hover:text-[#d71920] transition-colors">
-                  Accessories &amp; Patches
+                  Accessories
                 </Link>
               </li>
             </ul>

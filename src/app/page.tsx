@@ -29,7 +29,7 @@ export default function HomePage() {
     'swpa-printed-zip-up-hoodie',
     'swpa-womens-fitted-t-shirt',
     'swpa-printed-cuffed-joggers',
-    'awdis-sweatshirt-7033-7185',
+    'mens-plain-black-stretch-cargo-trousers',
   ];
   const featured = FEATURED_HANDLES.map((h) => PRODUCTS.find((p) => p.handle === h)).filter(
     (p): p is (typeof PRODUCTS)[number] => Boolean(p)
@@ -54,8 +54,8 @@ export default function HomePage() {
                 'tees': '/collections/tees',
                 't-shirts': '/collections/tees',
                 't-shirt': '/collections/tees',
-                'sweatshirts': '/collections/sweatshirts',
-                'sweatshirt': '/collections/sweatshirts',
+                'sweatshirts': '/collections/hoodies',
+                'sweatshirt': '/collections/hoodies',
                 'joggers': '/collections/bottoms',
                 'jogger': '/collections/bottoms',
                 'cargo': '/collections/bottoms',

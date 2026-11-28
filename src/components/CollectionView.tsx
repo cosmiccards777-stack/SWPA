@@ -18,7 +18,7 @@ export default function CollectionView({ products, showTypeFilter = false }: Pro
   const [type, setType] = useState<CategoryKey | 'all'>('all');
 
   const typesPresent = useMemo(() => {
-    const order: CategoryKey[] = ['tees', 'hoodies', 'sweatshirts', 'bottoms', 'accessories'];
+    const order: CategoryKey[] = ['tees', 'hoodies', 'bottoms', 'accessories'];
     const set = new Set(products.map(getCategory));
     return order.filter((t) => set.has(t));
   }, [products]);
